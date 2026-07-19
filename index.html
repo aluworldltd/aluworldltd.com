@@ -38,7 +38,7 @@
     ]
   }
   </script>
-  <link rel="icon" href="assets/image-001.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <style>
 :root {
   --ink: #07111c;
@@ -91,7 +91,9 @@ h3 { font-size: 1.5rem; }
 .site-header.scrolled { background: rgba(5,13,22,.86); border-color: var(--soft-line); backdrop-filter: blur(18px); }
 .header-inner { height: 84px; display: flex; align-items: center; gap: 30px; }
 .brand { flex: 0 0 auto; min-width: 0; }
-.brand-combo { display: inline-flex; align-items: center; gap: 12px; }
+.brand-combo { display: inline-flex; align-items: center; }
+.brand-logo { display: block; width: 340px; height: auto; }
+.brand-tagline { margin-left: 18px; padding-left: 18px; border-left: 1px solid rgba(255,255,255,.24); color: #c7d1da; font-size: .68rem; font-weight: 600; line-height: 1.35; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
 .brand-icon { width: 74px; flex: 0 0 74px; display: block; }
 .brand-icon img { width: 100%; height: auto; display: block; }
 .brand-text { display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; font-weight: 900; font-size: 2.05rem; line-height: 1; letter-spacing: -.02em; }
@@ -300,6 +302,8 @@ h3 { font-size: 1.5rem; }
 @media (max-width: 560px) {
   .brand-icon { width: 56px; flex-basis: 56px; }
   .brand-text { font-size: 1.38rem; }
+  .brand-logo { width: 255px; }
+  .brand-tagline { display: none; }
 
   .hero { min-height: 900px; height: auto; padding: 125px 0 78px; align-items: flex-start; }
   h1 { font-size: clamp(2.7rem, 14vw, 4rem); }
@@ -1094,8 +1098,8 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   <header class="site-header" id="top">
     <div class="shell header-inner">
       <a class="brand brand-combo" href="#top" aria-label="ALUWORLD LTD home">
-        <span class="brand-icon"><img decoding="async" src="assets/image-003.svg" alt=""></span>
-        <span class="brand-text" aria-hidden="true"><span class="brand-alu">ALU</span><span class="brand-world">WORLD LTD</span></span>
+        <img class="brand-logo" decoding="async" src="assets/aluworld-logo.svg" alt="ALUWORLD LTD">
+        <span class="brand-tagline" aria-hidden="true">Glass &amp; Aluminum<br>Solutions</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
         <span></span><span></span><span></span>
@@ -2127,8 +2131,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     <div class="shell footer-grid">
       <div class="footer-brand">
         <div class="footer-brand-lockup brand-combo" aria-label="ALUWORLD LTD">
-          <span class="brand-icon"><img decoding="async" src="assets/image-047.svg" alt=""></span>
-          <span class="brand-text" aria-hidden="true"><span class="brand-alu">ALU</span><span class="brand-world">WORLD LTD</span></span>
+          <img class="brand-logo" decoding="async" src="assets/aluworld-logo.svg" alt="ALUWORLD LTD">
         </div>
         <p>Premium glass, screen and aluminum solutions for modern high rises, commercial spaces and homes.</p>
       </div>
