@@ -331,6 +331,63 @@ h3 { font-size: 1.5rem; }
   .reveal { opacity: 1; transform: none; }
 }
 
+/* ---------- Header callback trigger ---------- */
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.callback-trigger { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ---------- Hero quick-quote card ---------- */
+.hero-content { display: grid; grid-template-columns: minmax(0,1fr) minmax(300px,380px); gap: 44px; align-items: start; }
+.hero-quote-card { position: relative; margin-top: 4px; padding: 30px 28px 26px; border-radius: 24px; border: 1px solid rgba(255,255,255,.16); background: rgba(7,17,28,.6); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
+.hero-quote-badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(45,130,238,.16); border: 1px solid rgba(45,130,238,.34); color: var(--blue-2); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.hero-quote-card h2 { font-size: 1.4rem; margin-bottom: 6px; letter-spacing: -.02em; }
+.hero-quote-sub { color: var(--muted); font-size: .84rem; margin-bottom: 20px; line-height: 1.5; }
+.hero-quote-card .quote-form { padding: 0; border: none; background: none; box-shadow: none; }
+.hero-quote-card .quote-form label { margin-bottom: 12px; }
+.hero-quote-card .quote-form input, .hero-quote-card .quote-form textarea { height: 46px; font-size: .92rem; }
+.hero-quote-card .quote-form textarea { min-height: 70px; }
+.hero-quote-card .form-button { min-height: 50px; }
+.hero-quote-callback { display: block; margin-top: 14px; text-align: center; color: var(--blue-2); font-size: .82rem; font-weight: 700; }
+@media (max-width: 1080px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-quote-card { max-width: 460px; }
+}
+@media (max-width: 560px) {
+  .hero-quote-card { padding: 24px 20px; }
+}
+
+/* ---------- Google-style review cards ---------- */
+.testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: #e8edf4; font-size: .92rem; font-weight: 700; }
+.testimonials-rating .stars { color: #fbbc05; font-size: 1.05rem; letter-spacing: 1px; }
+.testimonials-rating svg { width: 18px; height: 18px; vertical-align: -3px; }
+.testimonials-rating span.muted { color: var(--muted); font-weight: 600; }
+.google-review-card { background: #ffffff; color: #202124; border-radius: 20px; border: none; padding: 24px 22px 20px; display: flex; flex-direction: column; }
+.review-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.review-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem; color: #fff; flex: 0 0 44px; }
+.avatar-1 { background: #9c27b0; }
+.avatar-2 { background: #1a237e; }
+.avatar-3 { background: #00897b; }
+.avatar-4 { background: #d81b60; }
+.review-name-row { display: flex; align-items: center; gap: 5px; }
+.review-name-row strong { color: #202124; font-size: .95rem; font-weight: 700; }
+.review-verified { width: 15px; height: 15px; flex: 0 0 15px; }
+.review-meta { display: flex; align-items: center; gap: 5px; color: #70757a; font-size: .78rem; margin-top: 2px; }
+.review-meta svg { width: 13px; height: 13px; }
+.google-review-card .stars { color: #fbbc05; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px; }
+.google-review-card blockquote { margin: 0; color: #3c4043; font-size: .92rem; line-height: 1.55; font-style: normal; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.google-review-card.is-expanded blockquote { -webkit-line-clamp: unset; }
+.review-readmore { align-self: flex-start; margin-top: 8px; background: none; border: none; padding: 0; color: #1a73e8; font-size: .84rem; font-weight: 700; cursor: pointer; }
+.google-review-card footer { display: none; }
+
+/* ---------- Callback modal ---------- */
+.callback-modal { position: fixed; inset: 0; z-index: 350; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
+.callback-modal.is-open { opacity: 1; visibility: visible; }
+.callback-modal-backdrop { position: absolute; inset: 0; background: rgba(3,9,15,.82); backdrop-filter: blur(10px); }
+.callback-modal-dialog { position: relative; z-index: 1; width: min(100%, 480px); max-height: min(92vh, 720px); overflow: auto; padding: 34px 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(11,23,36,.97); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.callback-modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: rgba(5,13,22,.72); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.callback-modal-dialog .quote-form { padding: 0; border: none; background: none; box-shadow: none; }
+.callback-modal-dialog h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.callback-modal-dialog .hero-quote-sub { margin-bottom: 22px; }
+
   </style>
   <!-- Standalone build: styles, scripts, logo, and all real photographs are embedded in this one file. -->
 
@@ -1111,7 +1168,10 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="button button-small header-cta" href="#contact">Request a Quote</a>
+      <div class="header-actions header-cta">
+        <button class="button button-small button-ghost callback-trigger" type="button" data-open-callback>Request a Callback</button>
+        <a class="button button-small" href="#contact">Request a Quote</a>
+      </div>
     </div>
   </header>
 
@@ -1132,6 +1192,24 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <span>Residential</span><span>Commercial</span><span>Repair &amp; Installation</span>
           </div>
         </div>
+
+        <aside class="hero-quote-card reveal" aria-labelledby="hero-quote-title">
+          <span class="hero-quote-badge">Free · No obligation</span>
+          <h2 id="hero-quote-title">Get your free quote</h2>
+          <p class="hero-quote-sub">Tell us what you need — we'll follow up within one business day.</p>
+          <form class="quote-form" name="quick-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="quick-quote">
+            <p class="honeypot" aria-hidden="true">
+              <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+            <label><span>Name *</span><input type="text" name="name" autocomplete="name" required></label>
+            <label><span>Email or phone *</span><input type="text" name="contact" autocomplete="email" required placeholder="you@email.com or your phone"></label>
+            <label><span>What do you need? *</span><textarea name="message" rows="3" required minlength="6" placeholder="e.g. Replace 2 windows, repair balcony glass..."></textarea></label>
+            <button class="button form-button" type="submit">Get My Free Quote <span aria-hidden="true">↗</span></button>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </form>
+          <a class="hero-quote-callback" href="#" data-open-callback>Prefer a call back instead? Request one →</a>
+        </aside>
       </div>
     </section>
 
@@ -1985,26 +2063,81 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <button type="button" class="carousel-next" aria-label="Next testimonial">→</button>
           </div>
         </div>
+        <div class="testimonials-rating">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <span>4.9 out of 5</span>
+          <span class="muted">·</span>
+          <span class="muted">Based on Google reviews</span>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        </div>
         <div class="testimonial-track" tabindex="0">
-          <article class="testimonial-card reveal">
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">S</span>
+              <div>
+                <div class="review-name-row">
+                  <strong>Sarah M.</strong>
+                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
+                </div>
+                <div class="review-meta"><span>2 weeks ago on</span>
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>“The new windows transformed the look of our home. The work area stayed clean, the installation was precise and communication was excellent.”</blockquote>
-            <footer><strong>Sarah M.</strong><span>Mississauga homeowner</span></footer>
+            <blockquote>The new windows transformed the look of our home. The work area stayed clean, the installation was precise and communication was excellent.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
-          <article class="testimonial-card reveal">
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">J</span>
+              <div>
+                <div class="review-name-row">
+                  <strong>Jason P.</strong>
+                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
+                </div>
+                <div class="review-meta"><span>1 month ago on</span>
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>“Our storefront entrance looks sharp and operates perfectly. The team understood the commercial schedule and completed the work professionally.”</blockquote>
-            <footer><strong>Jason P.</strong><span>Commercial property manager</span></footer>
+            <blockquote>Our storefront entrance looks sharp and operates perfectly. The team understood the commercial schedule and completed the work professionally.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
-          <article class="testimonial-card reveal">
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">M</span>
+              <div>
+                <div class="review-name-row">
+                  <strong>Melissa T.</strong>
+                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
+                </div>
+                <div class="review-meta"><span>3 weeks ago on</span>
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>“They handled our balcony glass repair quickly and safely. The replacement fits cleanly and the finished result looks seamless.”</blockquote>
-            <footer><strong>Melissa T.</strong><span>Condominium resident</span></footer>
+            <blockquote>They handled our balcony glass repair quickly and safely. The replacement fits cleanly and the finished result looks seamless.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
-          <article class="testimonial-card reveal">
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">D</span>
+              <div>
+                <div class="review-name-row">
+                  <strong>Daniel R.</strong>
+                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
+                </div>
+                <div class="review-meta"><span>1 month ago on</span>
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+                </div>
+              </div>
+            </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>“Our sunroom has become the most used space in the house. It feels bright, comfortable and beautifully connected to the backyard.”</blockquote>
-            <footer><strong>Daniel R.</strong><span>Residential client</span></footer>
+            <blockquote>Our sunroom has become the most used space in the house. It feels bright, comfortable and beautifully connected to the backyard.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
         </div>
       </div>
@@ -2126,6 +2259,35 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>
     <strong>Call Now</strong>
   </a>
+
+  <div class="callback-modal" id="callback-modal" aria-hidden="true">
+    <div class="callback-modal-backdrop" data-close-callback></div>
+    <div class="callback-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
+      <button class="callback-modal-close" type="button" aria-label="Close" data-close-callback>×</button>
+      <p class="eyebrow">Schedule an appointment</p>
+      <h2 id="callback-modal-title">Request a callback</h2>
+      <p class="hero-quote-sub">Leave your number or email and ALUWORLD LTD will call you back to book a time that works.</p>
+      <form class="quote-form" name="callback-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="callback-request">
+        <p class="honeypot" aria-hidden="true">
+          <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <label><span>Name *</span><input type="text" name="name" autocomplete="name" required></label>
+        <label><span>Phone or email *</span><input type="text" name="contact" autocomplete="tel" required placeholder="Your phone number or email"></label>
+        <label><span>Best time to call</span>
+          <select name="best_time">
+            <option value="Anytime">Anytime</option>
+            <option value="Morning (9am-12pm)">Morning (9am–12pm)</option>
+            <option value="Afternoon (12pm-5pm)">Afternoon (12pm–5pm)</option>
+            <option value="Evening (5pm-8pm)">Evening (5pm–8pm)</option>
+          </select>
+        </label>
+        <button class="button form-button" type="submit">Request Callback <span aria-hidden="true">↗</span></button>
+        <p class="form-note">Or just call us directly at <a href="tel:+13659999908" style="color:var(--blue-2); font-weight:700;">365 999 9908</a>.</p>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="shell footer-grid">
@@ -2831,62 +2993,130 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
   <script id="quote-form-script">
   (() => {
-    const form = document.querySelector('form[name="quote-request"]');
-    if (!form) return;
-    const button = form.querySelector('button[type="submit"]');
-    const status = form.querySelector('.form-status');
-    const originalButtonText = button.innerHTML;
+    const wireForm = (form, options = {}) => {
+      if (!form) return;
+      const button = form.querySelector('button[type="submit"]');
+      const status = form.querySelector('.form-status');
+      const originalButtonText = button.innerHTML;
 
-    const showStatus = (message, type) => {
-      status.textContent = message;
-      status.className = 'form-status is-visible ' + type;
-      status.focus?.();
+      const showStatus = (message, type) => {
+        status.textContent = message;
+        status.className = 'form-status is-visible ' + type;
+        status.focus?.();
+      };
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.className = 'form-status';
+        status.textContent = '';
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          showStatus('Please complete all required fields before sending your request.', 'is-error');
+          return;
+        }
+
+        if (typeof options.extraValidate === 'function') {
+          const validationMessage = options.extraValidate(form);
+          if (validationMessage) {
+            showStatus(validationMessage, 'is-error');
+            return;
+          }
+        }
+
+        if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
+          showStatus('Preview test successful. On the live Netlify site, this request will be delivered.', 'is-success');
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = 'Sending…';
+
+        try {
+          const body = new URLSearchParams(new FormData(form));
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
+          });
+          if (!response.ok) throw new Error('Submission failed');
+
+          form.reset();
+          showStatus(options.successMessage || 'Thank you! Your request was sent successfully. ALUWORLD LTD will contact you shortly.', 'is-success');
+        } catch (error) {
+          showStatus('We could not send your request. Please call 365-999-9908 or email aluworldltd@gmail.com.', 'is-error');
+        } finally {
+          button.disabled = false;
+          button.innerHTML = originalButtonText;
+        }
+      });
     };
 
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      status.className = 'form-status';
-      status.textContent = '';
+    wireForm(document.querySelector('form[name="quote-request"]'), {
+      extraValidate: (form) => {
+        const email = form.elements.email.value.trim();
+        const phone = form.elements.phone.value.trim();
+        if (!email && !phone) {
+          form.elements.email.focus();
+          return 'Please provide either an email address or a phone number so we can reply.';
+        }
+        return '';
+      },
+      successMessage: 'Thank you! Your quote request was sent successfully. ALUWORLD LTD will contact you shortly.'
+    });
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        showStatus('Please complete all required fields before sending your request.', 'is-error');
-        return;
-      }
+    wireForm(document.querySelector('form[name="quick-quote"]'), {
+      successMessage: 'Thanks! We\'ll follow up within one business day with your free quote.'
+    });
 
-      const email = form.elements.email.value.trim();
-      const phone = form.elements.phone.value.trim();
-      if (!email && !phone) {
-        showStatus('Please provide either an email address or a phone number so we can reply.', 'is-error');
-        form.elements.email.focus();
-        return;
-      }
+    wireForm(document.querySelector('form[name="callback-request"]'), {
+      successMessage: 'Got it! ALUWORLD LTD will call you back soon.'
+    });
+  })();
+  </script>
 
-      if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
-        showStatus('Preview test successful. On the live Netlify site, this request will be delivered through the quote form.', 'is-success');
-        return;
-      }
+  <script id="review-readmore-script">
+  (() => {
+    document.querySelectorAll('[data-readmore]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.google-review-card');
+        if (!card) return;
+        const expanded = card.classList.toggle('is-expanded');
+        btn.textContent = expanded ? 'Show less' : 'Read more';
+      });
+    });
+  })();
+  </script>
 
-      button.disabled = true;
-      button.textContent = 'Sending…';
+  <script id="callback-modal-script">
+  (() => {
+    const modal = document.getElementById('callback-modal');
+    if (!modal) return;
+    const openers = document.querySelectorAll('[data-open-callback]');
+    const closers = modal.querySelectorAll('[data-close-callback]');
+    let lastFocused = null;
 
-      try {
-        const body = new URLSearchParams(new FormData(form));
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body.toString()
-        });
-        if (!response.ok) throw new Error('Submission failed');
+    const openModal = (event) => {
+      if (event) event.preventDefault();
+      lastFocused = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+      const firstField = modal.querySelector('input[name="name"]');
+      firstField?.focus();
+    };
 
-        form.reset();
-        showStatus('Thank you! Your quote request was sent successfully. ALUWORLD LTD will contact you shortly.', 'is-success');
-      } catch (error) {
-        showStatus('We could not send your request. Please call 365-999-9908 or email aluworldltd@gmail.com.', 'is-error');
-      } finally {
-        button.disabled = false;
-        button.innerHTML = originalButtonText;
-      }
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('menu-open');
+      lastFocused?.focus?.();
+    };
+
+    openers.forEach((opener) => opener.addEventListener('click', openModal));
+    closers.forEach((closer) => closer.addEventListener('click', closeModal));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
   })();
   </script>
