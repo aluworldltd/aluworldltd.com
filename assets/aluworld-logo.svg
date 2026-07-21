@@ -1,24 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 230" role="img" aria-labelledby="title desc">
-  <title id="title">AluWorld LTD</title>
-  <desc id="desc">AW architectural monogram with the AluWorld LTD wordmark</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" role="img" aria-label="ALUWORLD LIMITED">
   <defs>
-    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#f3f5f6"/><stop offset=".2" stop-color="#15191d"/>
-      <stop offset=".5" stop-color="#d9dee2"/><stop offset=".72" stop-color="#69727a"/>
-      <stop offset="1" stop-color="#f3f5f6"/>
+    <linearGradient id="bronze4a" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffcf94"/><stop offset="1" stop-color="#ee942d"/>
     </linearGradient>
-    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#72b7ff"/><stop offset=".48" stop-color="#2f8cff"/><stop offset="1" stop-color="#0752c4"/>
+    <linearGradient id="bronze4b" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ee942d"/><stop offset="1" stop-color="#8a5410"/>
+    </linearGradient>
+    <linearGradient id="bronze4c" x1="1" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffb969"/><stop offset="1" stop-color="#b8730f"/>
     </linearGradient>
   </defs>
-  <g transform="translate(4 5) scale(.94)">
-    <path d="M30 220 122 20h48l83 200h-56L145 80 88 220Z" fill="url(#metal)"/>
-    <path d="M162 20h52l43 119 39-93h42l39 93 43-119h52l-75 200h-39l-42-96-42 96h-39Z" fill="url(#blue)"/>
-    <path d="M101 205 137 112 176 205Z" fill="#07121d"/>
-    <rect x="121" y="158" width="46" height="39" rx="2" fill="url(#metal)"/>
-    <path d="M144 158v39M121 177.5h46" fill="none" stroke="#07121d" stroke-width="4"/>
+  <!-- Faceted diamond: cut-glass motif made of angular shards -->
+  <g>
+    <polygon points="104,10 180,95 104,120 28,95" fill="url(#bronze4a)"/>
+    <polygon points="104,120 180,95 104,210 60,150" fill="url(#bronze4b)"/>
+    <polygon points="104,120 28,95 44,150 104,210" fill="url(#bronze4c)"/>
+    <polygon points="104,10 28,95 104,120" fill="#fff" opacity=".18"/>
   </g>
-  <text x="430" y="137" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="800" letter-spacing="-2">
-    <tspan fill="url(#blue)">ALU</tspan><tspan fill="url(#metal)">WORLD LTD</tspan>
+  <text x="228" y="122" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="88" letter-spacing="-1.5">
+    <tspan fill="#ffcf94">ALU</tspan><tspan fill="#fcfaf7">WORLD</tspan>
   </text>
+  <text x="230" y="162" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="6" fill="#ee942d" opacity=".9">LIMITED</text>
 </svg>

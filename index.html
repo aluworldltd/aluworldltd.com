@@ -113,13 +113,26 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .brand-text { display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; font-weight: 900; font-size: 2.05rem; line-height: 1; letter-spacing: -.02em; }
 .brand-alu { color: var(--blue); }
 .brand-world { color: #fff; }
-.main-nav { margin-left: auto; display: flex; align-items: center; gap: 30px; font-size: .91rem; color: #e5ddd3; }
-.main-nav a { position: relative; padding: 8px 0; transition: color .2s ease; }
+.main-nav {
+  position: fixed; inset: 0; z-index: 101;
+  background: rgba(22,14,5,.98);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  padding: 90px 38px; gap: 9px;
+  opacity: 0; visibility: hidden; transform: translateY(-10px);
+  transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+  font-size: 1.6rem; color: #e5ddd3;
+}
+.main-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.main-nav a { position: relative; padding: 10px 0; font-weight: 800; transition: color .2s ease; }
 .main-nav a::after { content: ""; position: absolute; left: 0; bottom: 1px; width: 100%; height: 1px; background: var(--blue-2); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
 .main-nav a:hover { color: #fff; }
 .main-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
-.menu-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.04); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.menu-toggle { display: flex; margin-left: auto; position: relative; z-index: 102; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.04); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
 .menu-toggle span { width: 18px; height: 1.5px; background: #fff; transition: .25s ease; }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 24px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: white; font-weight: 800; font-size: .94rem; box-shadow: 0 12px 28px rgba(238,148,45,.23); transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; }
 .button:hover { transform: translateY(-3px); background: #f29d3c; box-shadow: 0 18px 36px rgba(238,148,45,.32); }
@@ -151,7 +164,7 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 
 .services { padding-top: 90px; }
 .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
-.service-card { min-width: 0; border: 1px solid var(--soft-line); border-radius: var(--radius); overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)); transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+.service-card { min-width: 0; border: 1px solid var(--soft-line); border-radius: var(--radius); overflow: hidden; background: linear-gradient(145deg, #ffffff, #f6f2ec); box-shadow: 0 10px 34px rgba(20,15,10,.06); transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
 .service-card:hover { transform: translateY(-8px); border-color: rgba(255,185,105,.42); box-shadow: var(--shadow); }
 .media-frame { height: 310px; overflow: hidden; background: #21170b; }
 .media-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .4s ease; filter: saturate(.86) contrast(1.03); }
@@ -183,20 +196,20 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 
 .work { padding-top: 90px; }
 .work-grid { display: grid; grid-template-columns: 1.18fr .82fr; grid-template-rows: repeat(2, 330px); gap: 22px; }
-.work-card { position: relative; margin: 0; border-radius: 24px; overflow: hidden; min-height: 0; background: #21170b; }
+.work-card { position: relative; margin: 0; border-radius: 24px; overflow: hidden; min-height: 0; background: #e8e3d9; }
 .work-large { grid-row: 1 / span 2; }
 .work-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.88); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .35s ease; }
 .work-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,11,4,.9), transparent 58%); }
 .work-card:hover img { transform: scale(1.055); filter: saturate(1.05) contrast(1.04); }
 .work-card figcaption { position: absolute; z-index: 1; left: 26px; right: 26px; bottom: 24px; display: flex; flex-direction: column; }
 .work-card figcaption span { color: var(--blue-2); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
-.work-card figcaption strong { margin-top: 5px; font-size: 1.14rem; }
+.work-card figcaption strong { margin-top: 5px; font-size: 1.14rem; color: #fff; }
 
-.testimonials { border-block: 1px solid var(--soft-line); background: rgba(255,255,255,.014); overflow: hidden; }
+.testimonials.light-section { border-block: 1px solid var(--soft-line); background: #efeae1; overflow: hidden; }
 .carousel-controls { display: flex; gap: 10px; justify-content: flex-end; }
-.carousel-controls button { width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.035); cursor: pointer; transition: .2s ease; }
+.carousel-controls button { width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%; background: rgba(20,15,10,.04); cursor: pointer; transition: .2s ease; }
 .carousel-controls button:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
-.testimonial-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 1fr); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 5px; }
+.testimonial-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 1fr); gap: 20px; overflow-x: auto; overflow-y: hidden; touch-action: pan-x; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 5px; }
 .testimonial-track::-webkit-scrollbar { display: none; }
 .testimonial-card { min-height: 330px; padding: 34px; border: 1px solid var(--soft-line); border-radius: 22px; background: rgba(28,18,7,.55); scroll-snap-align: start; display: flex; flex-direction: column; }
 .stars { color: var(--blue-2); letter-spacing: .16em; font-size: .8rem; }
@@ -231,26 +244,26 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .contact-links a:hover { color: var(--blue-2); }
 .contact-links span { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; }
 .owner-note { margin-top: 38px; color: var(--muted); font-size: .85rem; }
-.owner-note strong { color: #fff; font-family: Georgia, serif; font-style: italic; font-size: 1.2rem; font-weight: 500; }
-.quote-form { padding: 38px; border: 1px solid var(--line); border-radius: 28px; background: rgba(255,255,255,.035); box-shadow: var(--shadow); }
+.owner-note strong { color: var(--text); font-family: Georgia, serif; font-style: italic; font-size: 1.2rem; font-weight: 500; }
+.quote-form { padding: 38px; border: 1px solid var(--line); border-radius: 28px; background: var(--panel); box-shadow: 0 20px 50px rgba(20,15,10,.07); }
 .field-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
 .quote-form label { display: block; margin-bottom: 17px; }
-.quote-form label > span { display: block; color: #ece4db; font-size: .78rem; font-weight: 800; margin-bottom: 7px; }
-.quote-form input, .quote-form select, .quote-form textarea { width: 100%; color: #fff; background: #25190b; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+.quote-form label > span { display: block; color: var(--text); font-size: .78rem; font-weight: 800; margin-bottom: 7px; }
+.quote-form input, .quote-form select, .quote-form textarea { width: 100%; color: #201c17; background: #ffffff; border: 1px solid rgba(20,15,10,.16); border-radius: 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
 .quote-form input, .quote-form select { height: 52px; padding: 0 15px; }
 .quote-form textarea { resize: vertical; min-height: 150px; padding: 14px 15px; }
-.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(238,148,45,.12); background: #2b1d0c; }
-.quote-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #b3a391 50%), linear-gradient(135deg, #b3a391 50%, transparent 50%); background-position: calc(100% - 19px) 22px, calc(100% - 14px) 22px; background-size: 5px 5px; background-repeat: no-repeat; }
-.quote-form option { background: #25190b; }
+.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(238,148,45,.14); background: #fffdfa; }
+.quote-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #8a7d6d 50%), linear-gradient(135deg, #8a7d6d 50%, transparent 50%); background-position: calc(100% - 19px) 22px, calc(100% - 14px) 22px; background-size: 5px 5px; background-repeat: no-repeat; }
+.quote-form option { background: #ffffff; color: #201c17; }
 .form-button { width: 100%; border-radius: 12px; }
-.form-note { margin: 12px 0 0; text-align: center; color: #b8aa9b; font-size: .76rem; }
+.form-note { margin: 12px 0 0; text-align: center; color: var(--muted); font-size: .76rem; }
 .honeypot { position: absolute !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; border: 0 !important; }
-.consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: #d2c6b9; font-size: .78rem; line-height: 1.5; }
+.consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: var(--muted); font-size: .78rem; line-height: 1.5; }
 .quote-form .consent-label input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--blue); }
 .form-status { display: none; margin: 16px 0 0; padding: 14px 16px; border-radius: 12px; font-size: .88rem; line-height: 1.5; }
 .form-status.is-visible { display: block; }
-.form-status.is-success { color: #dff9ea; border: 1px solid rgba(63, 201, 124, .45); background: rgba(32, 150, 84, .14); }
-.form-status.is-error { color: #ffe6e6; border: 1px solid rgba(244, 92, 92, .5); background: rgba(190, 44, 44, .15); }
+.form-status.is-success { color: #1a6b3c; border: 1px solid rgba(34,150,84,.35); background: #eafaf0; }
+.form-status.is-error { color: #a32323; border: 1px solid rgba(220,60,60,.35); background: #fdecec; }
 .form-button[disabled] { opacity: .65; cursor: wait; transform: none; }
 
 .site-footer { padding: 72px 0 25px; border-top: 1px solid var(--soft-line); background: #160e05; }
@@ -270,8 +283,6 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .service-grid .reveal:nth-child(4), .testimonial-track .reveal:nth-child(4) { transition-delay: .25s; }
 
 @media (max-width: 1040px) {
-  .header-cta { display: none; }
-  .main-nav { gap: 22px; }
   .process-grid, .area-grid, .contact-grid { grid-template-columns: 1fr; }
   .process-visual { min-height: 560px; }
   .process-visual img { min-height: 560px; }
@@ -290,12 +301,9 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
   .brand-icon { width: 64px; flex-basis: 64px; }
   .brand-text { font-size: 1.7rem; }
   .menu-toggle { display: flex; margin-left: auto; position: relative; z-index: 102; }
-  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-  .main-nav { position: fixed; inset: 0; z-index: 101; background: rgba(22,14,5,.98); flex-direction: column; align-items: flex-start; justify-content: center; padding: 90px 38px; gap: 9px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: .25s ease; }
-  .main-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
   .main-nav a { font-size: 2rem; font-weight: 800; }
+  .nav-actions { flex-direction: column; align-items: stretch; width: 100%; margin-top: 20px; }
+  .nav-actions .button { width: 100%; }
   .hero { min-height: 850px; }
   .hero-image { background-position: 60% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(18,11,3,.97), rgba(18,11,3,.62)), linear-gradient(0deg, rgba(18,11,3,.75), transparent 45%); }
@@ -307,7 +315,12 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
   .media-frame { height: 300px; }
   .work-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 380px); }
   .work-large { grid-row: auto; }
-  .testimonial-track { grid-auto-columns: min(86vw, 420px); }
+  .testimonial-track { grid-auto-columns: calc(50% - 8px); gap: 16px; }
+  .google-review-card { padding: 18px 16px 16px; }
+  .google-review-card .stars { font-size: .88rem; margin-bottom: 6px; }
+  .google-review-card blockquote { font-size: .82rem; -webkit-line-clamp: 5; }
+  .review-avatar { width: 36px; height: 36px; flex: 0 0 36px; font-size: .9rem; }
+  .review-name-row strong { font-size: .85rem; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; }
@@ -346,7 +359,6 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 }
 
 /* ---------- Header callback trigger ---------- */
-.header-actions { display: flex; align-items: center; gap: 10px; }
 .callback-trigger { display: inline-flex; align-items: center; gap: 8px; }
 
 /* ---------- Hero quick-quote card ---------- */
@@ -371,7 +383,7 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 }
 
 /* ---------- Google-style review cards ---------- */
-.testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: #f4eee8; font-size: .92rem; font-weight: 700; }
+.testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: var(--text); font-size: .92rem; font-weight: 700; }
 .testimonials-rating .stars { color: #fbbc05; font-size: 1.05rem; letter-spacing: 1px; }
 .testimonials-rating span.muted { color: var(--muted); font-weight: 600; }
 .google-review-card { background: #ffffff; color: #242220; border-radius: 20px; border: none; padding: 24px 22px 20px; display: flex; flex-direction: column; }
@@ -409,6 +421,18 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .ticker-track span::after { content: "◆"; margin-left: 40px; color: var(--blue); font-size: .55rem; }
 @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker:hover .ticker-track { animation-play-state: paused; }
+
+/* ---------- Light-mode body sections (hero + footer stay dark) ---------- */
+.light-section {
+  --ink: #f4f1ec;
+  --text: #201c17;
+  --muted: #6b6055;
+  --line: rgba(20,15,10,.14);
+  --soft-line: rgba(20,15,10,.08);
+  --panel: #ffffff;
+  background: var(--ink);
+  color: var(--text);
+}
 
   </style>
   <!-- Standalone build: styles, scripts, logo, and all real photographs are embedded in this one file. -->
@@ -680,6 +704,7 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .location-card-content h3 {
   font-size: clamp(1.35rem, 2vw, 1.72rem);
   margin: 9px 0 9px;
+  color: #fff;
 }
 .location-card-content p {
   color: #ddd1c4;
@@ -888,6 +913,10 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
     .main-nav { padding-left: 22px; padding-right: 22px; }
     .main-nav a { font-size: clamp(1.12rem, 6vw, 1.45rem); }
     .floating-call strong { display: inline; }
+    .testimonial-track { grid-auto-columns: calc(50% - 6px); gap: 12px; }
+    .google-review-card { padding: 14px 12px 12px; }
+    .google-review-card blockquote { font-size: .76rem; -webkit-line-clamp: 6; }
+    .review-header { gap: 8px; margin-bottom: 8px; }
   }
 </style>
 
@@ -968,17 +997,17 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .work-gallery-head > p { max-width: 880px; }
 .work-filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
 .work-filter {
-  border: 1px solid var(--soft-line); background: rgba(255,255,255,.035); color: #f5eee6;
+  border: 1px solid var(--soft-line); background: rgba(20,15,10,.035); color: var(--text);
   border-radius: 999px; padding: 12px 16px; font-weight: 700; font-size: .9rem; cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease;
   display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
 }
-.work-filter span { display: inline-flex; min-width: 24px; height: 24px; padding: 0 8px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,.08); color: #e5d8c9; font-size: .78rem; }
-.work-filter:hover, .work-filter:focus-visible { transform: translateY(-2px); border-color: rgba(255,185,105,.44); }
-.work-filter.active { background: rgba(238,148,45,.14); border-color: rgba(255,185,105,.5); color: #fff; }
-.work-filter.active span { background: rgba(238,148,45,.26); color: #fff; }
+.work-filter span { display: inline-flex; min-width: 24px; height: 24px; padding: 0 8px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(20,15,10,.08); color: var(--text); font-size: .78rem; }
+.work-filter:hover, .work-filter:focus-visible { transform: translateY(-2px); border-color: rgba(200,120,30,.44); }
+.work-filter.active { background: rgba(238,148,45,.14); border-color: rgba(200,120,30,.5); color: #6e3f0c; }
+.work-filter.active span { background: rgba(238,148,45,.26); color: #6e3f0c; }
 .work-gallery-grid { display: block; column-count: 3; column-gap: 22px; }
-.gallery-card { display: inline-block; width: 100%; margin: 0 0 22px; break-inside: avoid; vertical-align: top; background: #21170b; transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-card { display: inline-block; width: 100%; margin: 0 0 22px; break-inside: avoid; vertical-align: top; background: #e8e3d9; transition: transform .25s ease, box-shadow .25s ease; }
 .gallery-card[hidden] { display: none !important; }
 .gallery-open {
   position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; text-align: left;
@@ -1189,11 +1218,11 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         <a href="#testimonials">Testimonials</a>
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
+        <div class="nav-actions">
+          <button class="button button-ghost nav-callback callback-trigger" type="button" data-open-callback>Request a Callback</button>
+          <a class="button nav-quote" href="#contact">Request a Quote</a>
+        </div>
       </nav>
-      <div class="header-actions header-cta">
-        <button class="button button-small button-ghost callback-trigger" type="button" data-open-callback>Request a Callback</button>
-        <a class="button button-small" href="#contact">Request a Quote</a>
-      </div>
     </div>
   </header>
 
@@ -1242,7 +1271,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </div>
 
-    <section class="section services" id="services" aria-labelledby="services-title">
+    <section class="section services light-section" id="services" aria-labelledby="services-title">
       <div class="shell">
         <div class="section-heading reveal">
           <div>
@@ -1296,7 +1325,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </section>
 
-    <section class="section process" aria-labelledby="process-title">
+    <section class="section process light-section" aria-labelledby="process-title">
       <div class="shell process-grid">
         <div class="process-copy reveal">
           <p class="eyebrow">A better build experience</p>
@@ -1317,7 +1346,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     </section>
 
     
-    <section class="section work work-gallery-section" id="work" aria-labelledby="work-title">
+    <section class="section work work-gallery-section light-section" id="work" aria-labelledby="work-title">
       <div class="shell">
         <div class="section-heading compact reveal work-gallery-head">
           <div>
@@ -1329,16 +1358,16 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
         <div class="work-filter-bar reveal" role="tablist" aria-label="Filter project gallery by category">
           <button class="work-filter active" type="button" data-filter="all" aria-pressed="true">All Work <span>85</span></button>
-            <button class="work-filter" type="button" data-filter="residential-aluminum" aria-pressed="false">Residential Aluminum <span>18</span></button>
-            <button class="work-filter" type="button" data-filter="glass-partition" aria-pressed="false">Glass &amp; Mirror / Partitions <span>11</span></button>
-            <button class="work-filter" type="button" data-filter="residential-buildings" aria-pressed="false">Residential Homes / Buildings <span>23</span></button>
-            <button class="work-filter" type="button" data-filter="commercial-buildings" aria-pressed="false">Commercial Buildings <span>33</span></button>
+            <button class="work-filter" type="button" data-filter="residential-aluminum" aria-pressed="false">Railings &amp; Aluminum Detailing <span>18</span></button>
+            <button class="work-filter" type="button" data-filter="glass-partition" aria-pressed="false">Glass &amp; Mirror Interiors <span>11</span></button>
+            <button class="work-filter" type="button" data-filter="residential-buildings" aria-pressed="false">Windows &amp; Home Exteriors <span>23</span></button>
+            <button class="work-filter" type="button" data-filter="commercial-buildings" aria-pressed="false">Commercial &amp; Architectural <span>33</span></button>
         </div>
 
         <div class="work-grid work-gallery-grid" id="work-gallery-grid">
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-009.webp" data-title="Residential Aluminum 01" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 01">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-009.webp" data-title="Residential Aluminum 01" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 01">
               <img decoding="async" src="assets/image-009.webp" alt="Residential Aluminum 01 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1349,7 +1378,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-010.webp" data-title="Residential Aluminum 02" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 02">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-010.webp" data-title="Residential Aluminum 02" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 02">
               <img decoding="async" src="assets/image-010.webp" alt="Residential Aluminum 02 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1360,7 +1389,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-011.webp" data-title="Residential Aluminum 03" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 03">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-011.webp" data-title="Residential Aluminum 03" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 03">
               <img decoding="async" src="assets/image-011.webp" alt="Residential Aluminum 03 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1371,7 +1400,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-012.webp" data-title="Residential Aluminum 04" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 04">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-012.webp" data-title="Residential Aluminum 04" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 04">
               <img decoding="async" src="assets/image-012.webp" alt="Residential Aluminum 04 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1382,7 +1411,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-013.webp" data-title="Residential Aluminum 05" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 05">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-013.webp" data-title="Residential Aluminum 05" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 05">
               <img decoding="async" src="assets/image-013.webp" alt="Residential Aluminum 05 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1393,7 +1422,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-014.webp" data-title="Residential Aluminum 06" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 06">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-014.webp" data-title="Residential Aluminum 06" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 06">
               <img decoding="async" src="assets/image-014.webp" alt="Residential Aluminum 06 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1404,7 +1433,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-015.webp" data-title="Residential Aluminum 07" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 07">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-015.webp" data-title="Residential Aluminum 07" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 07">
               <img decoding="async" src="assets/image-015.webp" alt="Residential Aluminum 07 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1415,7 +1444,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-016.webp" data-title="Residential Aluminum 08" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 08">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-016.webp" data-title="Residential Aluminum 08" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 08">
               <img decoding="async" src="assets/image-016.webp" alt="Residential Aluminum 08 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1426,7 +1455,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-017.webp" data-title="Residential Aluminum 09" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 09">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-017.webp" data-title="Residential Aluminum 09" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 09">
               <img decoding="async" src="assets/image-017.webp" alt="Residential Aluminum 09 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1437,7 +1466,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-018.webp" data-title="Residential Aluminum 10" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 10">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-018.webp" data-title="Residential Aluminum 10" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 10">
               <img decoding="async" src="assets/image-018.webp" alt="Residential Aluminum 10 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1448,7 +1477,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-019.webp" data-title="Residential Aluminum 11" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum 11">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-019.webp" data-title="Residential Aluminum 11" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 11">
               <img decoding="async" src="assets/image-019.webp" alt="Residential Aluminum 11 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1459,7 +1488,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-020.webp" data-title="Glass Partition 01" data-category-label="Glass Partition" aria-label="Open Glass Partition 01">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-020.webp" data-title="Glass Partition 01" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 01">
               <img decoding="async" src="assets/image-020.webp" alt="Glass Partition 01 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1470,7 +1499,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-021.webp" data-title="Glass Partition 02" data-category-label="Glass Partition" aria-label="Open Glass Partition 02">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-021.webp" data-title="Glass Partition 02" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 02">
               <img decoding="async" src="assets/image-021.webp" alt="Glass Partition 02 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1481,7 +1510,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-022.webp" data-title="Glass Partition 03" data-category-label="Glass Partition" aria-label="Open Glass Partition 03">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-022.webp" data-title="Glass Partition 03" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 03">
               <img decoding="async" src="assets/image-022.webp" alt="Glass Partition 03 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1492,7 +1521,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-023.webp" data-title="Glass Partition 04" data-category-label="Glass Partition" aria-label="Open Glass Partition 04">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-023.webp" data-title="Glass Partition 04" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 04">
               <img decoding="async" src="assets/image-023.webp" alt="Glass Partition 04 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1503,7 +1532,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-024.webp" data-title="Glass Partition 05" data-category-label="Glass Partition" aria-label="Open Glass Partition 05">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-024.webp" data-title="Glass Partition 05" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 05">
               <img decoding="async" src="assets/image-024.webp" alt="Glass Partition 05 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1514,7 +1543,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-025.webp" data-title="Residential Home / Building 01" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 01">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-025.webp" data-title="Residential Home / Building 01" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 01">
               <img decoding="async" src="assets/image-025.webp" alt="Residential Home / Building 01 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1525,7 +1554,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-026.webp" data-title="Residential Home / Building 02" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 02">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-026.webp" data-title="Residential Home / Building 02" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 02">
               <img decoding="async" src="assets/image-026.webp" alt="Residential Home / Building 02 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1536,7 +1565,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-027.webp" data-title="Residential Home / Building 03" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 03">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-027.webp" data-title="Residential Home / Building 03" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 03">
               <img decoding="async" src="assets/image-027.webp" alt="Residential Home / Building 03 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1547,7 +1576,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-028.webp" data-title="Residential Home / Building 04" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 04">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-028.webp" data-title="Residential Home / Building 04" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 04">
               <img decoding="async" src="assets/image-028.webp" alt="Residential Home / Building 04 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1558,7 +1587,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-029.webp" data-title="Residential Home / Building 05" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 05">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-029.webp" data-title="Residential Home / Building 05" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 05">
               <img decoding="async" src="assets/image-029.webp" alt="Residential Home / Building 05 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1569,7 +1598,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-030.webp" data-title="Residential Home / Building 06" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 06">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-030.webp" data-title="Residential Home / Building 06" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 06">
               <img decoding="async" src="assets/image-030.webp" alt="Residential Home / Building 06 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1580,7 +1609,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-031.webp" data-title="Residential Home / Building 07" data-category-label="Residential Homes / Buildings" aria-label="Open Residential Home / Building 07">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-031.webp" data-title="Residential Home / Building 07" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 07">
               <img decoding="async" src="assets/image-031.webp" alt="Residential Home / Building 07 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1591,7 +1620,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-032.webp" data-title="Commercial Building 01" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 01">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-032.webp" data-title="Commercial Building 01" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 01">
               <img decoding="async" src="assets/image-032.webp" alt="Commercial Building 01 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1602,7 +1631,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-033.webp" data-title="Commercial Building 02" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 02">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-033.webp" data-title="Commercial Building 02" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 02">
               <img decoding="async" src="assets/image-033.webp" alt="Commercial Building 02 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1613,7 +1642,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-034.webp" data-title="Commercial Building 03" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 03">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-034.webp" data-title="Commercial Building 03" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 03">
               <img decoding="async" src="assets/image-034.webp" alt="Commercial Building 03 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1624,7 +1653,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-035.webp" data-title="Commercial Building 04" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 04">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-035.webp" data-title="Commercial Building 04" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 04">
               <img decoding="async" src="assets/image-035.webp" alt="Commercial Building 04 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1635,7 +1664,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-036.webp" data-title="Commercial Building 05" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 05">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-036.webp" data-title="Commercial Building 05" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 05">
               <img decoding="async" src="assets/image-036.webp" alt="Commercial Building 05 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1646,7 +1675,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-037.webp" data-title="Commercial Building 06" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 06">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-037.webp" data-title="Commercial Building 06" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 06">
               <img decoding="async" src="assets/image-037.webp" alt="Commercial Building 06 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1657,7 +1686,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-038.webp" data-title="Commercial Building 07" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 07">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-038.webp" data-title="Commercial Building 07" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 07">
               <img decoding="async" src="assets/image-038.webp" alt="Commercial Building 07 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1668,7 +1697,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-039.webp" data-title="Commercial Building 08" data-category-label="Commercial Buildings" aria-label="Open Commercial Building 08">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-039.webp" data-title="Commercial Building 08" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 08">
               <img decoding="async" src="assets/image-039.webp" alt="Commercial Building 08 project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption>
@@ -1680,7 +1709,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         
 
           <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-008.webp" data-title="Residential Aluminum Before and After" data-category-label="Residential Aluminum" aria-label="Open Residential Aluminum Before and After">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-008.webp" data-title="Residential Aluminum Before and After" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum Before and After">
               <img decoding="async" src="assets/image-008.webp" alt="Before and after residential aluminum patio cover project by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption><span>Residential Aluminum</span><strong>Residential Aluminum Before and After</strong></figcaption>
@@ -1688,7 +1717,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </figure>
 
           <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-040.webp" data-title="Aluminum Door and Frame Fabrication" data-category-label="Commercial Buildings" aria-label="Open Aluminum Door and Frame Fabrication">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-040.webp" data-title="Aluminum Door and Frame Fabrication" data-category-label="Commercial &amp; Architectural" aria-label="Open Aluminum Door and Frame Fabrication">
               <img decoding="async" src="assets/image-040.webp" alt="Commercial aluminum doors and frames prepared for installation by ALUWORLD LTD" loading="lazy">
               <span class="gallery-card-overlay"></span>
               <figcaption><span>Commercial Buildings</span><strong>Aluminum Door and Frame Fabrication</strong></figcaption>
@@ -2080,7 +2109,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </div>
 
-    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+    <section class="section testimonials light-section" id="testimonials" aria-labelledby="testimonials-title">
       <div class="shell">
         <div class="section-heading reveal">
           <div>
@@ -2598,7 +2627,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </section>
 
-    <section class="section locations" id="areas" aria-labelledby="areas-title">
+    <section class="section locations light-section" id="areas" aria-labelledby="areas-title">
       <div class="shell">
         <div class="location-section-head reveal">
           <div>
@@ -2666,7 +2695,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <section class="section contact light-section" id="contact" aria-labelledby="contact-title">
       <div class="shell contact-grid">
         <div class="contact-intro reveal">
           <p class="eyebrow">Get in touch</p>

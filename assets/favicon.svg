@@ -1,18 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" role="img" aria-label="AluWorld AW">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="ALUWORLD LIMITED">
   <defs>
-    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#f3f5f6"/><stop offset=".2" stop-color="#15191d"/><stop offset=".5" stop-color="#d9dee2"/><stop offset=".72" stop-color="#69727a"/><stop offset="1" stop-color="#f3f5f6"/>
+    <linearGradient id="bronzeFa" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffcf94"/><stop offset="1" stop-color="#ee942d"/>
     </linearGradient>
-    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#72b7ff"/><stop offset=".48" stop-color="#2f8cff"/><stop offset="1" stop-color="#0752c4"/>
+    <linearGradient id="bronzeFb" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ee942d"/><stop offset="1" stop-color="#8a5410"/>
+    </linearGradient>
+    <linearGradient id="bronzeFc" x1="1" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffb969"/><stop offset="1" stop-color="#b8730f"/>
     </linearGradient>
   </defs>
-  <rect width="460" height="240" rx="42" fill="#07121d"/>
-  <g transform="translate(4)">
-    <path d="M30 220 122 20h48l83 200h-56L145 80 88 220Z" fill="url(#metal)"/>
-    <path d="M162 20h52l43 119 39-93h42l39 93 43-119h52l-75 200h-39l-42-96-42 96h-39Z" fill="url(#blue)"/>
-    <path d="M101 205 137 112 176 205Z" fill="#07121d"/>
-    <rect x="121" y="158" width="46" height="39" rx="2" fill="url(#metal)"/>
-    <path d="M144 158v39M121 177.5h46" fill="none" stroke="#07121d" stroke-width="4"/>
+  <rect width="240" height="240" rx="46" fill="#1c1207"/>
+  <g transform="translate(38 20)">
+    <polygon points="82,10 158,105 82,135 6,105" fill="url(#bronzeFa)"/>
+    <polygon points="82,135 158,105 82,230 40,165" fill="url(#bronzeFb)"/>
+    <polygon points="82,135 6,105 22,165 82,230" fill="url(#bronzeFc)"/>
+    <polygon points="82,10 6,105 82,135" fill="#fff" opacity=".18"/>
   </g>
 </svg>
