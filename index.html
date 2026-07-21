@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ALUWORLD LTD provides premium glass repairs, window installations, aluminum fabrication, storefront systems and custom sunrooms for homes and commercial properties across the GTA.">
-  <meta name="theme-color" content="#07111c">
+  <meta name="theme-color" content="#1c1207">
   <title>ALUWORLD LTD | Glass & Aluminum Solutions</title>
   <link rel="canonical" href="https://aluworldltd.com/">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -41,15 +41,15 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <style>
 :root {
-  --ink: #07111c;
-  --ink-2: #0b1724;
-  --panel: #101f2d;
+  --ink: #1c1207;
+  --ink-2: #24180b;
+  --panel: #2d1f10;
   --line: rgba(255,255,255,.12);
   --soft-line: rgba(255,255,255,.08);
-  --text: #f7f9fc;
-  --muted: #aab7c6;
-  --blue: #2d82ee;
-  --blue-2: #69adff;
+  --text: #fcfaf7;
+  --muted: #c6b9aa;
+  --blue: #ee942d;
+  --blue-2: #ffb969;
   --white: #fff;
   --shadow: 0 24px 70px rgba(0,0,0,.28);
   --radius: 24px;
@@ -62,8 +62,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at 8% 18%, rgba(45,130,238,.09), transparent 30rem),
-    radial-gradient(circle at 92% 45%, rgba(35,100,170,.08), transparent 32rem),
+    radial-gradient(circle at 8% 18%, rgba(238,148,45,.09), transparent 30rem),
+    radial-gradient(circle at 92% 45%, rgba(170,107,35,.08), transparent 32rem),
     var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -88,18 +88,18 @@ h2 { font-size: clamp(2.25rem, 4vw, 4.4rem); margin-bottom: 0; }
 h3 { font-size: 1.5rem; }
 
 .site-header { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; border-bottom: 1px solid transparent; transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease; }
-.site-header.scrolled { background: rgba(5,13,22,.86); border-color: var(--soft-line); backdrop-filter: blur(18px); }
+.site-header.scrolled { background: rgba(22,14,5,.86); border-color: var(--soft-line); backdrop-filter: blur(18px); }
 .header-inner { height: 84px; display: flex; align-items: center; gap: 30px; }
 .brand { flex: 0 0 auto; min-width: 0; }
 .brand-combo { display: inline-flex; align-items: center; }
 .brand-logo { display: block; width: 340px; height: auto; }
-.brand-tagline { margin-left: 18px; padding-left: 18px; border-left: 1px solid rgba(255,255,255,.24); color: #c7d1da; font-size: .68rem; font-weight: 600; line-height: 1.35; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.brand-tagline { margin-left: 18px; padding-left: 18px; border-left: 1px solid rgba(255,255,255,.24); color: #dad1c7; font-size: .68rem; font-weight: 600; line-height: 1.35; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
 .brand-icon { width: 74px; flex: 0 0 74px; display: block; }
 .brand-icon img { width: 100%; height: auto; display: block; }
 .brand-text { display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; font-weight: 900; font-size: 2.05rem; line-height: 1; letter-spacing: -.02em; }
 .brand-alu { color: var(--blue); }
 .brand-world { color: #fff; }
-.main-nav { margin-left: auto; display: flex; align-items: center; gap: 30px; font-size: .91rem; color: #d3dbe5; }
+.main-nav { margin-left: auto; display: flex; align-items: center; gap: 30px; font-size: .91rem; color: #e5ddd3; }
 .main-nav a { position: relative; padding: 8px 0; transition: color .2s ease; }
 .main-nav a::after { content: ""; position: absolute; left: 0; bottom: 1px; width: 100%; height: 1px; background: var(--blue-2); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
 .main-nav a:hover { color: #fff; }
@@ -107,27 +107,27 @@ h3 { font-size: 1.5rem; }
 .menu-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.04); align-items: center; justify-content: center; flex-direction: column; gap: 5px; cursor: pointer; }
 .menu-toggle span { width: 18px; height: 1.5px; background: #fff; transition: .25s ease; }
 
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 24px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: white; font-weight: 800; font-size: .94rem; box-shadow: 0 12px 28px rgba(45,130,238,.23); transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; }
-.button:hover { transform: translateY(-3px); background: #3c8ff2; box-shadow: 0 18px 36px rgba(45,130,238,.32); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 24px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: white; font-weight: 800; font-size: .94rem; box-shadow: 0 12px 28px rgba(238,148,45,.23); transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; }
+.button:hover { transform: translateY(-3px); background: #f29d3c; box-shadow: 0 18px 36px rgba(238,148,45,.32); }
 .button-small { min-height: 44px; padding: 0 19px; font-size: .84rem; }
-.button-ghost { background: rgba(7,17,28,.35); border-color: rgba(255,255,255,.32); box-shadow: none; backdrop-filter: blur(8px); }
+.button-ghost { background: rgba(28,18,7,.35); border-color: rgba(255,255,255,.32); box-shadow: none; backdrop-filter: blur(8px); }
 .button-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); box-shadow: none; }
 
 .hero { position: relative; min-height: 920px; height: 100svh; display: flex; align-items: center; isolation: isolate; overflow: hidden; }
 .hero-image { position: absolute; inset: 0; z-index: -3; background: url("assets/image-002.webp") center 44% / cover no-repeat; transform: scale(1.02); animation: heroZoom 14s ease-out forwards; }
-.hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(3,10,18,.98) 0%, rgba(3,10,18,.88) 39%, rgba(3,10,18,.32) 72%, rgba(3,10,18,.28) 100%), linear-gradient(0deg, rgba(3,10,18,.72), transparent 45%); }
+.hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(18,11,3,.98) 0%, rgba(18,11,3,.88) 39%, rgba(18,11,3,.32) 72%, rgba(18,11,3,.28) 100%), linear-gradient(0deg, rgba(18,11,3,.72), transparent 45%); }
 .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 180px; z-index: -1; background: linear-gradient(0deg, var(--ink), transparent); }
 .hero-content { padding-top: 100px; }
 .hero-copy { max-width: 890px; padding-top: 8px; }
-.hero-brand-lockup { display: inline-flex; align-items: center; gap: 22px; margin-bottom: 45px; padding: 16px 20px 16px 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: rgba(5,14,24,.38); backdrop-filter: blur(10px); }
+.hero-brand-lockup { display: inline-flex; align-items: center; gap: 22px; margin-bottom: 45px; padding: 16px 20px 16px 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: rgba(24,15,5,.38); backdrop-filter: blur(10px); }
 .hero-brand-lockup img { width: 215px; }
-.hero-brand-lockup p { margin: 0; padding-left: 20px; border-left: 1px solid rgba(255,255,255,.16); color: #d7e0ea; font-size: .75rem; line-height: 1.5; text-transform: uppercase; letter-spacing: .1em; }
-.hero-intro { max-width: 720px; color: #c5d0dc; font-size: clamp(1.06rem, 1.5vw, 1.28rem); margin-bottom: 34px; }
+.hero-brand-lockup p { margin: 0; padding-left: 20px; border-left: 1px solid rgba(255,255,255,.16); color: #eae1d7; font-size: .75rem; line-height: 1.5; text-transform: uppercase; letter-spacing: .1em; }
+.hero-intro { max-width: 720px; color: #dcd1c5; font-size: clamp(1.06rem, 1.5vw, 1.28rem); margin-bottom: 34px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 46px; color: #c2ccd7; font-size: .84rem; font-weight: 700; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 46px; color: #d7cdc2; font-size: .84rem; font-weight: 700; }
 .hero-trust span { position: relative; padding-left: 16px; }
 .hero-trust span::before { content: ""; position: absolute; left: 0; top: .65em; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-2); box-shadow: 0 0 16px var(--blue); }
-.scroll-cue { position: absolute; right: 46px; bottom: 46px; z-index: 2; display: flex; align-items: center; gap: 10px; color: #d6dee8; font-size: .7rem; text-transform: uppercase; letter-spacing: .17em; writing-mode: vertical-rl; }
+.scroll-cue { position: absolute; right: 46px; bottom: 46px; z-index: 2; display: flex; align-items: center; gap: 10px; color: #e8e0d6; font-size: .7rem; text-transform: uppercase; letter-spacing: .17em; writing-mode: vertical-rl; }
 .scroll-cue span { display: block; width: 1px; height: 52px; background: linear-gradient(var(--blue-2), transparent); }
 @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1.02); } }
 
@@ -138,8 +138,8 @@ h3 { font-size: 1.5rem; }
 .services { padding-top: 90px; }
 .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
 .service-card { min-width: 0; border: 1px solid var(--soft-line); border-radius: var(--radius); overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)); transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
-.service-card:hover { transform: translateY(-8px); border-color: rgba(105,173,255,.42); box-shadow: var(--shadow); }
-.media-frame { height: 310px; overflow: hidden; background: #0b1621; }
+.service-card:hover { transform: translateY(-8px); border-color: rgba(255,185,105,.42); box-shadow: var(--shadow); }
+.media-frame { height: 310px; overflow: hidden; background: #21170b; }
 .media-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .4s ease; filter: saturate(.86) contrast(1.03); }
 .service-card:hover .media-frame img { transform: scale(1.055); filter: saturate(1) contrast(1.07); }
 .service-body { position: relative; padding: 34px; }
@@ -160,19 +160,19 @@ h3 { font-size: 1.5rem; }
 .process-list strong { display: block; margin-bottom: 3px; }
 .process-list p { color: var(--muted); margin: 0; font-size: .92rem; }
 .process-visual { position: relative; min-height: 700px; border-radius: 32px; overflow: hidden; box-shadow: var(--shadow); }
-.process-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,12,20,.75), transparent 50%); pointer-events: none; }
+.process-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,13,4,.75), transparent 50%); pointer-events: none; }
 .process-visual img { width: 100%; height: 100%; min-height: 700px; object-fit: cover; transition: transform .9s ease; }
 .process-visual:hover img { transform: scale(1.035); }
-.floating-note { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 28px; padding: 22px 24px; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.16); background: rgba(6,15,24,.62); backdrop-filter: blur(16px); border-radius: 18px; }
+.floating-note { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 28px; padding: 22px 24px; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.16); background: rgba(24,16,6,.62); backdrop-filter: blur(16px); border-radius: 18px; }
 .floating-note strong { font-size: 1.25rem; }
-.floating-note span { color: #c3ced9; font-size: .9rem; }
+.floating-note span { color: #d9cfc3; font-size: .9rem; }
 
 .work { padding-top: 90px; }
 .work-grid { display: grid; grid-template-columns: 1.18fr .82fr; grid-template-rows: repeat(2, 330px); gap: 22px; }
-.work-card { position: relative; margin: 0; border-radius: 24px; overflow: hidden; min-height: 0; background: #0b1621; }
+.work-card { position: relative; margin: 0; border-radius: 24px; overflow: hidden; min-height: 0; background: #21170b; }
 .work-large { grid-row: 1 / span 2; }
 .work-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.88); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .35s ease; }
-.work-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,11,18,.9), transparent 58%); }
+.work-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,11,4,.9), transparent 58%); }
 .work-card:hover img { transform: scale(1.055); filter: saturate(1.05) contrast(1.04); }
 .work-card figcaption { position: absolute; z-index: 1; left: 26px; right: 26px; bottom: 24px; display: flex; flex-direction: column; }
 .work-card figcaption span { color: var(--blue-2); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
@@ -184,9 +184,9 @@ h3 { font-size: 1.5rem; }
 .carousel-controls button:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
 .testimonial-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(320px, 1fr); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 5px; }
 .testimonial-track::-webkit-scrollbar { display: none; }
-.testimonial-card { min-height: 330px; padding: 34px; border: 1px solid var(--soft-line); border-radius: 22px; background: rgba(7,17,28,.55); scroll-snap-align: start; display: flex; flex-direction: column; }
+.testimonial-card { min-height: 330px; padding: 34px; border: 1px solid var(--soft-line); border-radius: 22px; background: rgba(28,18,7,.55); scroll-snap-align: start; display: flex; flex-direction: column; }
 .stars { color: var(--blue-2); letter-spacing: .16em; font-size: .8rem; }
-.testimonial-card blockquote { margin: 38px 0 34px; font-size: 1.14rem; line-height: 1.65; color: #e8edf4; }
+.testimonial-card blockquote { margin: 38px 0 34px; font-size: 1.14rem; line-height: 1.65; color: #f4eee8; }
 .testimonial-card footer { margin-top: auto; display: flex; flex-direction: column; }
 .testimonial-card footer span { color: var(--muted); font-size: .85rem; }
 
@@ -196,19 +196,19 @@ h3 { font-size: 1.5rem; }
 .area-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
 .area-list span { position: relative; padding: 10px 12px 10px 29px; border-bottom: 1px solid var(--soft-line); font-size: .9rem; }
 .area-list span::before { content: "✓"; position: absolute; left: 4px; color: var(--blue-2); font-weight: 900; }
-.area-callout { margin-top: 34px; display: flex; gap: 15px; align-items: flex-start; padding: 20px; border: 1px solid rgba(45,130,238,.38); border-radius: 16px; background: rgba(45,130,238,.07); }
+.area-callout { margin-top: 34px; display: flex; gap: 15px; align-items: flex-start; padding: 20px; border: 1px solid rgba(238,148,45,.38); border-radius: 16px; background: rgba(238,148,45,.07); }
 .area-callout svg { flex: 0 0 27px; width: 27px; fill: none; stroke: var(--blue-2); stroke-width: 1.7; }
 .area-callout div { display: flex; flex-direction: column; }
 .area-callout span { color: var(--muted); font-size: .85rem; }
 .area-image { position: relative; min-height: 660px; border-radius: 30px; overflow: hidden; }
-.area-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,12,20,.88), transparent 54%); }
+.area-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,13,4,.88), transparent 54%); }
 .area-image img { width: 100%; height: 100%; min-height: 660px; object-fit: cover; transition: transform .8s ease; }
 .area-image:hover img { transform: scale(1.035); }
 .image-label { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 25px; display: flex; flex-direction: column; }
 .image-label span { color: var(--blue-2); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; }
 .image-label strong { max-width: 440px; font-size: 1.18rem; margin-top: 5px; }
 
-.contact { background: linear-gradient(150deg, #0a1826, #07111c 65%); border-top: 1px solid var(--soft-line); }
+.contact { background: linear-gradient(150deg, #26190a, #1c1207 65%); border-top: 1px solid var(--soft-line); }
 .contact-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; align-items: start; }
 .contact-intro { position: sticky; top: 130px; }
 .contact-intro > p:not(.eyebrow) { color: var(--muted); margin: 28px 0 36px; max-width: 450px; }
@@ -221,17 +221,17 @@ h3 { font-size: 1.5rem; }
 .quote-form { padding: 38px; border: 1px solid var(--line); border-radius: 28px; background: rgba(255,255,255,.035); box-shadow: var(--shadow); }
 .field-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
 .quote-form label { display: block; margin-bottom: 17px; }
-.quote-form label > span { display: block; color: #dbe3ec; font-size: .78rem; font-weight: 800; margin-bottom: 7px; }
-.quote-form input, .quote-form select, .quote-form textarea { width: 100%; color: #fff; background: #0b1825; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+.quote-form label > span { display: block; color: #ece4db; font-size: .78rem; font-weight: 800; margin-bottom: 7px; }
+.quote-form input, .quote-form select, .quote-form textarea { width: 100%; color: #fff; background: #25190b; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
 .quote-form input, .quote-form select { height: 52px; padding: 0 15px; }
 .quote-form textarea { resize: vertical; min-height: 150px; padding: 14px 15px; }
-.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(45,130,238,.12); background: #0c1c2b; }
-.quote-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #91a1b3 50%), linear-gradient(135deg, #91a1b3 50%, transparent 50%); background-position: calc(100% - 19px) 22px, calc(100% - 14px) 22px; background-size: 5px 5px; background-repeat: no-repeat; }
-.quote-form option { background: #0b1825; }
+.quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(238,148,45,.12); background: #2b1d0c; }
+.quote-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #b3a391 50%), linear-gradient(135deg, #b3a391 50%, transparent 50%); background-position: calc(100% - 19px) 22px, calc(100% - 14px) 22px; background-size: 5px 5px; background-repeat: no-repeat; }
+.quote-form option { background: #25190b; }
 .form-button { width: 100%; border-radius: 12px; }
-.form-note { margin: 12px 0 0; text-align: center; color: #9ba9b8; font-size: .76rem; }
+.form-note { margin: 12px 0 0; text-align: center; color: #b8aa9b; font-size: .76rem; }
 .honeypot { position: absolute !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; border: 0 !important; }
-.consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: #b9c5d2; font-size: .78rem; line-height: 1.5; }
+.consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: #d2c6b9; font-size: .78rem; line-height: 1.5; }
 .quote-form .consent-label input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--blue); }
 .form-status { display: none; margin: 16px 0 0; padding: 14px 16px; border-radius: 12px; font-size: .88rem; line-height: 1.5; }
 .form-status.is-visible { display: block; }
@@ -239,7 +239,7 @@ h3 { font-size: 1.5rem; }
 .form-status.is-error { color: #ffe6e6; border: 1px solid rgba(244, 92, 92, .5); background: rgba(190, 44, 44, .15); }
 .form-button[disabled] { opacity: .65; cursor: wait; transform: none; }
 
-.site-footer { padding: 72px 0 25px; border-top: 1px solid var(--soft-line); background: #050d16; }
+.site-footer { padding: 72px 0 25px; border-top: 1px solid var(--soft-line); background: #160e05; }
 .footer-grid { display: grid; grid-template-columns: 1.55fr repeat(3, .7fr); gap: 48px; padding-bottom: 52px; }
 .footer-brand img { width: 245px; }
 .footer-brand p { max-width: 390px; color: var(--muted); margin: 19px 0 0; }
@@ -247,7 +247,7 @@ h3 { font-size: 1.5rem; }
 .footer-grid > div:not(.footer-brand) { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
 .footer-grid a, .footer-grid > div > p { color: var(--muted); font-size: .88rem; margin: 0; transition: color .2s ease; }
 .footer-grid a:hover { color: var(--blue-2); }
-.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 23px; border-top: 1px solid var(--soft-line); color: #748293; font-size: .75rem; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 23px; border-top: 1px solid var(--soft-line); color: #938574; font-size: .75rem; }
 
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -279,12 +279,12 @@ h3 { font-size: 1.5rem; }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-  .main-nav { position: fixed; inset: 0; z-index: 101; background: rgba(5,13,22,.98); flex-direction: column; align-items: flex-start; justify-content: center; padding: 90px 38px; gap: 9px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: .25s ease; }
+  .main-nav { position: fixed; inset: 0; z-index: 101; background: rgba(22,14,5,.98); flex-direction: column; align-items: flex-start; justify-content: center; padding: 90px 38px; gap: 9px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: .25s ease; }
   .main-nav.open { opacity: 1; visibility: visible; transform: translateY(0); }
   .main-nav a { font-size: 2rem; font-weight: 800; }
   .hero { min-height: 850px; }
   .hero-image { background-position: 60% center; }
-  .hero-shade { background: linear-gradient(90deg, rgba(3,10,18,.97), rgba(3,10,18,.62)), linear-gradient(0deg, rgba(3,10,18,.75), transparent 45%); }
+  .hero-shade { background: linear-gradient(90deg, rgba(18,11,3,.97), rgba(18,11,3,.62)), linear-gradient(0deg, rgba(18,11,3,.75), transparent 45%); }
   .hero-brand-lockup { align-items: flex-start; flex-direction: column; gap: 12px; }
   .hero-brand-lockup p { padding-left: 0; padding-top: 12px; border-left: 0; border-top: 1px solid rgba(255,255,255,.16); }
   .scroll-cue { display: none; }
@@ -337,8 +337,8 @@ h3 { font-size: 1.5rem; }
 
 /* ---------- Hero quick-quote card ---------- */
 .hero-content { display: grid; grid-template-columns: minmax(0,1fr) minmax(300px,380px); gap: 44px; align-items: start; }
-.hero-quote-card { position: relative; margin-top: 4px; padding: 30px 28px 26px; border-radius: 24px; border: 1px solid rgba(255,255,255,.16); background: rgba(7,17,28,.6); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
-.hero-quote-badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(45,130,238,.16); border: 1px solid rgba(45,130,238,.34); color: var(--blue-2); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.hero-quote-card { position: relative; margin-top: 4px; padding: 30px 28px 26px; border-radius: 24px; border: 1px solid rgba(255,255,255,.16); background: rgba(28,18,7,.6); backdrop-filter: blur(18px); box-shadow: var(--shadow); }
+.hero-quote-badge { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(238,148,45,.16); border: 1px solid rgba(238,148,45,.34); color: var(--blue-2); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .hero-quote-card h2 { font-size: 1.4rem; margin-bottom: 6px; letter-spacing: -.02em; }
 .hero-quote-sub { color: var(--muted); font-size: .84rem; margin-bottom: 20px; line-height: 1.5; }
 .hero-quote-card .quote-form { padding: 0; border: none; background: none; box-shadow: none; }
@@ -356,29 +356,29 @@ h3 { font-size: 1.5rem; }
 }
 
 /* ---------- Google-style review cards ---------- */
-.testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: #e8edf4; font-size: .92rem; font-weight: 700; }
+.testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: #f4eee8; font-size: .92rem; font-weight: 700; }
 .testimonials-rating .stars { color: #fbbc05; font-size: 1.05rem; letter-spacing: 1px; }
 .testimonials-rating span.muted { color: var(--muted); font-weight: 600; }
-.google-review-card { background: #ffffff; color: #202124; border-radius: 20px; border: none; padding: 24px 22px 20px; display: flex; flex-direction: column; }
+.google-review-card { background: #ffffff; color: #242220; border-radius: 20px; border: none; padding: 24px 22px 20px; display: flex; flex-direction: column; }
 .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .review-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem; color: #fff; flex: 0 0 44px; }
 .avatar-1 { background: #9c27b0; }
 .avatar-2 { background: #1a237e; }
 .avatar-3 { background: #00897b; }
 .avatar-4 { background: #d81b60; }
-.review-name-row strong { color: #202124; font-size: .95rem; font-weight: 700; }
+.review-name-row strong { color: #242220; font-size: .95rem; font-weight: 700; }
 .google-review-card .stars { color: #fbbc05; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px; }
-.google-review-card blockquote { margin: 0; color: #3c4043; font-size: .92rem; line-height: 1.55; font-style: normal; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.google-review-card blockquote { margin: 0; color: #43403c; font-size: .92rem; line-height: 1.55; font-style: normal; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .google-review-card.is-expanded blockquote { -webkit-line-clamp: unset; }
-.review-readmore { align-self: flex-start; margin-top: 8px; background: none; border: none; padding: 0; color: #1a73e8; font-size: .84rem; font-weight: 700; cursor: pointer; }
+.review-readmore { align-self: flex-start; margin-top: 8px; background: none; border: none; padding: 0; color: #e8881a; font-size: .84rem; font-weight: 700; cursor: pointer; }
 .google-review-card footer { display: none; }
 
 /* ---------- Callback modal ---------- */
 .callback-modal { position: fixed; inset: 0; z-index: 350; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
 .callback-modal.is-open { opacity: 1; visibility: visible; }
-.callback-modal-backdrop { position: absolute; inset: 0; background: rgba(3,9,15,.82); backdrop-filter: blur(10px); }
-.callback-modal-dialog { position: relative; z-index: 1; width: min(100%, 480px); max-height: min(92vh, 720px); overflow: auto; padding: 34px 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(11,23,36,.97); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
-.callback-modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: rgba(5,13,22,.72); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.callback-modal-backdrop { position: absolute; inset: 0; background: rgba(15,9,3,.82); backdrop-filter: blur(10px); }
+.callback-modal-dialog { position: relative; z-index: 1; width: min(100%, 480px); max-height: min(92vh, 720px); overflow: auto; padding: 34px 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(36,24,11,.97); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.callback-modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 40px; height: 40px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: rgba(22,14,5,.72); color: #fff; font-size: 1.4rem; line-height: 1; cursor: pointer; }
 .callback-modal-dialog .quote-form { padding: 0; border: none; background: none; box-shadow: none; }
 .callback-modal-dialog h2 { font-size: 1.5rem; margin-bottom: 8px; }
 .callback-modal-dialog .hero-quote-sub { margin-bottom: 22px; }
@@ -396,8 +396,8 @@ h3 { font-size: 1.5rem; }
   width: 0;
   height: 3px;
   pointer-events: none;
-  background: linear-gradient(90deg, #2d82ee, #7fc1ff);
-  box-shadow: 0 0 18px rgba(77, 161, 255, .75);
+  background: linear-gradient(90deg, #ee942d, #ffc37f);
+  box-shadow: 0 0 18px rgba(255,172,77, .75);
   transform-origin: left center;
 }
 
@@ -442,7 +442,7 @@ h3 { font-size: 1.5rem; }
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(112deg, rgba(5,13,22,.99) 0%, rgba(9,25,41,.98) 62%, rgba(45,130,238,.36) 100%);
+    linear-gradient(112deg, rgba(22,14,5,.99) 0%, rgba(41,26,9,.98) 62%, rgba(238,148,45,.36) 100%);
   transform: scaleX(1);
   transform-origin: right center;
   transition: transform 980ms cubic-bezier(.16, 1, .3, 1) calc(var(--reveal-delay, 0ms) + 90ms);
@@ -523,7 +523,7 @@ h3 { font-size: 1.5rem; }
   inset: 0;
   pointer-events: none;
   border-radius: inherit;
-  background: radial-gradient(520px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(96,174,255,.11), transparent 42%);
+  background: radial-gradient(520px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(255,181,96,.11), transparent 42%);
   opacity: 0;
   transition: opacity .35s ease;
 }
@@ -541,8 +541,8 @@ h3 { font-size: 1.5rem; }
 .motion-media:hover img { filter: saturate(1.03) contrast(1.06); }
 
 @keyframes aluworldLogoFloat {
-  0%, 100% { transform: translate3d(0, 0, 0); filter: drop-shadow(0 0 0 rgba(70,155,255,0)); }
-  50% { transform: translate3d(0, -7px, 0); filter: drop-shadow(0 10px 18px rgba(70,155,255,.16)); }
+  0%, 100% { transform: translate3d(0, 0, 0); filter: drop-shadow(0 0 0 rgba(255,169,70,0)); }
+  50% { transform: translate3d(0, -7px, 0); filter: drop-shadow(0 10px 18px rgba(255,169,70,.16)); }
 }
 @keyframes aluworldScrollPulse {
   0%, 100% { opacity: .28; transform: scaleY(.45); }
@@ -570,8 +570,8 @@ h3 { font-size: 1.5rem; }
 
 .locations {
   background:
-    radial-gradient(circle at 84% 8%, rgba(45,130,238,.11), transparent 30%),
-    linear-gradient(180deg, #07111c 0%, #050d17 100%);
+    radial-gradient(circle at 84% 8%, rgba(238,148,45,.11), transparent 30%),
+    linear-gradient(180deg, #1c1207 0%, #170f05 100%);
   border-top: 1px solid var(--soft-line);
   border-bottom: 1px solid var(--soft-line);
 }
@@ -598,7 +598,7 @@ h3 { font-size: 1.5rem; }
   position: relative;
   overflow: hidden;
   border-radius: 25px;
-  background: #0b1725;
+  background: #25190b;
   border: 1px solid var(--line);
   box-shadow: 0 18px 55px rgba(0,0,0,.18);
   transition: box-shadow 1.05s var(--ease), border-color 1.05s var(--ease), transform .55s var(--ease);
@@ -622,7 +622,7 @@ h3 { font-size: 1.5rem; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(2,8,16,.03) 20%, rgba(2,8,16,.25) 52%, rgba(2,8,16,.97) 92%);
+  background: linear-gradient(180deg, rgba(16,9,2,.03) 20%, rgba(16,9,2,.25) 52%, rgba(16,9,2,.97) 92%);
   transition: background 1.05s var(--ease);
   pointer-events: none;
 }
@@ -632,7 +632,7 @@ h3 { font-size: 1.5rem; }
   inset: 0;
   z-index: 1;
   opacity: 0;
-  background: linear-gradient(135deg, rgba(45,130,238,.2), transparent 44%);
+  background: linear-gradient(135deg, rgba(238,148,45,.2), transparent 44%);
   transition: opacity .8s var(--ease);
   pointer-events: none;
 }
@@ -655,7 +655,7 @@ h3 { font-size: 1.5rem; }
   margin: 9px 0 9px;
 }
 .location-card-content p {
-  color: #c4d0dd;
+  color: #ddd1c4;
   font-size: .9rem;
   line-height: 1.65;
   margin: 0 0 18px;
@@ -673,13 +673,13 @@ h3 { font-size: 1.5rem; }
 }
 .location-card:hover,
 .location-card:focus-visible {
-  box-shadow: 0 30px 78px rgba(0,97,191,.24);
-  border-color: rgba(112,202,255,.32);
+  box-shadow: 0 30px 78px rgba(191,102,0,.24);
+  border-color: rgba(255,188,112,.32);
   transform: translateY(-5px);
 }
 .location-card:hover::before,
 .location-card:focus-visible::before {
-  background: linear-gradient(180deg, rgba(25,151,255,.08) 12%, rgba(2,8,16,.22) 48%, rgba(2,8,16,.95) 91%);
+  background: linear-gradient(180deg, rgba(255,148,25,.08) 12%, rgba(16,9,2,.22) 48%, rgba(16,9,2,.95) 91%);
 }
 .location-card:hover::after,
 .location-card:focus-visible::after { opacity: 1; }
@@ -752,9 +752,9 @@ h3 { font-size: 1.5rem; }
     padding: 0 18px;
     border: 1px solid rgba(255,255,255,.18);
     border-radius: 999px;
-    background: linear-gradient(135deg, #2d8bf2, #0759bd);
+    background: linear-gradient(135deg, #f2962d, #bd6807);
     color: #fff;
-    box-shadow: 0 16px 42px rgba(0,91,205,.38);
+    box-shadow: 0 16px 42px rgba(205,109,0,.38);
     font-size: .84rem;
     font-weight: 850;
     letter-spacing: .01em;
@@ -764,7 +764,7 @@ h3 { font-size: 1.5rem; }
   .floating-call:hover,
   .floating-call:focus-visible {
     transform: translateY(-4px);
-    box-shadow: 0 22px 50px rgba(0,102,224,.46);
+    box-shadow: 0 22px 50px rgba(224,119,0,.46);
     filter: brightness(1.06);
   }
 
@@ -941,17 +941,17 @@ h3 { font-size: 1.5rem; }
 .work-gallery-head > p { max-width: 880px; }
 .work-filter-bar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
 .work-filter {
-  border: 1px solid var(--soft-line); background: rgba(255,255,255,.035); color: #e6edf5;
+  border: 1px solid var(--soft-line); background: rgba(255,255,255,.035); color: #f5eee6;
   border-radius: 999px; padding: 12px 16px; font-weight: 700; font-size: .9rem; cursor: pointer;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease;
   display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
 }
-.work-filter span { display: inline-flex; min-width: 24px; height: 24px; padding: 0 8px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,.08); color: #c9d7e5; font-size: .78rem; }
-.work-filter:hover, .work-filter:focus-visible { transform: translateY(-2px); border-color: rgba(105,173,255,.44); }
-.work-filter.active { background: rgba(45,130,238,.14); border-color: rgba(105,173,255,.5); color: #fff; }
-.work-filter.active span { background: rgba(45,130,238,.26); color: #fff; }
+.work-filter span { display: inline-flex; min-width: 24px; height: 24px; padding: 0 8px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,.08); color: #e5d8c9; font-size: .78rem; }
+.work-filter:hover, .work-filter:focus-visible { transform: translateY(-2px); border-color: rgba(255,185,105,.44); }
+.work-filter.active { background: rgba(238,148,45,.14); border-color: rgba(255,185,105,.5); color: #fff; }
+.work-filter.active span { background: rgba(238,148,45,.26); color: #fff; }
 .work-gallery-grid { display: block; column-count: 3; column-gap: 22px; }
-.gallery-card { display: inline-block; width: 100%; margin: 0 0 22px; break-inside: avoid; vertical-align: top; background: #0b1621; transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-card { display: inline-block; width: 100%; margin: 0 0 22px; break-inside: avoid; vertical-align: top; background: #21170b; transition: transform .25s ease, box-shadow .25s ease; }
 .gallery-card[hidden] { display: none !important; }
 .gallery-open {
   position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; text-align: left;
@@ -968,14 +968,14 @@ h3 { font-size: 1.5rem; }
 
 .gallery-lightbox { position: fixed; inset: 0; z-index: 350; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
 .gallery-lightbox.is-open { opacity: 1; visibility: visible; }
-.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(3,9,15,.82); backdrop-filter: blur(10px); }
-.gallery-lightbox-dialog { position: relative; z-index: 1; width: min(100%, 1080px); max-height: min(92vh, 980px); overflow: auto; padding: 18px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(7,17,28,.92); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
-.gallery-lightbox-media-wrap { overflow: hidden; border-radius: 18px; background: #09131d; }
+.gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(15,9,3,.82); backdrop-filter: blur(10px); }
+.gallery-lightbox-dialog { position: relative; z-index: 1; width: min(100%, 1080px); max-height: min(92vh, 980px); overflow: auto; padding: 18px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(28,18,7,.92); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.gallery-lightbox-media-wrap { overflow: hidden; border-radius: 18px; background: #1d1409; }
 .gallery-lightbox-media-wrap img { width: 100%; max-height: 74vh; object-fit: contain; display: block; }
 .gallery-lightbox-meta { display: flex; flex-direction: column; gap: 6px; padding: 16px 4px 6px; }
 .gallery-lightbox-meta span { color: var(--blue-2); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
 .gallery-lightbox-meta strong { font-size: 1.05rem; }
-.gallery-lightbox-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: rgba(5,13,22,.72); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.gallery-lightbox-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; background: rgba(22,14,5,.72); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
 body.lightbox-open { overflow: hidden; }
 .footer-brand-lockup { display: inline-flex; align-items: center; gap: 12px; }
 .footer-brand .brand-icon { width: 62px; flex-basis: 62px; }
@@ -1082,7 +1082,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   width: 100%;
   aspect-ratio: 3 / 4;
   min-height: 0 !important;
-  background: #0b1621;
+  background: #21170b;
 }
 .process-visual.before-after-visual img {
   width: 100%;
@@ -2062,7 +2062,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <div class="stars" aria-hidden="true">★★★★★</div>
           <span>4.9 out of 5</span>
           <span class="muted">·</span>
-          <span class="muted">Based on 20+ customer reviews</span>
+          <span class="muted">Based on 45+ customer reviews</span>
         </div>
         <div class="testimonial-track" tabindex="0">
           <article class="testimonial-card google-review-card reveal">
@@ -2283,6 +2283,281 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote>They explained everything up front, no surprises on the invoice, and the walkthrough at the end was thorough. Would recommend.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">W</span>
+              <div class="review-name-row">
+                <strong>Wendy S.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Called about a stuck sliding door and they had someone out within two days. Adjusted the track, oiled everything, works like new. Didn't try to upsell me on a replacement I didn't need.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">H</span>
+              <div class="review-name-row">
+                <strong>Hassan M.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Got new eavestrough-adjacent aluminum trim done alongside a window job. They coordinated both without extra site visits, saved us some hassle.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">B</span>
+              <div class="review-name-row">
+                <strong>Brenda C.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Screen door mesh was torn from our dog, quick fix, in and out in twenty minutes. Reasonable price for such a small job.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">D</span>
+              <div class="review-name-row">
+                <strong>Diego R.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Commercial glass door closer was failing, they diagnosed it as hardware not the glass itself and fixed it for way less than I was expecting to pay.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">F</span>
+              <div class="review-name-row">
+                <strong>Fatima Z.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Condo balcony railing needed replacing after a storm. Building approved their quote fast because the paperwork and photos they provided were thorough.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">T</span>
+              <div class="review-name-row">
+                <strong>Trevor L.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>New windows for the whole second floor. Crew was respectful of the house, vacuumed up glass shavings without being asked.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">S</span>
+              <div class="review-name-row">
+                <strong>Simone B.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>We run a small bakery and needed the front glass reinforced. They understood we couldn't close during the day and scheduled around us.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">A</span>
+              <div class="review-name-row">
+                <strong>Adam K.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Aluminum patio cover install went smoothly. Only hiccup was a delayed material shipment which wasn't really their fault, they kept us informed the whole time.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">R</span>
+              <div class="review-name-row">
+                <strong>Rosalind P.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Fogged double-pane window in the kitchen finally fixed. Should've called them years ago honestly.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">E</span>
+              <div class="review-name-row">
+                <strong>Emeka O.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Storefront security glazing upgrade for our shop. They walked us through the different glass options without pushing the most expensive one.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">G</span>
+              <div class="review-name-row">
+                <strong>Grace H.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Sunroom screen enclosure looks fantastic, kids can be outside without the bugs now. Worth every penny.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">P</span>
+              <div class="review-name-row">
+                <strong>Patrick D.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Office partition wall installed in our new lease space before opening day, right on schedule which mattered a lot to us.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">Y</span>
+              <div class="review-name-row">
+                <strong>Yuki T.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Broken thermal seal on a bay window fixed properly instead of just papering over it. Appreciated the honesty about what was actually wrong.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">O</span>
+              <div class="review-name-row">
+                <strong>Omar F.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>New commercial entrance doors, heavy traffic area and they held up perfectly through the first winter.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">C</span>
+              <div class="review-name-row">
+                <strong>Carmen V.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Balcony glass panel replacement in our high-rise. Coordinated with the concierge and building rules without any issues on our end.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">I</span>
+              <div class="review-name-row">
+                <strong>Ibrahim S.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Custom mirror wall for our gym. Exact size we asked for, mounted securely, looks professional.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">H</span>
+              <div class="review-name-row">
+                <strong>Holly W.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Window screens for the whole house, ordered a bit unusual sizes and they still got it right the first time.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">N</span>
+              <div class="review-name-row">
+                <strong>Nathan G.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Aluminum railing for our front steps replaced the old rusted one. Quick turnaround given it was a smaller residential job.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">M</span>
+              <div class="review-name-row">
+                <strong>Michelle A.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>They fixed a drafty window that was costing us on heating. Noticeable difference in the room temperature already.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">F</span>
+              <div class="review-name-row">
+                <strong>Farid H.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Retail storefront glass cracked from a break-in attempt, they came out same day to board it up and had the real glass in within the week.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">C</span>
+              <div class="review-name-row">
+                <strong>Colleen R.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>New sliding patio door, smooth operation, and they hauled away the old one so we didn't have to deal with disposal.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">B</span>
+              <div class="review-name-row">
+                <strong>Bilal A.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Commercial curtain wall repair on an older building. They knew how to work with the existing system instead of wanting to redo the whole thing.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">S</span>
+              <div class="review-name-row">
+                <strong>Stephanie N.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Condo association hired them for common area glass doors. Professional paperwork, insurance all in order, made approval easy on our end.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">G</span>
+              <div class="review-name-row">
+                <strong>Gordon L.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Aluminum fascia and soffit work paired with a window job, saved us from hiring two separate contractors.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">R</span>
+              <div class="review-name-row">
+                <strong>Rachel B.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Cracked shower glass panel replaced carefully without damaging the tile around it. Small detail but it's the kind of thing that matters.</blockquote>
             <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
         </div>
