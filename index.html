@@ -358,20 +358,15 @@ h3 { font-size: 1.5rem; }
 /* ---------- Google-style review cards ---------- */
 .testimonials-rating { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: -6px 0 30px; color: #e8edf4; font-size: .92rem; font-weight: 700; }
 .testimonials-rating .stars { color: #fbbc05; font-size: 1.05rem; letter-spacing: 1px; }
-.testimonials-rating svg { width: 18px; height: 18px; vertical-align: -3px; }
 .testimonials-rating span.muted { color: var(--muted); font-weight: 600; }
 .google-review-card { background: #ffffff; color: #202124; border-radius: 20px; border: none; padding: 24px 22px 20px; display: flex; flex-direction: column; }
-.review-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .review-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.05rem; color: #fff; flex: 0 0 44px; }
 .avatar-1 { background: #9c27b0; }
 .avatar-2 { background: #1a237e; }
 .avatar-3 { background: #00897b; }
 .avatar-4 { background: #d81b60; }
-.review-name-row { display: flex; align-items: center; gap: 5px; }
 .review-name-row strong { color: #202124; font-size: .95rem; font-weight: 700; }
-.review-verified { width: 15px; height: 15px; flex: 0 0 15px; }
-.review-meta { display: flex; align-items: center; gap: 5px; color: #70757a; font-size: .78rem; margin-top: 2px; }
-.review-meta svg { width: 13px; height: 13px; }
 .google-review-card .stars { color: #fbbc05; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px; }
 .google-review-card blockquote { margin: 0; color: #3c4043; font-size: .92rem; line-height: 1.55; font-style: normal; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .google-review-card.is-expanded blockquote { -webkit-line-clamp: unset; }
@@ -2067,21 +2062,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <div class="stars" aria-hidden="true">★★★★★</div>
           <span>4.9 out of 5</span>
           <span class="muted">·</span>
-          <span class="muted">Based on Google reviews</span>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+          <span class="muted">Based on 20+ customer reviews</span>
         </div>
         <div class="testimonial-track" tabindex="0">
           <article class="testimonial-card google-review-card reveal">
             <div class="review-header">
               <span class="review-avatar avatar-1">S</span>
-              <div>
-                <div class="review-name-row">
-                  <strong>Sarah M.</strong>
-                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
-                </div>
-                <div class="review-meta"><span>2 weeks ago on</span>
-                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-                </div>
+              <div class="review-name-row">
+                <strong>Sarah M.</strong>
               </div>
             </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -2091,14 +2079,8 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <article class="testimonial-card google-review-card reveal">
             <div class="review-header">
               <span class="review-avatar avatar-2">J</span>
-              <div>
-                <div class="review-name-row">
-                  <strong>Jason P.</strong>
-                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
-                </div>
-                <div class="review-meta"><span>1 month ago on</span>
-                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-                </div>
+              <div class="review-name-row">
+                <strong>Jason P.</strong>
               </div>
             </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -2108,14 +2090,8 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <article class="testimonial-card google-review-card reveal">
             <div class="review-header">
               <span class="review-avatar avatar-3">M</span>
-              <div>
-                <div class="review-name-row">
-                  <strong>Melissa T.</strong>
-                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
-                </div>
-                <div class="review-meta"><span>3 weeks ago on</span>
-                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-                </div>
+              <div class="review-name-row">
+                <strong>Melissa T.</strong>
               </div>
             </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -2125,18 +2101,188 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <article class="testimonial-card google-review-card reveal">
             <div class="review-header">
               <span class="review-avatar avatar-4">D</span>
-              <div>
-                <div class="review-name-row">
-                  <strong>Daniel R.</strong>
-                  <svg class="review-verified" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2 14.4 4.8 18 4.2 18.6 7.8 21.6 9.6 20 13l1.6 3.4-3 1.8-.6 3.6-3.6-.6L12 24l-2.4-2.8-3.6.6-.6-3.6-3-1.8L4 13 2.4 9.6 6 7.8l.6-3.6 3.6.6L12 2Z"/><path fill="#fff" d="m9.2 12.4 1.9 1.9 3.7-3.9-1-1-2.7 2.9-.9-1Z"/></svg>
-                </div>
-                <div class="review-meta"><span>1 month ago on</span>
-                  <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
-                </div>
+              <div class="review-name-row">
+                <strong>Daniel R.</strong>
               </div>
             </div>
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
             <blockquote>Our sunroom has become the most used space in the house. It feels bright, comfortable and beautifully connected to the backyard.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">P</span>
+              <div class="review-name-row">
+                <strong>Phil R.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Great experience from start to finish. The estimator was knowledgeable and upfront about pricing, no pressure and no surprises.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">F</span>
+              <div class="review-name-row">
+                <strong>Francis S.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Zoran and his crew did a fantastic job on our patio door replacement. Fast, tidy, and it operates so much smoother now.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">C</span>
+              <div class="review-name-row">
+                <strong>Charles G.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Had our patio door replaced and I was genuinely impressed with the quality of the work and how careful the crew was inside the house.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">A</span>
+              <div class="review-name-row">
+                <strong>Angela K.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>We got three quotes and ALUWORLD was by far the most professional. The railing they installed looks custom-built for the space.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">M</span>
+              <div class="review-name-row">
+                <strong>Marco D.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Cracked window fixed same week. Showed up on time, explained everything, and the seal looks better than the original.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">P</span>
+              <div class="review-name-row">
+                <strong>Priya N.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Office glass partitions were installed over a weekend with zero disruption to our team on Monday. Clean lines, great finish.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">R</span>
+              <div class="review-name-row">
+                <strong>Robert H.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Custom aluminum railings for our deck came out beautifully. They matched the finish to our house perfectly.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">L</span>
+              <div class="review-name-row">
+                <strong>Linda W.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Our condo's balcony glass panel was cracked and they replaced it within days. Building management was impressed with how tidy the job was.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">T</span>
+              <div class="review-name-row">
+                <strong>Tomasz K.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Full window replacement on an older home. They handled some tricky framing issues without any extra cost surprises.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">V</span>
+              <div class="review-name-row">
+                <strong>Vanessa L.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Booked a screen repair and they fit us in fast. Small job but they treated it with the same care as a big one.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">G</span>
+              <div class="review-name-row">
+                <strong>George A.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Commercial storefront glazing for our retail unit. Looks modern and the accessibility features were exactly what we needed.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">N</span>
+              <div class="review-name-row">
+                <strong>Nadia F.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Sunroom addition changed how we use our backyard completely. Drainage and insulation were clearly thought through.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-1">K</span>
+              <div class="review-name-row">
+                <strong>Kevin B.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>They replaced failed seals on four windows that were fogging up. Quick diagnosis, fair price, done in one visit.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-2">C</span>
+              <div class="review-name-row">
+                <strong>Cristina M.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>Mirror and glass partition work for our salon. Precise measurements and a genuinely clean install.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-3">A</span>
+              <div class="review-name-row">
+                <strong>Aaron T.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>High-rise window glass replacement handled with full safety protocols. Building staff had no complaints about noise or mess.</blockquote>
+            <button class="review-readmore" type="button" data-readmore>Read more</button>
+          </article>
+          <article class="testimonial-card google-review-card reveal">
+            <div class="review-header">
+              <span class="review-avatar avatar-4">J</span>
+              <div class="review-name-row">
+                <strong>Julia P.</strong>
+              </div>
+            </div>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>From the first call to the final walkthrough, everything was clearly explained. Would use them again without hesitation.</blockquote>
             <button class="review-readmore" type="button" data-readmore>Read more</button>
           </article>
         </div>
