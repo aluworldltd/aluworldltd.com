@@ -1,29 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 200" role="img" aria-labelledby="title desc">
-  <title id="title">ALUWORLD LTD</title>
-  <desc id="desc">Window-pane mark with the ALUWORLD LTD wordmark</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" role="img" aria-label="ALUWORLD LIMITED">
   <defs>
-    <linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#ffb969"/>
-      <stop offset=".5" stop-color="#ee942d"/>
-      <stop offset="1" stop-color="#b8730f"/>
+    <linearGradient id="bronze4a" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffcf94"/><stop offset="1" stop-color="#ee942d"/>
     </linearGradient>
-    <linearGradient id="bronzeSoft" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#ffcf94"/>
-      <stop offset="1" stop-color="#d9922f"/>
+    <linearGradient id="bronze4b" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ee942d"/><stop offset="1" stop-color="#8a5410"/>
+    </linearGradient>
+    <linearGradient id="bronze4c" x1="1" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffb969"/><stop offset="1" stop-color="#b8730f"/>
     </linearGradient>
   </defs>
-
-  <!-- Window-pane mark: literal glass/aluminum motif -->
+  <!-- Faceted diamond: cut-glass motif made of angular shards -->
   <g>
-    <rect x="8" y="8" width="184" height="184" rx="22" fill="none" stroke="url(#bronze)" stroke-width="15"/>
-    <rect x="92.5" y="8" width="15" height="184" fill="url(#bronze)"/>
-    <rect x="8" y="92.5" width="184" height="15" fill="url(#bronze)"/>
-    <rect x="24" y="24" width="61" height="61" fill="#ffffff" opacity=".07"/>
-    <rect x="115" y="24" width="61" height="61" fill="#ffffff" opacity=".035"/>
+    <polygon points="104,10 180,95 104,120 28,95" fill="url(#bronze4a)"/>
+    <polygon points="104,120 180,95 104,210 60,150" fill="url(#bronze4b)"/>
+    <polygon points="104,120 28,95 44,150 104,210" fill="url(#bronze4c)"/>
+    <polygon points="104,10 28,95 104,120" fill="#fff" opacity=".18"/>
   </g>
-
-  <text x="232" y="122" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="92" letter-spacing="-1.5">
-    <tspan fill="url(#bronzeSoft)">ALU</tspan><tspan fill="#fcfaf7">WORLD</tspan>
+  <text x="228" y="122" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="88" letter-spacing="-1.5">
+    <tspan fill="#ffcf94">ALU</tspan><tspan fill="#fcfaf7">WORLD</tspan>
   </text>
-  <text x="234" y="164" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="26" letter-spacing="6" fill="#ee942d" opacity=".9">LTD</text>
+  <text x="230" y="162" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="6" fill="#ee942d" opacity=".9">LIMITED</text>
 </svg>

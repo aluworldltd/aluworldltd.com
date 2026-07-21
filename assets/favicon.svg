@@ -1,16 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="ALUWORLD LTD">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="ALUWORLD LIMITED">
   <defs>
-    <linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#ffb969"/>
-      <stop offset=".5" stop-color="#ee942d"/>
-      <stop offset="1" stop-color="#b8730f"/>
+    <linearGradient id="bronzeFa" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ffcf94"/><stop offset="1" stop-color="#ee942d"/>
+    </linearGradient>
+    <linearGradient id="bronzeFb" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ee942d"/><stop offset="1" stop-color="#8a5410"/>
+    </linearGradient>
+    <linearGradient id="bronzeFc" x1="1" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffb969"/><stop offset="1" stop-color="#b8730f"/>
     </linearGradient>
   </defs>
   <rect width="240" height="240" rx="46" fill="#1c1207"/>
-  <g transform="translate(28 28)">
-    <rect x="8" y="8" width="184" height="184" rx="20" fill="none" stroke="url(#bronze)" stroke-width="16"/>
-    <rect x="92" y="8" width="16" height="184" fill="url(#bronze)"/>
-    <rect x="8" y="92" width="184" height="16" fill="url(#bronze)"/>
-    <rect x="24" y="24" width="60" height="60" fill="#ffffff" opacity=".08"/>
+  <g transform="translate(38 20)">
+    <polygon points="82,10 158,105 82,135 6,105" fill="url(#bronzeFa)"/>
+    <polygon points="82,135 158,105 82,230 40,165" fill="url(#bronzeFb)"/>
+    <polygon points="82,135 6,105 22,165 82,230" fill="url(#bronzeFc)"/>
+    <polygon points="82,10 6,105 82,135" fill="#fff" opacity=".18"/>
   </g>
 </svg>
