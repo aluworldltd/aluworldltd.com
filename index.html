@@ -447,12 +447,14 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .day-cell.is-full { cursor: not-allowed; }
 .day-cell.is-full .num { color: #b6afa2; text-decoration: line-through; }
 .day-cell.is-full .dot { background: #cbc4b6; }
-.day-cell.is-empty, .day-cell.is-past { cursor: default; }
+.day-cell.is-empty, .day-cell.is-past, .day-cell.is-closed { cursor: default; }
+.day-cell.is-closed .num { color: #cbc4b6; }
 .day-cell.is-past .num { color: #cbc4b6; }
-.day-cell:not(.is-full):not(.is-past):not(.is-empty):hover { background: rgba(238,148,45,.09); border-color: rgba(238,148,45,.3); }
+.day-cell:not(.is-full):not(.is-past):not(.is-empty):not(.is-closed):hover { background: rgba(238,148,45,.09); border-color: rgba(238,148,45,.3); }
 .day-cell.is-selected { background: var(--blue) !important; border-color: var(--blue) !important; }
 .day-cell.is-selected .num { color: #fff; }
 .day-cell.is-selected .dot { background: #fff; }
+.cal-note { margin: 20px 0 0; font-size: .8rem; color: var(--muted); }
 .cal-legend, .legend { display: flex; gap: 18px; margin-top: 20px; flex-wrap: wrap; font-size: .76rem; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
@@ -1261,11 +1263,11 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
         <a href="#reviews">Reviews</a>
-        <a href="#schedule">Schedule a Visit</a>
+        <a href="#schedule">Request a Visit</a>
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
         <div class="nav-actions">
-          <a class="button button-ghost nav-callback" href="#schedule">Schedule a Visit</a>
+          <a class="button button-ghost nav-callback" href="#schedule">Request a Visit</a>
           <a class="button nav-quote" href="#contact">Request a Quote</a>
         </div>
       </nav>
@@ -1305,7 +1307,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <button class="button form-button" type="submit">Get My Free Quote</button>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
-          <a class="hero-quote-callback" href="#schedule">Prefer to pick a day yourself? Schedule a visit →</a>
+          <a class="hero-quote-callback" href="#schedule">Prefer an in-person visit? Request one →</a>
         </aside>
       </div>
     </section>
@@ -2172,9 +2174,9 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
     <section class="section schedule light-section" id="schedule" aria-labelledby="schedule-title">
       <div class="shell">
-        <p class="eyebrow">Schedule a visit</p>
-        <h2 id="schedule-title">Pick a day, we'll come <em>take a look.</em></h2>
-        <p class="section-sub">Free, no-obligation home visits — pick a time that works and we'll confirm by phone or email.</p>
+        <p class="eyebrow">Request a visit</p>
+        <h2 id="schedule-title">Request a visit — <em>we'll confirm with you.</em></h2>
+        <p class="section-sub">Free, no-obligation site visits. Choose a preferred day and time, and we'll contact you by phone or email to confirm. Your visit is not booked until we confirm it.</p>
 
         <div class="booking-grid">
           <div class="cal-card">
@@ -2189,16 +2191,12 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
               <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
             </div>
             <div class="day-grid" id="day-grid"></div>
-            <div class="legend">
-              <span><i class="lg-open"></i>Open</span>
-              <span><i class="lg-limited"></i>Almost full</span>
-              <span><i class="lg-full"></i>Booked</span>
-            </div>
+            <p class="cal-note">Visits available Monday to Saturday. Pick a preferred time and we'll contact you to confirm.</p>
           </div>
 
           <div class="slot-card">
             <div id="slot-panel">
-              <div class="slot-empty">Pick a day on the calendar to see open times.</div>
+              <div class="slot-empty">Pick a preferred day on the calendar.</div>
             </div>
           </div>
         </div>
@@ -2342,7 +2340,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         <p>Premium glass, screen and aluminum solutions for modern high rises, commercial spaces and homes.</p>
       </div>
       <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
-      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Schedule a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
+      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+13659999908">365 999 9908</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
     <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Screen Repair for Modern High Rises &amp; Homes</span></div>
@@ -3137,25 +3135,17 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     today.setHours(0,0,0,0);
     let viewStart = new Date(today);
 
+    // Preferred time windows only. Nothing here reflects real availability;
+    // every request is confirmed by ALUWORLD LTD by phone or email.
     const slotTimes = ["9:00 AM","11:00 AM","1:00 PM","3:00 PM"];
     const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
     const dayInfo = (date) => {
-      const day = date.getDay();
-      if (day === 0) return { status: 'empty' };
       const diff = Math.round((date - today) / 86400000);
-      if (diff < 0) return { status: 'past' };
-      const seed = (date.getFullYear()*400 + date.getMonth()*35 + date.getDate()*7) % 11;
-      let bookedCount;
-      if (seed < 3) bookedCount = 4;
-      else if (seed < 6) bookedCount = 3;
-      else if (seed < 9) bookedCount = 1;
-      else bookedCount = 0;
-      const open = 4 - bookedCount;
-      const status = open === 0 ? 'full' : (open <= 1 ? 'limited' : 'open');
-      const booked = [];
-      for (let i = 0; i < bookedCount; i++) booked.push(i);
-      return { status, open, booked };
+      if (diff < 1) return { status: 'past' };
+      if (date.getDay() === 0) return { status: 'closed' };
+      return { status: 'open' };
     };
 
     let selectedDate = null;
@@ -3166,6 +3156,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     const nextBtn = document.getElementById('cal-next');
 
     const fmtDate = (d) => monthNames[d.getMonth()] + ' ' + d.getDate();
+    const fmtLongDate = (d) => dayNames[d.getDay()] + ', ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 
     const renderCalendar = () => {
       grid.innerHTML = '';
@@ -3186,51 +3177,56 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         numSpan.className = 'num';
         numSpan.textContent = d.getDate();
         cell.appendChild(numSpan);
-        if (info.status === 'open' || info.status === 'limited') {
-          const dot = document.createElement('span');
-          dot.className = 'dot';
-          cell.appendChild(dot);
-        }
-        if (selectedDate && d.getTime() === selectedDate.getTime()) cell.classList.add('is-selected');
-        if (info.status === 'open' || info.status === 'limited') {
-          cell.addEventListener('click', () => selectDay(new Date(d), info));
+        const isSelected = selectedDate && d.getTime() === selectedDate.getTime();
+        if (isSelected) cell.classList.add('is-selected');
+        if (info.status === 'open') {
+          cell.setAttribute('aria-label', fmtLongDate(d));
+          if (isSelected) cell.setAttribute('aria-pressed', 'true');
+          cell.addEventListener('click', () => selectDay(new Date(d)));
+        } else {
+          cell.disabled = true;
+          cell.setAttribute('aria-label', fmtLongDate(d) + (info.status === 'closed' ? ', closed' : ', not available'));
         }
         grid.appendChild(cell);
       }
     };
 
-    const selectDay = (date, info) => {
+    const selectDay = (date) => {
       selectedDate = date;
       selectedTime = null;
       renderCalendar();
-      renderSlotPanel(date, info);
+      renderSlotPanel(date);
     };
 
-    const renderSlotPanel = (date, info) => {
+    const renderSlotPanel = (date) => {
       const panel = document.getElementById('slot-panel');
       let html = '';
-      html += '<span class="slot-date">' + fmtDate(date) + '</span>';
-      html += '<h3>' + info.open + ' time' + (info.open === 1 ? '' : 's') + ' left</h3>';
+      html += '<span class="slot-date">' + fmtLongDate(date) + '</span>';
+      html += '<h3>Choose a preferred time</h3>';
       html += '<div class="time-grid" id="time-grid">';
       slotTimes.forEach((t, i) => {
-        const taken = info.booked.indexOf(i) !== -1;
-        html += '<button type="button" class="time-btn" data-idx="' + i + '"' + (taken ? ' disabled' : '') + '>' + t + '</button>';
+        html += '<button type="button" class="time-btn" data-idx="' + i + '" aria-pressed="false">' + t + '</button>';
       });
       html += '</div>';
       html += '<div class="booking-form" id="booking-form">';
-      html += '  <label><span>Name *</span><input type="text" id="bf-name"></label>';
-      html += '  <label><span>Phone or email *</span><input type="text" id="bf-contact"></label>';
-      html += '  <label><span>Address to visit *</span><input type="text" id="bf-address"></label>';
+      html += '  <label><span>Name *</span><input type="text" id="bf-name" autocomplete="name" required></label>';
+      html += '  <label><span>Phone or email *</span><input type="text" id="bf-contact" autocomplete="tel" required></label>';
+      html += '  <label><span>Address to visit *</span><input type="text" id="bf-address" autocomplete="street-address" required></label>';
       html += '  <label><span>Anything we should know?</span><textarea id="bf-notes" rows="2"></textarea></label>';
-      html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Confirm my free visit</button>';
+      html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Request this visit</button>';
+      html += '  <p class="form-note">This is a request, not a confirmed booking. We\'ll contact you to confirm the day and time.</p>';
       html += '  <div class="form-status" role="status" aria-live="polite" id="bf-status"></div>';
       html += '</div>';
       panel.innerHTML = html;
 
       panel.querySelectorAll('.time-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
-          panel.querySelectorAll('.time-btn').forEach((b) => b.classList.remove('is-selected'));
+          panel.querySelectorAll('.time-btn').forEach((b) => {
+            b.classList.remove('is-selected');
+            b.setAttribute('aria-pressed', 'false');
+          });
           btn.classList.add('is-selected');
+          btn.setAttribute('aria-pressed', 'true');
           selectedTime = btn.textContent;
           document.getElementById('booking-form').classList.add('is-visible');
         });
@@ -3249,6 +3245,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
         [[nameEl,name],[contactEl,contact],[addressEl,address]].forEach(([el,val]) => {
           el.style.borderColor = val ? '' : '#d9534f';
+          el.setAttribute('aria-invalid', val ? 'false' : 'true');
         });
         if (!name || !contact || !address) {
           statusEl.className = 'form-status is-visible is-error';
@@ -3257,7 +3254,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         }
 
         confirmBtn.disabled = true;
-        confirmBtn.textContent = 'Booking…';
+        confirmBtn.textContent = 'Sending…';
 
         try {
           if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
@@ -3265,7 +3262,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
               'form-name': 'visit-request',
               name, contact, address,
               notes: notesEl.value.trim(),
-              visit_date: fmtDate(date),
+              visit_date: fmtLongDate(date),
               visit_time: selectedTime
             });
             const response = await fetch('/', {
@@ -3276,20 +3273,33 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             if (!response.ok) throw new Error('Submission failed');
           }
 
-          panel.innerHTML =
-            '<div class="success-card">' +
-            '  <div class="success-check">&#10003;</div>' +
-            '  <h3>You\'re booked, ' + name.split(' ')[0] + '.</h3>' +
-            '  <p>We\'ll see you on <span class="booked-for">' + fmtDate(date) + ' at ' + selectedTime + '</span>.</p>' +
-            '  <p>A confirmation will be sent to ' + contact + '.</p>' +
-            '  <button type="button" class="book-again" id="book-again">Book a different time</button>' +
-            '</div>';
-          document.getElementById('book-again').addEventListener('click', () => renderSlotPanel(date, info));
+          const card = document.createElement('div');
+          card.className = 'success-card';
+          const check = document.createElement('div');
+          check.className = 'success-check';
+          check.textContent = '✓';
+          const heading = document.createElement('h3');
+          heading.textContent = 'Request received, ' + name.split(' ')[0] + '.';
+          const requested = document.createElement('p');
+          requested.append('You asked for ');
+          const when = document.createElement('span');
+          when.className = 'booked-for';
+          when.textContent = fmtLongDate(date) + ' at ' + selectedTime;
+          requested.append(when, '.');
+          const followUp = document.createElement('p');
+          followUp.textContent = 'We\'ll contact you at ' + contact + ' to confirm. Your visit is not booked until we confirm it.';
+          const again = document.createElement('button');
+          again.type = 'button';
+          again.className = 'book-again';
+          again.textContent = 'Request a different time';
+          again.addEventListener('click', () => renderSlotPanel(date));
+          card.append(check, heading, requested, followUp, again);
+          panel.replaceChildren(card);
         } catch (err) {
           confirmBtn.disabled = false;
-          confirmBtn.textContent = 'Confirm my free visit';
+          confirmBtn.textContent = 'Request this visit';
           statusEl.className = 'form-status is-visible is-error';
-          statusEl.textContent = 'We could not save your booking. Please call 365-999-9908 instead.';
+          statusEl.textContent = 'We could not send your request. Please call (365) 999-9908 instead.';
         }
       });
     };
@@ -3308,3 +3318,4 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   </script>
 </body>
 </html>
+
