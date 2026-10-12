@@ -1336,6 +1336,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <p class="hero-quote-sub">Tell us what you need — we'll follow up within one business day.</p>
           <form class="quote-form" name="quick-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
             <input type="hidden" name="form-name" value="quick-quote">
+            <input type="hidden" name="subject" value="New AluWorld Quick Quote">
             <p class="honeypot" aria-hidden="true">
               <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
             </p>
@@ -2344,6 +2345,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
         <form name="visit-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
           <input type="hidden" name="form-name" value="visit-request">
+          <input type="hidden" name="subject" value="New AluWorld Visit Request">
           <input type="text" name="name">
           <input type="text" name="contact">
           <input type="text" name="address">
@@ -2438,6 +2440,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
         <form class="quote-form reveal" name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="quote-request">
+          <input type="hidden" name="subject" value="New AluWorld Quote Request">
           <p class="honeypot" aria-hidden="true">
             <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
           </p>
@@ -3458,6 +3461,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
             const body = new URLSearchParams({
               'form-name': 'visit-request',
+              subject: 'New AluWorld Visit Request',
               name, contact, address,
               notes: notesEl.value.trim(),
               visit_date: fmtLongDate(date),
