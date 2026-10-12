@@ -422,7 +422,15 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .reviews.section { padding: 84px 0; }
 .reviews .section-heading { margin-bottom: 44px; }
 .reviews .section-heading > div:last-child p { color: var(--muted); margin: 0 0 22px; }
-.g-review-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.g-review-list { list-style: none; margin: 0 0 -18px; padding: 2px 2px 26px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 2px; scrollbar-width: none; overscroll-behavior-inline: contain; }
+.g-review-list::-webkit-scrollbar { display: none; }
+.g-review-list:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 22px; }
+.g-review { scroll-snap-align: start; }
+.g-review-rating { display: flex; align-items: center; gap: 8px; color: var(--text) !important; font-weight: 700; }
+.g-review-rating .g-review-stars { margin: 0; }
+.g-review-controls { margin: 0 0 16px; }
+.g-review-controls[hidden] { display: none; }
+.g-review-controls button:disabled { background: transparent; border-color: var(--line); }
 .g-review { display: flex; flex-direction: column; padding: 24px 22px 20px; border: 1px solid var(--soft-line); border-radius: 20px; background: #fff; color: #242220; box-shadow: 0 10px 30px rgba(20,15,10,.05); }
 .g-review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .g-review-head > div { display: flex; flex-direction: column; min-width: 0; }
@@ -432,12 +440,10 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .g-review-stars { margin: 0 0 10px; color: #e8a317; letter-spacing: 2px; font-size: 1rem; line-height: 1; }
 .g-review blockquote { margin: 0 0 16px; color: #43403c; font-size: .95rem; line-height: 1.6; }
 .g-review-source { margin: auto 0 0; color: #8a7d6d; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-@media (max-width: 1040px) { .g-review-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) {
-  .g-review-list { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px 2px 26px; margin-bottom: -18px; scroll-padding-inline: 2px; scrollbar-width: none; }
-  .g-review-list::-webkit-scrollbar { display: none; }
-  .g-review { scroll-snap-align: start; }
-}
+.g-review--rating .g-review-stars { margin: auto 0; padding: 18px 0; font-size: 1.7rem; letter-spacing: 6px; text-align: center; }
+.g-review--rating .g-review-source { margin-top: 0; }
+@media (max-width: 1040px) { .g-review-list { grid-auto-columns: calc((100% - 18px) / 2); } }
+@media (max-width: 640px) { .g-review-list { grid-auto-columns: 86%; } }
 
 /* ---------- Ticker strip ---------- */
 .ticker { overflow: hidden; border-block: 1px solid var(--soft-line); background: var(--panel); padding: 15px 0; position: relative; z-index: 1; }
@@ -2198,12 +2204,18 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           </div>
           <div>
             <p>Real reviews from ALUWORLD LTD customers, shown exactly as posted on our Google Business Profile.</p>
+            <p class="g-review-rating"><span class="g-review-stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> on Google</p>
             <a class="button" href="https://share.google/DuhpmtYDUdyGER0lq" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
-        <!-- Reviews are copied verbatim from the Google Business Profile. Do not edit the text. -->
-        <ul class="g-review-list" aria-label="Customer reviews from Google">
+        <div class="carousel-controls g-review-controls">
+          <button type="button" class="g-review-prev" aria-label="Previous reviews" aria-controls="g-review-list">←</button>
+          <button type="button" class="g-review-next" aria-label="Next reviews" aria-controls="g-review-list">→</button>
+        </div>
+        <!-- Reviews are copied verbatim from the Google Business Profile. Do not edit the text,
+             and do not add text to reviews that were posted with a star rating only. -->
+        <ul class="g-review-list" id="g-review-list" tabindex="0" aria-label="Customer reviews from Google (scrollable)">
           <li class="g-review">
             <div class="g-review-head">
               <span class="g-review-avatar" aria-hidden="true">G</span>
@@ -2247,6 +2259,54 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             </div>
             <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <blockquote>great job</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">F</span>
+              <div><strong>feoudakos FN</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">C</span>
+              <div><strong>Christos Chatzipateras</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Malik C</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Maram Elhag</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">O</span>
+              <div><strong>Olivia Gauld</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">L</span>
+              <div><strong>Lucas Tronzo</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <p class="g-review-source">Posted on Google</p>
           </li>
         </ul>
@@ -3210,6 +3270,38 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         btn.textContent = expanded ? 'Show less' : 'Read more';
       });
     });
+  })();
+  </script>
+
+  <script id="google-reviews-script">
+  (() => {
+    const list = document.getElementById('g-review-list');
+    const controls = document.querySelector('.g-review-controls');
+    if (!list || !controls) return;
+    const prev = controls.querySelector('.g-review-prev');
+    const next = controls.querySelector('.g-review-next');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const step = () => {
+      const card = list.querySelector('.g-review');
+      const gap = parseFloat(getComputedStyle(list).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : list.clientWidth;
+    };
+    const update = () => {
+      const max = list.scrollWidth - list.clientWidth;
+      controls.hidden = max <= 2;
+      prev.disabled = list.scrollLeft <= 2;
+      next.disabled = list.scrollLeft >= max - 2;
+    };
+    const move = (direction) => {
+      list.scrollBy({ left: direction * step(), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    };
+
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    list.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   })();
   </script>
 
