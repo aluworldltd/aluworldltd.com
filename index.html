@@ -3303,6 +3303,9 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       if (ratingOnly.length) mixed.push(ratingOnly.shift());
     }
     list.append(...mixed);
+    /* Reordering a scroll-snap container makes Chrome re-snap to the card that
+       was previously first, wherever it landed. Always start at the beginning. */
+    list.scrollLeft = 0;
 
     const step = () => {
       const card = list.querySelector('.g-review');
