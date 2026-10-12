@@ -1,13 +1,13 @@
-ALUWORLD LTD brand kit (logo direction B "Window pane", palette: Ink + Glass Blue)
+ALUWORLD LTD brand kit (logo direction B, arched window, palette: Ink + Glass Blue)
 
 Files
-  aluworld-logo-v4.svg            Primary logo for dark backgrounds (website header/footer)
-  aluworld-logo-v4-dark.svg       Primary logo for light backgrounds (documents, invoices)
-  aluworld-logo-v4-mono-ink.svg   One colour ink (print, stamps, embroidery)
-  aluworld-logo-v4-mono-white.svg One colour white (shirts, vehicles, signage)
-  aluworld-icon-v4.svg            Square icon on ink
-  aluworld-icon-v4-720.png        Square icon for Google Business Profile / social profiles
-  favicon-v4.svg                  Simplified icon for browser tabs (16-32px)
+  aluworld-logo-v5.svg            Primary logo for dark backgrounds (website header/footer)
+  aluworld-logo-v5-dark.svg       Primary logo for light backgrounds (documents, invoices)
+  aluworld-logo-v5-mono-ink.svg   One colour ink (print, stamps, embroidery)
+  aluworld-logo-v5-mono-white.svg One colour white (shirts, vehicles, signage)
+  aluworld-icon-v5.svg            Square icon on ink
+  aluworld-icon-v5-720.png        Square icon for Google Business Profile / social profiles
+  favicon-v5.svg                  Simplified icon for browser tabs (16-32px)
   make_brand.py                   Regenerates all SVGs: python3 make_brand.py <output-folder>
 
 Lettering is drawn as vector strokes (no font), so it renders identically everywhere.

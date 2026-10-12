@@ -49,25 +49,31 @@ def word(text, x0, y0, scale=1.0):
     g = f'<g transform="translate({x0:.2f} {y0:.2f}) scale({scale})">' + ''.join(parts) + '</g>'
     return g, x * scale
 
+ICON_W, ICON_H = 34, 44   # arched-window mark: narrow enough that the lower panes are taller than the arch
+
 def icon_paths(frame, glint, x=0, y=0, s=1.0, simple=False):
-    """Window-pane mark in a 40x44 box."""
-    sw = 3.5 if not simple else 5.4
+    """Arched window: one undivided half-circle fanlight over two tall lower panes."""
+    W, Hh = ICON_W, ICON_H
+    sw = 3.5 if not simple else 5.2
     o = sw / 2
+    r = W / 2 - o            # arch radius on the centreline
+    cx, spring = W / 2, o + r  # spring line where the arch meets the straight sides
     p = [f'<g transform="translate({x} {y}) scale({s})" fill="none" stroke-linejoin="miter">',
-         f'<rect x="{o}" y="{o}" width="{40-sw}" height="{44-sw}" stroke="{frame}" stroke-width="{sw}"/>',
-         f'<path d="M20 {o}V{44-o}" stroke="{frame}" stroke-width="{sw}"/>']
+         f'<path d="M{o} {Hh-o}V{spring}A{r} {r} 0 0 1 {W-o} {spring}V{Hh-o}Z" stroke="{frame}" stroke-width="{sw}"/>',
+         f'<path d="M{o} {spring}H{W-o}M{cx} {spring}V{Hh-o}" stroke="{frame}" stroke-width="{sw}"/>']
     if simple:
-        p.append(f'<path d="M7.6 30L14.2 16" stroke="{glint}" stroke-width="4.6"/>')
+        p.append(f'<path d="M6.6 38.4L11.6 27.4" stroke="{glint}" stroke-width="4.2"/>')
     else:
-        p.append(f'<path d="M7.2 26L14.4 12" stroke="{glint}" stroke-width="3"/>')
-        p.append(f'<path d="M25.6 38L32.8 24" stroke="{glint}" stroke-width="3"/>')
+        p.append(f'<path d="M6.2 37.6L11.4 26.6" stroke="{glint}" stroke-width="3"/>')
+        p.append(f'<path d="M22.6 37.6L27.8 26.6" stroke="{glint}" stroke-width="3"/>')
     p.append('</g>')
     return ''.join(p)
 
 def lockup(fg, glint, ltd, title):
-    wm, ww = word('ALUWORLD', 54, 12)
-    lt, lw = word('LTD', 54 + ww + 7.0, 12 + H - H*0.6, 0.6)
-    width = 54 + ww + 7.0 + lw + 1
+    WX = ICON_W + 14
+    wm, ww = word('ALUWORLD', WX, 12)
+    lt, lw = word('LTD', WX + ww + 7.0, 12 + H - H*0.6, 0.6)
+    width = WX + ww + 7.0 + lw + 1
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width:.1f} 44" role="img" aria-label="ALUWORLD LTD">'
             f'<title>{title}</title>' + icon_paths(fg, glint) +
             f'<g fill="none" stroke="{fg}" stroke-width="{S}" stroke-linejoin="miter" stroke-miterlimit="2.2" stroke-linecap="butt">{wm}</g>'
@@ -76,19 +82,19 @@ def lockup(fg, glint, ltd, title):
 def square_icon(bg, frame, glint, simple=False, round_bg=False, size=64):
     m = 13 if not simple else 11
     sc = (size - 2*m) / 44
-    x = (size - 40*sc) / 2
+    x = (size - ICON_W*sc) / 2
     rect = (f'<rect width="{size}" height="{size}" rx="{size*0.22:.1f}" fill="{bg}"/>' if round_bg
             else f'<rect width="{size}" height="{size}" fill="{bg}"/>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" role="img" aria-label="ALUWORLD LTD">'
             + rect + icon_paths(frame, glint, x=round(x, 2), y=m, s=round(sc, 4), simple=simple) + '</svg>')
 
 files = {
-    'aluworld-logo-v4.svg':          lockup('#F2F5F7', LGLASS, ALU, 'ALUWORLD LTD logo, light on dark'),
-    'aluworld-logo-v4-dark.svg':     lockup(INK, GLASS, STEEL, 'ALUWORLD LTD logo, dark on light'),
-    'aluworld-logo-v4-mono-ink.svg': lockup(INK, INK, INK, 'ALUWORLD LTD logo, one colour ink'),
-    'aluworld-logo-v4-mono-white.svg': lockup('#FFFFFF', '#FFFFFF', '#FFFFFF', 'ALUWORLD LTD logo, one colour white'),
-    'aluworld-icon-v4.svg':          square_icon(INK, '#F2F5F7', LGLASS),
-    'favicon-v4.svg':                square_icon(INK, '#F2F5F7', LGLASS, simple=True, round_bg=True),
+    'aluworld-logo-v5.svg':          lockup('#F2F5F7', LGLASS, ALU, 'ALUWORLD LTD logo, light on dark'),
+    'aluworld-logo-v5-dark.svg':     lockup(INK, GLASS, STEEL, 'ALUWORLD LTD logo, dark on light'),
+    'aluworld-logo-v5-mono-ink.svg': lockup(INK, INK, INK, 'ALUWORLD LTD logo, one colour ink'),
+    'aluworld-logo-v5-mono-white.svg': lockup('#FFFFFF', '#FFFFFF', '#FFFFFF', 'ALUWORLD LTD logo, one colour white'),
+    'aluworld-icon-v5.svg':          square_icon(INK, '#F2F5F7', LGLASS),
+    'favicon-v5.svg':                square_icon(INK, '#F2F5F7', LGLASS, simple=True, round_bg=True),
 }
 os.makedirs(OUT, exist_ok=True)
 import re
