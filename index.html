@@ -23,13 +23,16 @@
     "@type": "ProfessionalService",
     "name": "ALUWORLD LTD",
     "url": "https://aluworldltd.com/",
-    "telephone": "+1-365-999-9908",
+    "telephone": "+1-647-504-4338",
     "email": "aluworldltd@gmail.com",
     "description": "ALUWORLD LTD provides glass repairs, window and door installations, storefront systems, aluminum fabrication and custom sunrooms across the Greater Toronto Area.",
     "areaServed": [
       "Mississauga", "Toronto", "Brampton", "Oakville", "Burlington",
       "Milton", "Vaughan", "Richmond Hill", "Markham", "Etobicoke",
       "North York", "Scarborough", "Hamilton"
+    ],
+    "sameAs": [
+      "https://share.google/DuhpmtYDUdyGER0lq"
     ],
     "serviceType": [
       "Glass repair", "Window installation", "Door installation",
@@ -38,7 +41,7 @@
     ]
   }
   </script>
-  <link rel="icon" href="assets/favicon-v2.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-v3.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,600;1,9..144,340;1,9..144,500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -133,6 +136,22 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-phone svg { width: 17px; height: 17px; flex: 0 0 17px; fill: currentColor; }
+
+/* Desktop: inline navigation with phone and quote CTA; overlay menu below 1200px. */
+@media (min-width: 1200px) {
+  .site-header { background: linear-gradient(180deg, rgba(18,11,3,.72), rgba(18,11,3,0)); }
+  .header-inner { gap: 24px; }
+  .brand-logo { width: 220px; }
+  .brand-tagline { display: none; }
+  .menu-toggle { display: none; }
+  .main-nav { position: static; inset: auto; z-index: auto; flex: 1 1 auto; flex-direction: row; align-items: center; justify-content: flex-end; gap: 22px; padding: 0; background: none; opacity: 1; visibility: visible; transform: none; transition: none; font-size: .88rem; color: #e5ddd3; }
+  .main-nav a { padding: 6px 0; font-weight: 700; white-space: nowrap; }
+  .main-nav .nav-actions { flex-wrap: nowrap; align-items: center; gap: 10px; margin: 0 0 0 6px; }
+  .main-nav .nav-actions a::after { display: none; }
+  .main-nav .nav-actions .button { min-height: 44px; padding: 0 18px; font-size: .84rem; }
+}
 
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 24px; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: white; font-weight: 800; font-size: .94rem; box-shadow: 0 12px 28px rgba(238,148,45,.23); transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; }
 .button:hover { transform: translateY(-3px); background: #f29d3c; box-shadow: 0 18px 36px rgba(238,148,45,.32); }
@@ -399,6 +418,33 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .review-readmore { align-self: flex-start; margin-top: 8px; background: none; border: none; padding: 0; color: #e8881a; font-size: .84rem; font-weight: 700; cursor: pointer; }
 .google-review-card footer { display: none; }
 
+/* ---------- Google reviews link ---------- */
+.reviews.section { padding: 84px 0; }
+.reviews .section-heading { margin-bottom: 44px; }
+.reviews .section-heading > div:last-child p { color: var(--muted); margin: 0 0 22px; }
+.g-review-list { list-style: none; margin: 0 0 -18px; padding: 2px 2px 26px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 36px) / 3); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 2px; scrollbar-width: none; overscroll-behavior-inline: contain; }
+.g-review-list::-webkit-scrollbar { display: none; }
+.g-review-list:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 22px; }
+.g-review { scroll-snap-align: start; }
+.g-review-rating { display: flex; align-items: center; gap: 8px; color: var(--text) !important; font-weight: 700; }
+.g-review-rating .g-review-stars { margin: 0; }
+.g-review-controls { margin: 0 0 16px; }
+.g-review-controls[hidden] { display: none; }
+.g-review-controls button:disabled { background: transparent; border-color: var(--line); }
+.g-review { display: flex; flex-direction: column; padding: 24px 22px 20px; border: 1px solid var(--soft-line); border-radius: 20px; background: #fff; color: #242220; box-shadow: 0 10px 30px rgba(20,15,10,.05); }
+.g-review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.g-review-head > div { display: flex; flex-direction: column; min-width: 0; }
+.g-review-head strong { font-size: .95rem; line-height: 1.3; }
+.g-review-head span:not(.g-review-avatar) { color: #6b6055; font-size: .78rem; }
+.g-review-avatar { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #2d1f10; color: #ffcf94; font-weight: 800; }
+.g-review-stars { margin: 0 0 10px; color: #e8a317; letter-spacing: 2px; font-size: 1rem; line-height: 1; }
+.g-review blockquote { margin: 0 0 16px; color: #43403c; font-size: .95rem; line-height: 1.6; }
+.g-review-source { margin: auto 0 0; color: #8a7d6d; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.g-review--rating .g-review-stars { margin: auto 0; padding: 18px 0; font-size: 1.7rem; letter-spacing: 6px; text-align: center; }
+.g-review--rating .g-review-source { margin-top: 0; }
+@media (max-width: 1040px) { .g-review-list { grid-auto-columns: calc((100% - 18px) / 2); } }
+@media (max-width: 640px) { .g-review-list { grid-auto-columns: 86%; } }
+
 /* ---------- Ticker strip ---------- */
 .ticker { overflow: hidden; border-block: 1px solid var(--soft-line); background: var(--panel); padding: 15px 0; position: relative; z-index: 1; }
 .ticker-track { display: flex; width: max-content; gap: 0; animation: tickerScroll 36s linear infinite; }
@@ -439,12 +485,14 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 .day-cell.is-full { cursor: not-allowed; }
 .day-cell.is-full .num { color: #b6afa2; text-decoration: line-through; }
 .day-cell.is-full .dot { background: #cbc4b6; }
-.day-cell.is-empty, .day-cell.is-past { cursor: default; }
+.day-cell.is-empty, .day-cell.is-past, .day-cell.is-closed { cursor: default; }
+.day-cell.is-closed .num { color: #cbc4b6; }
 .day-cell.is-past .num { color: #cbc4b6; }
-.day-cell:not(.is-full):not(.is-past):not(.is-empty):hover { background: rgba(238,148,45,.09); border-color: rgba(238,148,45,.3); }
+.day-cell:not(.is-full):not(.is-past):not(.is-empty):not(.is-closed):hover { background: rgba(238,148,45,.09); border-color: rgba(238,148,45,.3); }
 .day-cell.is-selected { background: var(--blue) !important; border-color: var(--blue) !important; }
 .day-cell.is-selected .num { color: #fff; }
 .day-cell.is-selected .dot { background: #fff; }
+.cal-note { margin: 20px 0 0; font-size: .8rem; color: var(--muted); }
 .cal-legend, .legend { display: flex; gap: 18px; margin-top: 20px; flex-wrap: wrap; font-size: .76rem; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
@@ -1243,7 +1291,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   <header class="site-header" id="top">
     <div class="shell header-inner">
       <a class="brand brand-combo" href="#top" aria-label="ALUWORLD LTD home">
-        <img class="brand-logo" decoding="async" src="assets/aluworld-logo-v2.svg" alt="ALUWORLD LIMITED">
+        <img class="brand-logo" decoding="async" src="assets/aluworld-logo-v3.svg" alt="ALUWORLD LTD">
         <span class="brand-tagline" aria-hidden="true">Glass &amp; Aluminum<br>Solutions</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
@@ -1252,13 +1300,13 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#schedule">Schedule a Visit</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#schedule">Request a Visit</a>
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
         <div class="nav-actions">
-          <button class="button button-ghost nav-callback" type="button" onclick="document.getElementById('schedule').scrollIntoView({behavior:'smooth'}); document.getElementById('main-nav').classList.remove('open'); document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');">Schedule a Visit</button>
-          <a class="button nav-quote" href="#contact">Request a Quote</a>
+          <a class="button button-ghost nav-phone" href="tel:+16475044338" aria-label="Call ALUWORLD LTD at (647) 504-4338"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>(647) 504-4338</a>
+          <a class="button nav-quote" href="#contact">Get a Free Quote</a>
         </div>
       </nav>
     </div>
@@ -1288,6 +1336,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <p class="hero-quote-sub">Tell us what you need — we'll follow up within one business day.</p>
           <form class="quote-form" name="quick-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
             <input type="hidden" name="form-name" value="quick-quote">
+            <input type="hidden" name="subject" value="New AluWorld Quick Quote">
             <p class="honeypot" aria-hidden="true">
               <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
             </p>
@@ -1297,7 +1346,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <button class="button form-button" type="submit">Get My Free Quote</button>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
-          <a class="hero-quote-callback" href="#schedule">Prefer to pick a day yourself? Schedule a visit →</a>
+          <a class="hero-quote-callback" href="#schedule">Prefer an in-person visit? Request one →</a>
         </aside>
       </div>
     </section>
@@ -2147,529 +2196,129 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
       </div>
     </div>
 
-    <section class="section testimonials light-section" id="testimonials" aria-labelledby="testimonials-title">
+    <section class="section reviews light-section" id="reviews" aria-labelledby="reviews-title">
       <div class="shell">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Client testimonials</p>
-            <h2 id="testimonials-title">Trusted for careful work and dependable service.</h2>
+            <p class="eyebrow">Customer reviews</p>
+            <h2 id="reviews-title">What our customers say on Google.</h2>
           </div>
-          <div class="carousel-controls" aria-label="Testimonial controls">
-            <button type="button" class="carousel-prev" aria-label="Previous testimonial">←</button>
-            <button type="button" class="carousel-next" aria-label="Next testimonial">→</button>
+          <div>
+            <p>Real reviews from ALUWORLD LTD customers, shown exactly as posted on our Google Business Profile.</p>
+            <p class="g-review-rating"><span class="g-review-stars" aria-hidden="true">★★★★★</span> <strong>5.0</strong> on Google</p>
+            <a class="button" href="https://share.google/DuhpmtYDUdyGER0lq" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="testimonials-rating">
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <span>4.9 out of 5</span>
-          <span class="muted">·</span>
-          <span class="muted">Based on 45+ customer reviews</span>
+
+        <div class="carousel-controls g-review-controls">
+          <button type="button" class="g-review-prev" aria-label="Previous reviews" aria-controls="g-review-list">←</button>
+          <button type="button" class="g-review-next" aria-label="Next reviews" aria-controls="g-review-list">→</button>
         </div>
-        <div class="testimonial-track" tabindex="0">
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">S</span>
-              <div class="review-name-row">
-                <strong>Sarah M.</strong>
-              </div>
+        <!-- Reviews are copied verbatim from the Google Business Profile. Do not edit the text,
+             and do not add text to reviews that were posted with a star rating only. -->
+        <ul class="g-review-list" id="g-review-list" tabindex="0" aria-label="Customer reviews from Google (scrollable)">
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">G</span>
+              <div><strong>Gordon D</strong><span>Local Guide</span></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>We had all our windows done last fall and honestly it made a bigger difference than I expected. House feels warmer, way quieter too. They cleaned up every day before leaving, which I really appreciated with two kids running around.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">J</span>
-              <div class="review-name-row">
-                <strong>Jason P.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>I had a 3 panel neo-angle glass shower door installation that was nicely done. Door alignment and travel were plum and true. Job was completed to my full satisfaction. Good communication from start to end.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">F</span>
+              <div><strong>feoudakos FN</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Needed our storefront glass redone before a big renovation deadline. They worked around our hours so we didn't lose a single day of business. Looks great, no complaints from the landlord either.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">M</span>
-              <div class="review-name-row">
-                <strong>Melissa T.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">S</span>
+              <div><strong>Scott</strong><span>Local Guide</span></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Cracked balcony glass got fixed in under a week. Fast quote, showed up when they said they would, and the new pane matches perfectly. Would call them again if anything else comes up.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">D</span>
-              <div class="review-name-row">
-                <strong>Daniel R.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>They did the front facade as well as all the glass on the inside of our Bakery. Fabulous workmanship, on time, on budget and unlike a lot of businesses seemed very grateful to have the work. Would highly recommend for any commercial or residential project.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">C</span>
+              <div><strong>Christos Chatzipateras</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>The sunroom took a bit longer than the original estimate but they kept us posted the whole way and the end result is honestly better than what we pictured. We eat breakfast out there almost every morning now.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">P</span>
-              <div class="review-name-row">
-                <strong>Phil R.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">J</span>
+              <div><strong>John Koil</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Salesman knew what he was talking about, no upselling, gave me a fair price and stuck to it. Good experience overall.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">F</span>
-              <div class="review-name-row">
-                <strong>Francis S.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>Really happy with the work from AluWorld. The team was easy to deal with, showed up when they said they would, and did a great job. 10/10 would recommend.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Malik C</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Zoran and the crew did a great job on our patio door. Quick, no mess, works way smoother than the old one.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">C</span>
-              <div class="review-name-row">
-                <strong>Charles G.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Michael Grabowski</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Patio door replacement - impressed with how careful they were inside the house, laid down covers everywhere. Work itself looks clean too.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">A</span>
-              <div class="review-name-row">
-                <strong>Angela K.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>Had my windows changed by AluWorld LTD and the quality was the best. Highly recommend!</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Maram Elhag</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Got three quotes before going with ALUWORLD, glad we did. The railing looks like it was built specifically for our deck, not off the shelf.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">M</span>
-              <div class="review-name-row">
-                <strong>Marco D.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">V</span>
+              <div><strong>valentina bodnariuc</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Window cracked on a Tuesday, fixed by Friday. Explained what happened with the seal and it's holding up fine months later.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">P</span>
-              <div class="review-name-row">
-                <strong>Priya N.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>great job</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">O</span>
+              <div><strong>Olivia Gauld</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Office glass partitions went in over a weekend, we didn't lose any work time. Straight lines, no gaps, exactly what we needed.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">R</span>
-              <div class="review-name-row">
-                <strong>Robert H.</strong>
-              </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">L</span>
+              <div><strong>Lucas Tronzo</strong></div>
             </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Custom railings for the deck, matched them to the house finish without us even asking twice. Small detail but it mattered to us.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">L</span>
-              <div class="review-name-row">
-                <strong>Linda W.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Balcony glass cracked and building management wanted it dealt with fast. They came in, replaced it, cleaned up, done. No complaints from anyone in the building.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">T</span>
-              <div class="review-name-row">
-                <strong>Tomasz K.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Older house so the window frames weren't standard sizes. They figured it out without charging us extra for the headache, which I wasn't expecting honestly.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">V</span>
-              <div class="review-name-row">
-                <strong>Vanessa L.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Small screen repair job but they still showed up on time and treated it like it mattered. Appreciated that.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">G</span>
-              <div class="review-name-row">
-                <strong>George A.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>New storefront glazing for our shop. Modern look, and they made sure the accessibility stuff was actually up to code, not just an afterthought.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">N</span>
-              <div class="review-name-row">
-                <strong>Nadia F.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>We use the backyard so much more now that the sunroom is done. Drainage was a concern going in and they addressed it properly, no pooling after rain.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">K</span>
-              <div class="review-name-row">
-                <strong>Kevin B.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Four windows were fogging up from failed seals. One visit, diagnosed it right away, fair price, done same day.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">C</span>
-              <div class="review-name-row">
-                <strong>Cristina M.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Mirror work for the salon came out really precise, exactly the measurements we asked for. Clean install, no chips or scratches.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">A</span>
-              <div class="review-name-row">
-                <strong>Aaron T.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>High-rise window job, was worried about noise and disruption for other tenants but building management said it went smoothly. No issues.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">J</span>
-              <div class="review-name-row">
-                <strong>Julia P.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>They explained everything up front, no surprises on the invoice, and the walkthrough at the end was thorough. Would recommend.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">W</span>
-              <div class="review-name-row">
-                <strong>Wendy S.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Called about a stuck sliding door and they had someone out within two days. Adjusted the track, oiled everything, works like new. Didn't try to upsell me on a replacement I didn't need.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">H</span>
-              <div class="review-name-row">
-                <strong>Hassan M.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Got new eavestrough-adjacent aluminum trim done alongside a window job. They coordinated both without extra site visits, saved us some hassle.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">B</span>
-              <div class="review-name-row">
-                <strong>Brenda C.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Screen door mesh was torn from our dog, quick fix, in and out in twenty minutes. Reasonable price for such a small job.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">D</span>
-              <div class="review-name-row">
-                <strong>Diego R.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Commercial glass door closer was failing, they diagnosed it as hardware not the glass itself and fixed it for way less than I was expecting to pay.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">F</span>
-              <div class="review-name-row">
-                <strong>Fatima Z.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Condo balcony railing needed replacing after a storm. Building approved their quote fast because the paperwork and photos they provided were thorough.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">T</span>
-              <div class="review-name-row">
-                <strong>Trevor L.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>New windows for the whole second floor. Crew was respectful of the house, vacuumed up glass shavings without being asked.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">S</span>
-              <div class="review-name-row">
-                <strong>Simone B.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>We run a small bakery and needed the front glass reinforced. They understood we couldn't close during the day and scheduled around us.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">A</span>
-              <div class="review-name-row">
-                <strong>Adam K.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Aluminum patio cover install went smoothly. Only hiccup was a delayed material shipment which wasn't really their fault, they kept us informed the whole time.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">R</span>
-              <div class="review-name-row">
-                <strong>Rosalind P.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Fogged double-pane window in the kitchen finally fixed. Should've called them years ago honestly.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">E</span>
-              <div class="review-name-row">
-                <strong>Emeka O.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Storefront security glazing upgrade for our shop. They walked us through the different glass options without pushing the most expensive one.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">G</span>
-              <div class="review-name-row">
-                <strong>Grace H.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Sunroom screen enclosure looks fantastic, kids can be outside without the bugs now. Worth every penny.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">P</span>
-              <div class="review-name-row">
-                <strong>Patrick D.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Office partition wall installed in our new lease space before opening day, right on schedule which mattered a lot to us.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">Y</span>
-              <div class="review-name-row">
-                <strong>Yuki T.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Broken thermal seal on a bay window fixed properly instead of just papering over it. Appreciated the honesty about what was actually wrong.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">O</span>
-              <div class="review-name-row">
-                <strong>Omar F.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>New commercial entrance doors, heavy traffic area and they held up perfectly through the first winter.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">C</span>
-              <div class="review-name-row">
-                <strong>Carmen V.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Balcony glass panel replacement in our high-rise. Coordinated with the concierge and building rules without any issues on our end.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">I</span>
-              <div class="review-name-row">
-                <strong>Ibrahim S.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Custom mirror wall for our gym. Exact size we asked for, mounted securely, looks professional.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">H</span>
-              <div class="review-name-row">
-                <strong>Holly W.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Window screens for the whole house, ordered a bit unusual sizes and they still got it right the first time.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">N</span>
-              <div class="review-name-row">
-                <strong>Nathan G.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Aluminum railing for our front steps replaced the old rusted one. Quick turnaround given it was a smaller residential job.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">M</span>
-              <div class="review-name-row">
-                <strong>Michelle A.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>They fixed a drafty window that was costing us on heating. Noticeable difference in the room temperature already.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">F</span>
-              <div class="review-name-row">
-                <strong>Farid H.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Retail storefront glass cracked from a break-in attempt, they came out same day to board it up and had the real glass in within the week.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">C</span>
-              <div class="review-name-row">
-                <strong>Colleen R.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>New sliding patio door, smooth operation, and they hauled away the old one so we didn't have to deal with disposal.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-2">B</span>
-              <div class="review-name-row">
-                <strong>Bilal A.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Commercial curtain wall repair on an older building. They knew how to work with the existing system instead of wanting to redo the whole thing.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-3">S</span>
-              <div class="review-name-row">
-                <strong>Stephanie N.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Condo association hired them for common area glass doors. Professional paperwork, insurance all in order, made approval easy on our end.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-4">G</span>
-              <div class="review-name-row">
-                <strong>Gordon L.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Aluminum fascia and soffit work paired with a window job, saved us from hiring two separate contractors.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-          <article class="testimonial-card google-review-card reveal">
-            <div class="review-header">
-              <span class="review-avatar avatar-1">R</span>
-              <div class="review-name-row">
-                <strong>Rachel B.</strong>
-              </div>
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Cracked shower glass panel replaced carefully without damaging the tile around it. Small detail but it's the kind of thing that matters.</blockquote>
-            <button class="review-readmore" type="button" data-readmore>Read more</button>
-          </article>
-        </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="section schedule light-section" id="schedule" aria-labelledby="schedule-title">
       <div class="shell">
-        <p class="eyebrow">Schedule a visit</p>
-        <h2 id="schedule-title">Pick a day, we'll come <em>take a look.</em></h2>
-        <p class="section-sub">Free, no-obligation home visits — pick a time that works and we'll confirm by phone or email.</p>
+        <p class="eyebrow">Request a visit</p>
+        <h2 id="schedule-title">Request a visit — <em>we'll confirm with you.</em></h2>
+        <p class="section-sub">Free, no-obligation site visits. Choose a preferred day and time, and we'll contact you by phone or email to confirm. Your visit is not booked until we confirm it.</p>
 
         <div class="booking-grid">
           <div class="cal-card">
@@ -2684,22 +2333,19 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
               <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
             </div>
             <div class="day-grid" id="day-grid"></div>
-            <div class="legend">
-              <span><i class="lg-open"></i>Open</span>
-              <span><i class="lg-limited"></i>Almost full</span>
-              <span><i class="lg-full"></i>Booked</span>
-            </div>
+            <p class="cal-note">Visits available Monday to Saturday. Pick a preferred time and we'll contact you to confirm.</p>
           </div>
 
           <div class="slot-card">
             <div id="slot-panel">
-              <div class="slot-empty">Pick a day on the calendar to see open times.</div>
+              <div class="slot-empty">Pick a preferred day on the calendar.</div>
             </div>
           </div>
         </div>
 
-        <form name="visit-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="honeypot" aria-hidden="true">
+        <form name="visit-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
           <input type="hidden" name="form-name" value="visit-request">
+          <input type="hidden" name="subject" value="New AluWorld Visit Request">
           <input type="text" name="name">
           <input type="text" name="contact">
           <input type="text" name="address">
@@ -2787,13 +2433,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           <p>Share a few details and ALUWORLD LTD will follow up to discuss the scope, timing and next steps.</p>
           <div class="contact-links">
             <a href="mailto:aluworldltd@gmail.com"><span>Email</span><strong>aluworldltd@gmail.com</strong></a>
-            <a href="tel:+13659999908"><span>Phone</span><strong>365 999 9908</strong></a>
+            <a href="tel:+16475044338"><span>Phone</span><strong>(647) 504-4338</strong></a>
           </div>
           <div class="owner-note">Owned and Operated by <strong>K. Edlbi</strong></div>
         </div>
 
         <form class="quote-form reveal" name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="quote-request">
+          <input type="hidden" name="subject" value="New AluWorld Quote Request">
           <p class="honeypot" aria-hidden="true">
             <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
           </p>
@@ -2823,7 +2470,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   </main>
 
 
-  <a class="floating-call" href="tel:+13659999908" aria-label="Call ALUWORLD LTD at 365 999 9908">
+  <a class="floating-call" href="tel:+16475044338" aria-label="Call ALUWORLD LTD at (647) 504-4338">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>
     <strong>Call Now</strong>
   </a>
@@ -2832,13 +2479,13 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     <div class="shell footer-grid">
       <div class="footer-brand">
         <div class="footer-brand-lockup brand-combo" aria-label="ALUWORLD LTD">
-          <img class="brand-logo" decoding="async" src="assets/aluworld-logo-v2.svg" alt="ALUWORLD LIMITED">
+          <img class="brand-logo" decoding="async" src="assets/aluworld-logo-v3.svg" alt="ALUWORLD LTD">
         </div>
         <p>Premium glass, screen and aluminum solutions for modern high rises, commercial spaces and homes.</p>
       </div>
       <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
-      <div><h3>Company</h3><a href="#work">Our work</a><a href="#testimonials">Testimonials</a><a href="#schedule">Schedule a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
-      <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+13659999908">365 999 9908</a><p>Owned and Operated by K. Edlbi</p></div>
+      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
+      <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
     <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Screen Repair for Modern High Rises &amp; Homes</span></div>
   </footer>
@@ -2955,6 +2602,12 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     window.addEventListener('hashchange', closeMenu);
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeMenu();
+    });
+    /* The overlay menu does not exist at desktop widths, so never leave it
+       open (and the page scroll-locked) after resizing up. */
+    const desktopNav = window.matchMedia('(min-width: 1200px)');
+    desktopNav.addEventListener?.('change', (event) => {
+      if (event.matches) closeMenu();
     });
 
     /* Add one lightweight overlay to each photograph. It slides away when the
@@ -3583,7 +3236,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
           form.reset();
           showStatus(options.successMessage || 'Thank you! Your request was sent successfully. ALUWORLD LTD will contact you shortly.', 'is-success');
         } catch (error) {
-          showStatus('We could not send your request. Please call 365-999-9908 or email aluworldltd@gmail.com.', 'is-error');
+          showStatus('We could not send your request. Please call (647) 504-4338 or email aluworldltd@gmail.com.', 'is-error');
         } finally {
           button.disabled = false;
           button.innerHTML = originalButtonText;
@@ -3623,6 +3276,57 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   })();
   </script>
 
+  <script id="google-reviews-script">
+  (() => {
+    const list = document.getElementById('g-review-list');
+    const controls = document.querySelector('.g-review-controls');
+    if (!list || !controls) return;
+    const prev = controls.querySelector('.g-review-prev');
+    const next = controls.querySelector('.g-review-next');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* Shuffle on each visit, alternating written reviews with star-only ones
+       (always starting with a written review) so neither kind bunches up. */
+    const shuffle = (items) => {
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+      return items;
+    };
+    const cards = [...list.children];
+    const written = shuffle(cards.filter((card) => !card.classList.contains('g-review--rating')));
+    const ratingOnly = shuffle(cards.filter((card) => card.classList.contains('g-review--rating')));
+    const mixed = [];
+    while (written.length || ratingOnly.length) {
+      if (written.length) mixed.push(written.shift());
+      if (ratingOnly.length) mixed.push(ratingOnly.shift());
+    }
+    list.append(...mixed);
+
+    const step = () => {
+      const card = list.querySelector('.g-review');
+      const gap = parseFloat(getComputedStyle(list).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : list.clientWidth;
+    };
+    const update = () => {
+      const max = list.scrollWidth - list.clientWidth;
+      controls.hidden = max <= 2;
+      prev.disabled = list.scrollLeft <= 2;
+      next.disabled = list.scrollLeft >= max - 2;
+    };
+    const move = (direction) => {
+      list.scrollBy({ left: direction * step(), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    };
+
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    list.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+  </script>
+
   <script id="schedule-calendar-script">
   (() => {
     const grid = document.getElementById('day-grid');
@@ -3632,25 +3336,17 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     today.setHours(0,0,0,0);
     let viewStart = new Date(today);
 
+    // Preferred time windows only. Nothing here reflects real availability;
+    // every request is confirmed by ALUWORLD LTD by phone or email.
     const slotTimes = ["9:00 AM","11:00 AM","1:00 PM","3:00 PM"];
     const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
     const dayInfo = (date) => {
-      const day = date.getDay();
-      if (day === 0) return { status: 'empty' };
       const diff = Math.round((date - today) / 86400000);
-      if (diff < 0) return { status: 'past' };
-      const seed = (date.getFullYear()*400 + date.getMonth()*35 + date.getDate()*7) % 11;
-      let bookedCount;
-      if (seed < 3) bookedCount = 4;
-      else if (seed < 6) bookedCount = 3;
-      else if (seed < 9) bookedCount = 1;
-      else bookedCount = 0;
-      const open = 4 - bookedCount;
-      const status = open === 0 ? 'full' : (open <= 1 ? 'limited' : 'open');
-      const booked = [];
-      for (let i = 0; i < bookedCount; i++) booked.push(i);
-      return { status, open, booked };
+      if (diff < 1) return { status: 'past' };
+      if (date.getDay() === 0) return { status: 'closed' };
+      return { status: 'open' };
     };
 
     let selectedDate = null;
@@ -3661,6 +3357,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     const nextBtn = document.getElementById('cal-next');
 
     const fmtDate = (d) => monthNames[d.getMonth()] + ' ' + d.getDate();
+    const fmtLongDate = (d) => dayNames[d.getDay()] + ', ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 
     const renderCalendar = () => {
       grid.innerHTML = '';
@@ -3681,51 +3378,56 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         numSpan.className = 'num';
         numSpan.textContent = d.getDate();
         cell.appendChild(numSpan);
-        if (info.status === 'open' || info.status === 'limited') {
-          const dot = document.createElement('span');
-          dot.className = 'dot';
-          cell.appendChild(dot);
-        }
-        if (selectedDate && d.getTime() === selectedDate.getTime()) cell.classList.add('is-selected');
-        if (info.status === 'open' || info.status === 'limited') {
-          cell.addEventListener('click', () => selectDay(new Date(d), info));
+        const isSelected = selectedDate && d.getTime() === selectedDate.getTime();
+        if (isSelected) cell.classList.add('is-selected');
+        if (info.status === 'open') {
+          cell.setAttribute('aria-label', fmtLongDate(d));
+          if (isSelected) cell.setAttribute('aria-pressed', 'true');
+          cell.addEventListener('click', () => selectDay(new Date(d)));
+        } else {
+          cell.disabled = true;
+          cell.setAttribute('aria-label', fmtLongDate(d) + (info.status === 'closed' ? ', closed' : ', not available'));
         }
         grid.appendChild(cell);
       }
     };
 
-    const selectDay = (date, info) => {
+    const selectDay = (date) => {
       selectedDate = date;
       selectedTime = null;
       renderCalendar();
-      renderSlotPanel(date, info);
+      renderSlotPanel(date);
     };
 
-    const renderSlotPanel = (date, info) => {
+    const renderSlotPanel = (date) => {
       const panel = document.getElementById('slot-panel');
       let html = '';
-      html += '<span class="slot-date">' + fmtDate(date) + '</span>';
-      html += '<h3>' + info.open + ' time' + (info.open === 1 ? '' : 's') + ' left</h3>';
+      html += '<span class="slot-date">' + fmtLongDate(date) + '</span>';
+      html += '<h3>Choose a preferred time</h3>';
       html += '<div class="time-grid" id="time-grid">';
       slotTimes.forEach((t, i) => {
-        const taken = info.booked.indexOf(i) !== -1;
-        html += '<button type="button" class="time-btn" data-idx="' + i + '"' + (taken ? ' disabled' : '') + '>' + t + '</button>';
+        html += '<button type="button" class="time-btn" data-idx="' + i + '" aria-pressed="false">' + t + '</button>';
       });
       html += '</div>';
       html += '<div class="booking-form" id="booking-form">';
-      html += '  <label><span>Name *</span><input type="text" id="bf-name"></label>';
-      html += '  <label><span>Phone or email *</span><input type="text" id="bf-contact"></label>';
-      html += '  <label><span>Address to visit *</span><input type="text" id="bf-address"></label>';
+      html += '  <label><span>Name *</span><input type="text" id="bf-name" autocomplete="name" required></label>';
+      html += '  <label><span>Phone or email *</span><input type="text" id="bf-contact" autocomplete="tel" required></label>';
+      html += '  <label><span>Address to visit *</span><input type="text" id="bf-address" autocomplete="street-address" required></label>';
       html += '  <label><span>Anything we should know?</span><textarea id="bf-notes" rows="2"></textarea></label>';
-      html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Confirm my free visit</button>';
+      html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Request this visit</button>';
+      html += '  <p class="form-note">This is a request, not a confirmed booking. We\'ll contact you to confirm the day and time.</p>';
       html += '  <div class="form-status" role="status" aria-live="polite" id="bf-status"></div>';
       html += '</div>';
       panel.innerHTML = html;
 
       panel.querySelectorAll('.time-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
-          panel.querySelectorAll('.time-btn').forEach((b) => b.classList.remove('is-selected'));
+          panel.querySelectorAll('.time-btn').forEach((b) => {
+            b.classList.remove('is-selected');
+            b.setAttribute('aria-pressed', 'false');
+          });
           btn.classList.add('is-selected');
+          btn.setAttribute('aria-pressed', 'true');
           selectedTime = btn.textContent;
           document.getElementById('booking-form').classList.add('is-visible');
         });
@@ -3744,6 +3446,7 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
 
         [[nameEl,name],[contactEl,contact],[addressEl,address]].forEach(([el,val]) => {
           el.style.borderColor = val ? '' : '#d9534f';
+          el.setAttribute('aria-invalid', val ? 'false' : 'true');
         });
         if (!name || !contact || !address) {
           statusEl.className = 'form-status is-visible is-error';
@@ -3752,15 +3455,16 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         }
 
         confirmBtn.disabled = true;
-        confirmBtn.textContent = 'Booking…';
+        confirmBtn.textContent = 'Sending…';
 
         try {
           if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
             const body = new URLSearchParams({
               'form-name': 'visit-request',
+              subject: 'New AluWorld Visit Request',
               name, contact, address,
               notes: notesEl.value.trim(),
-              visit_date: fmtDate(date),
+              visit_date: fmtLongDate(date),
               visit_time: selectedTime
             });
             const response = await fetch('/', {
@@ -3771,20 +3475,33 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             if (!response.ok) throw new Error('Submission failed');
           }
 
-          panel.innerHTML =
-            '<div class="success-card">' +
-            '  <div class="success-check">&#10003;</div>' +
-            '  <h3>You\'re booked, ' + name.split(' ')[0] + '.</h3>' +
-            '  <p>We\'ll see you on <span class="booked-for">' + fmtDate(date) + ' at ' + selectedTime + '</span>.</p>' +
-            '  <p>A confirmation will be sent to ' + contact + '.</p>' +
-            '  <button type="button" class="book-again" id="book-again">Book a different time</button>' +
-            '</div>';
-          document.getElementById('book-again').addEventListener('click', () => renderSlotPanel(date, info));
+          const card = document.createElement('div');
+          card.className = 'success-card';
+          const check = document.createElement('div');
+          check.className = 'success-check';
+          check.textContent = '✓';
+          const heading = document.createElement('h3');
+          heading.textContent = 'Request received, ' + name.split(' ')[0] + '.';
+          const requested = document.createElement('p');
+          requested.append('You asked for ');
+          const when = document.createElement('span');
+          when.className = 'booked-for';
+          when.textContent = fmtLongDate(date) + ' at ' + selectedTime;
+          requested.append(when, '.');
+          const followUp = document.createElement('p');
+          followUp.textContent = 'We\'ll contact you at ' + contact + ' to confirm. Your visit is not booked until we confirm it.';
+          const again = document.createElement('button');
+          again.type = 'button';
+          again.className = 'book-again';
+          again.textContent = 'Request a different time';
+          again.addEventListener('click', () => renderSlotPanel(date));
+          card.append(check, heading, requested, followUp, again);
+          panel.replaceChildren(card);
         } catch (err) {
           confirmBtn.disabled = false;
-          confirmBtn.textContent = 'Confirm my free visit';
+          confirmBtn.textContent = 'Request this visit';
           statusEl.className = 'form-status is-visible is-error';
-          statusEl.textContent = 'We could not save your booking. Please call 365-999-9908 instead.';
+          statusEl.textContent = 'We could not send your request. Please call (647) 504-4338 instead.';
         }
       });
     };
@@ -3803,3 +3520,4 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
   </script>
 </body>
 </html>
+
