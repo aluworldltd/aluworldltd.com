@@ -296,7 +296,7 @@ em { font-style: normal; color: var(--glass-deep); }
 .gallery-card { position: relative; margin: 0; overflow: hidden; border-radius: 8px; background: var(--slate); }
 .gallery-card[hidden] { display: none !important; }
 .gallery-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
-.gallery-open img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s var(--ease); }
+.gallery-open img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .8s var(--ease); }
 .gallery-card:hover .gallery-open img, .gallery-card:focus-within .gallery-open img { transform: scale(1.04); }
 .gallery-card figcaption, .gallery-card-overlay { display: none; }
 .gallery-card.gallery-newly-shown { animation: galleryIn .5s ease both; }
@@ -306,7 +306,7 @@ em { font-style: normal; color: var(--glass-deep); }
 .gallery-more-status { min-height: 1.3em; margin: 0; color: var(--steel); font-size: .82rem; }
 
 .gallery-lightbox { position: fixed; inset: 0; z-index: 350; display: grid; place-items: center; padding: 24px; opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility .25s ease; }
-.gallery-lightbox.is-open { opacity: 1; visibility: visible; }
+.gallery-lightbox.is-open { opacity: 1; visibility: visible; transition: opacity .25s ease; }
 .gallery-lightbox-backdrop { position: absolute; inset: 0; background: rgba(11, 20, 28, .92); }
 .gallery-lightbox-dialog { position: relative; z-index: 1; width: min(100%, 1040px); max-height: 92vh; overflow: auto; padding: 14px; border: 1px solid var(--line-dark); border-radius: var(--radius); background: var(--ink); color: var(--on-dark); }
 .gallery-lightbox-media-wrap { overflow: hidden; border-radius: 6px; background: var(--ink-deep); }
@@ -645,745 +645,448 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <div class="section-heading compact reveal work-gallery-head">
           <div>
             <p class="eyebrow">Our work</p>
-            <h2 id="work-title">A gallery of completed ALUWORLD LTD projects.</h2>
+            <h2 id="work-title">Selected projects, photographed on site.</h2>
           </div>
-          <p>Browse real project photos by category to explore residential aluminum, glass partitions, residential homes and buildings, and commercial building work. Tap or click any image to view it larger.</p>
+          <p>A selection of real ALUWORLD LTD projects. Filter by type, tap any photo to view it larger, or browse the full archive.</p>
         </div>
 
-        <div class="work-filter-bar reveal" role="tablist" aria-label="Filter project gallery by category">
-          <button class="work-filter active" type="button" data-filter="all" aria-pressed="true">All Work <span>85</span></button>
+        <div class="work-filter-bar reveal" role="group" aria-label="Filter project gallery by category">
+          <button class="work-filter active" type="button" data-filter="all" aria-pressed="true">All projects <span>85</span></button>
             <button class="work-filter" type="button" data-filter="residential-aluminum" aria-pressed="false">Railings &amp; Aluminum Detailing <span>18</span></button>
             <button class="work-filter" type="button" data-filter="glass-partition" aria-pressed="false">Glass &amp; Mirror Interiors <span>11</span></button>
             <button class="work-filter" type="button" data-filter="residential-buildings" aria-pressed="false">Windows &amp; Home Exteriors <span>23</span></button>
             <button class="work-filter" type="button" data-filter="commercial-buildings" aria-pressed="false">Commercial &amp; Architectural <span>33</span></button>
         </div>
 
-        <div class="work-grid work-gallery-grid" id="work-gallery-grid">
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-009.webp" data-title="Residential Aluminum 01" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 01">
-              <img decoding="async" src="assets/image-009.webp" alt="Residential Aluminum 01 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 01</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-010.webp" data-title="Residential Aluminum 02" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 02">
-              <img decoding="async" src="assets/image-010.webp" alt="Residential Aluminum 02 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 02</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-011.webp" data-title="Residential Aluminum 03" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 03">
-              <img decoding="async" src="assets/image-011.webp" alt="Residential Aluminum 03 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 03</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-012.webp" data-title="Residential Aluminum 04" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 04">
-              <img decoding="async" src="assets/image-012.webp" alt="Residential Aluminum 04 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 04</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-013.webp" data-title="Residential Aluminum 05" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 05">
-              <img decoding="async" src="assets/image-013.webp" alt="Residential Aluminum 05 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 05</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-014.webp" data-title="Residential Aluminum 06" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 06">
-              <img decoding="async" src="assets/image-014.webp" alt="Residential Aluminum 06 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 06</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-015.webp" data-title="Residential Aluminum 07" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 07">
-              <img decoding="async" src="assets/image-015.webp" alt="Residential Aluminum 07 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 07</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-016.webp" data-title="Residential Aluminum 08" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 08">
-              <img decoding="async" src="assets/image-016.webp" alt="Residential Aluminum 08 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 08</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-017.webp" data-title="Residential Aluminum 09" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 09">
-              <img decoding="async" src="assets/image-017.webp" alt="Residential Aluminum 09 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 09</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-018.webp" data-title="Residential Aluminum 10" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 10">
-              <img decoding="async" src="assets/image-018.webp" alt="Residential Aluminum 10 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 10</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-019.webp" data-title="Residential Aluminum 11" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum 11">
-              <img decoding="async" src="assets/image-019.webp" alt="Residential Aluminum 11 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Aluminum</span>
-                <strong>Residential Aluminum 11</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-020.webp" data-title="Glass Partition 01" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 01">
-              <img decoding="async" src="assets/image-020.webp" alt="Glass Partition 01 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Glass Partition</span>
-                <strong>Glass Partition 01</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-021.webp" data-title="Glass Partition 02" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 02">
-              <img decoding="async" src="assets/image-021.webp" alt="Glass Partition 02 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Glass Partition</span>
-                <strong>Glass Partition 02</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-022.webp" data-title="Glass Partition 03" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 03">
-              <img decoding="async" src="assets/image-022.webp" alt="Glass Partition 03 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Glass Partition</span>
-                <strong>Glass Partition 03</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-023.webp" data-title="Glass Partition 04" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 04">
-              <img decoding="async" src="assets/image-023.webp" alt="Glass Partition 04 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Glass Partition</span>
-                <strong>Glass Partition 04</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-024.webp" data-title="Glass Partition 05" data-category-label="Glass &amp; Mirror Interiors" aria-label="Open Glass Partition 05">
-              <img decoding="async" src="assets/image-024.webp" alt="Glass Partition 05 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Glass Partition</span>
-                <strong>Glass Partition 05</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-025.webp" data-title="Residential Home / Building 01" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 01">
-              <img decoding="async" src="assets/image-025.webp" alt="Residential Home / Building 01 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 01</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-026.webp" data-title="Residential Home / Building 02" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 02">
-              <img decoding="async" src="assets/image-026.webp" alt="Residential Home / Building 02 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 02</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-027.webp" data-title="Residential Home / Building 03" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 03">
-              <img decoding="async" src="assets/image-027.webp" alt="Residential Home / Building 03 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 03</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-028.webp" data-title="Residential Home / Building 04" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 04">
-              <img decoding="async" src="assets/image-028.webp" alt="Residential Home / Building 04 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 04</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-029.webp" data-title="Residential Home / Building 05" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 05">
-              <img decoding="async" src="assets/image-029.webp" alt="Residential Home / Building 05 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 05</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-030.webp" data-title="Residential Home / Building 06" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 06">
-              <img decoding="async" src="assets/image-030.webp" alt="Residential Home / Building 06 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 06</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-031.webp" data-title="Residential Home / Building 07" data-category-label="Windows &amp; Home Exteriors" aria-label="Open Residential Home / Building 07">
-              <img decoding="async" src="assets/image-031.webp" alt="Residential Home / Building 07 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Residential Homes / Buildings</span>
-                <strong>Residential Home / Building 07</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-032.webp" data-title="Commercial Building 01" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 01">
-              <img decoding="async" src="assets/image-032.webp" alt="Commercial Building 01 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 01</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-033.webp" data-title="Commercial Building 02" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 02">
-              <img decoding="async" src="assets/image-033.webp" alt="Commercial Building 02 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 02</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-034.webp" data-title="Commercial Building 03" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 03">
-              <img decoding="async" src="assets/image-034.webp" alt="Commercial Building 03 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 03</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-035.webp" data-title="Commercial Building 04" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 04">
-              <img decoding="async" src="assets/image-035.webp" alt="Commercial Building 04 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 04</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-036.webp" data-title="Commercial Building 05" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 05">
-              <img decoding="async" src="assets/image-036.webp" alt="Commercial Building 05 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 05</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-037.webp" data-title="Commercial Building 06" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 06">
-              <img decoding="async" src="assets/image-037.webp" alt="Commercial Building 06 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 06</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-038.webp" data-title="Commercial Building 07" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 07">
-              <img decoding="async" src="assets/image-038.webp" alt="Commercial Building 07 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 07</strong>
-              </figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-039.webp" data-title="Commercial Building 08" data-category-label="Commercial &amp; Architectural" aria-label="Open Commercial Building 08">
-              <img decoding="async" src="assets/image-039.webp" alt="Commercial Building 08 project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption>
-                <span>Commercial Buildings</span>
-                <strong>Commercial Building 08</strong>
-              </figcaption>
-            </button>
-          </figure>
-        
-
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-008.webp" data-title="Residential Aluminum Before and After" data-category-label="Railings &amp; Aluminum Detailing" aria-label="Open Residential Aluminum Before and After">
-              <img decoding="async" src="assets/image-008.webp" alt="Before and after residential aluminum patio cover project by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption><span>Residential Aluminum</span><strong>Residential Aluminum Before and After</strong></figcaption>
-            </button>
-          </figure>
-
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/image-040.webp" data-title="Aluminum Door and Frame Fabrication" data-category-label="Commercial &amp; Architectural" aria-label="Open Aluminum Door and Frame Fabrication">
-              <img decoding="async" src="assets/image-040.webp" alt="Commercial aluminum doors and frames prepared for installation by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-              <figcaption><span>Commercial Buildings</span><strong>Aluminum Door and Frame Fabrication</strong></figcaption>
-            </button>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-001.webp" aria-label="Open Glass & Mirror Work project photo 1">
-              <img decoding="async" src="assets/project-001.webp" alt="Glass & Mirror Work project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Glass & Mirror Work</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-002.webp" aria-label="Open Residential Aluminum & Railings project photo 2">
-              <img decoding="async" src="assets/project-002.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-003.webp" aria-label="Open Residential Aluminum & Railings project photo 3">
-              <img decoding="async" src="assets/project-003.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-004.webp" aria-label="Open Residential Aluminum & Railings project photo 4">
-              <img decoding="async" src="assets/project-004.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-005.webp" aria-label="Open Residential Aluminum & Railings project photo 5">
-              <img decoding="async" src="assets/project-005.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-006.webp" aria-label="Open Residential Aluminum & Railings project photo 6">
-              <img decoding="async" src="assets/project-006.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-aluminum" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-007.webp" aria-label="Open Residential Aluminum & Railings project photo 7">
-              <img decoding="async" src="assets/project-007.webp" alt="Residential Aluminum & Railings project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Aluminum & Railings</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-008.webp" aria-label="Open Residential Windows & Doors project photo 8">
-              <img decoding="async" src="assets/project-008.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-009.webp" aria-label="Open Residential Windows & Doors project photo 9">
-              <img decoding="async" src="assets/project-009.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-010.webp" aria-label="Open Residential Windows & Doors project photo 10">
-              <img decoding="async" src="assets/project-010.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-011.webp" aria-label="Open Residential Windows & Doors project photo 11">
-              <img decoding="async" src="assets/project-011.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-012.webp" aria-label="Open Residential Windows & Doors project photo 12">
-              <img decoding="async" src="assets/project-012.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-013.webp" aria-label="Open Residential Windows & Doors project photo 13">
-              <img decoding="async" src="assets/project-013.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-014.webp" aria-label="Open Residential Windows & Doors project photo 14">
-              <img decoding="async" src="assets/project-014.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-015.webp" aria-label="Open Residential Windows & Doors project photo 15">
-              <img decoding="async" src="assets/project-015.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-016.webp" aria-label="Open Residential Windows & Doors project photo 16">
-              <img decoding="async" src="assets/project-016.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-017.webp" aria-label="Open Residential Windows & Doors project photo 17">
-              <img decoding="async" src="assets/project-017.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-018.webp" aria-label="Open Residential Windows & Doors project photo 18">
-              <img decoding="async" src="assets/project-018.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-019.webp" aria-label="Open Residential Windows & Doors project photo 19">
-              <img decoding="async" src="assets/project-019.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-020.webp" aria-label="Open Residential Windows & Doors project photo 20">
-              <img decoding="async" src="assets/project-020.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-021.webp" aria-label="Open Residential Windows & Doors project photo 21">
-              <img decoding="async" src="assets/project-021.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-022.webp" aria-label="Open Residential Windows & Doors project photo 22">
-              <img decoding="async" src="assets/project-022.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="residential-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-023.webp" aria-label="Open Residential Windows & Doors project photo 23">
-              <img decoding="async" src="assets/project-023.webp" alt="Residential Windows & Doors project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Residential Windows & Doors</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-024.webp" aria-label="Open Office Glass Partitions project photo 24">
-              <img decoding="async" src="assets/project-024.webp" alt="Office Glass Partitions project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Office Glass Partitions</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-025.webp" aria-label="Open Office Glass Partitions project photo 25">
-              <img decoding="async" src="assets/project-025.webp" alt="Office Glass Partitions project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Office Glass Partitions</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-026.webp" aria-label="Open Office Glass Partitions project photo 26">
-              <img decoding="async" src="assets/project-026.webp" alt="Office Glass Partitions project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Office Glass Partitions</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-027.webp" aria-label="Open Office Glass Partitions project photo 27">
-              <img decoding="async" src="assets/project-027.webp" alt="Office Glass Partitions project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Office Glass Partitions</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="glass-partition" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-028.webp" aria-label="Open Office Glass Partitions project photo 28">
-              <img decoding="async" src="assets/project-028.webp" alt="Office Glass Partitions project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Office Glass Partitions</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-029.webp" aria-label="Open Commercial & Architectural Systems project photo 29">
-              <img decoding="async" src="assets/project-029.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-030.webp" aria-label="Open Commercial & Architectural Systems project photo 30">
-              <img decoding="async" src="assets/project-030.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-031.webp" aria-label="Open Commercial & Architectural Systems project photo 31">
-              <img decoding="async" src="assets/project-031.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-032.webp" aria-label="Open Commercial & Architectural Systems project photo 32">
-              <img decoding="async" src="assets/project-032.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-033.webp" aria-label="Open Commercial & Architectural Systems project photo 33">
-              <img decoding="async" src="assets/project-033.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-034.webp" aria-label="Open Commercial & Architectural Systems project photo 34">
-              <img decoding="async" src="assets/project-034.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-035.webp" aria-label="Open Commercial & Architectural Systems project photo 35">
-              <img decoding="async" src="assets/project-035.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-036.webp" aria-label="Open Commercial & Architectural Systems project photo 36">
-              <img decoding="async" src="assets/project-036.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-037.webp" aria-label="Open Commercial & Architectural Systems project photo 37">
-              <img decoding="async" src="assets/project-037.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-038.webp" aria-label="Open Commercial & Architectural Systems project photo 38">
-              <img decoding="async" src="assets/project-038.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-039.webp" aria-label="Open Commercial & Architectural Systems project photo 39">
-              <img decoding="async" src="assets/project-039.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-040.webp" aria-label="Open Commercial & Architectural Systems project photo 40">
-              <img decoding="async" src="assets/project-040.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-041.webp" aria-label="Open Commercial & Architectural Systems project photo 41">
-              <img decoding="async" src="assets/project-041.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-042.webp" aria-label="Open Commercial & Architectural Systems project photo 42">
-              <img decoding="async" src="assets/project-042.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-043.webp" aria-label="Open Commercial & Architectural Systems project photo 43">
-              <img decoding="async" src="assets/project-043.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-044.webp" aria-label="Open Commercial & Architectural Systems project photo 44">
-              <img decoding="async" src="assets/project-044.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-045.webp" aria-label="Open Commercial & Architectural Systems project photo 45">
-              <img decoding="async" src="assets/project-045.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-046.webp" aria-label="Open Commercial & Architectural Systems project photo 46">
-              <img decoding="async" src="assets/project-046.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-047.webp" aria-label="Open Commercial & Architectural Systems project photo 47">
-              <img decoding="async" src="assets/project-047.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-048.webp" aria-label="Open Commercial & Architectural Systems project photo 48">
-              <img decoding="async" src="assets/project-048.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-049.webp" aria-label="Open Commercial & Architectural Systems project photo 49">
-              <img decoding="async" src="assets/project-049.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-050.webp" aria-label="Open Commercial & Architectural Systems project photo 50">
-              <img decoding="async" src="assets/project-050.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-051.webp" aria-label="Open Commercial & Architectural Systems project photo 51">
-              <img decoding="async" src="assets/project-051.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-          <figure class="work-card gallery-card reveal" data-category="commercial-buildings" tabindex="0">
-            <button class="gallery-open" type="button" data-fullsrc="assets/project-052.webp" aria-label="Open Commercial & Architectural Systems project photo 52">
-              <img decoding="async" src="assets/project-052.webp" alt="Commercial & Architectural Systems project completed by ALUWORLD LTD" loading="lazy">
-              <span class="gallery-card-overlay"></span>
-            </button>
-            <figcaption><span>Commercial & Architectural Systems</span><strong>Completed Project</strong></figcaption>
-          </figure>
-</div>
+        <div class="work-gallery-grid" id="work-gallery-grid">
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-013.webp" data-title="Enclosed patio with arched windows" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Covered patio enclosed with dark aluminum arched windows and sliding doors">
+              <img decoding="async" src="assets/image-013.webp" alt="Covered patio enclosed with dark aluminum arched windows and sliding doors" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-021.webp" data-title="Black-frame glass office partitions" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Office meeting room enclosed by black-framed glass partitions">
+              <img decoding="async" src="assets/image-021.webp" alt="Office meeting room enclosed by black-framed glass partitions" loading="lazy" width="1044" height="690">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-034.webp" data-title="Window work at height" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Rope-access technician working at a window on a brick building">
+              <img decoding="async" src="assets/image-034.webp" alt="Rope-access technician working at a window on a brick building" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-015.webp" data-title="Glass staircase railing" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Frameless glass railing along a modern open staircase">
+              <img decoding="async" src="assets/image-015.webp" alt="Frameless glass railing along a modern open staircase" loading="lazy" width="1209" height="1365">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-011.webp" data-title="Arched aluminum entry door" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Dark aluminum arched entry door with sidelights in a brick courtyard">
+              <img decoding="async" src="assets/image-011.webp" alt="Dark aluminum arched entry door with sidelights in a brick courtyard" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-037.webp" data-title="Frameless glass entrance" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Frameless glass entrance doors in a commercial lobby">
+              <img decoding="async" src="assets/image-037.webp" alt="Frameless glass entrance doors in a commercial lobby" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-001.webp" data-title="Salon mirror installation" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Salon with arched wall mirrors above the styling stations">
+              <img decoding="async" src="assets/project-001.webp" alt="Salon with arched wall mirrors above the styling stations" loading="lazy" width="900" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-018.webp" data-title="Exterior glass railing" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Glass railing panels along exterior stone steps">
+              <img decoding="async" src="assets/image-018.webp" alt="Glass railing panels along exterior stone steps" loading="lazy" width="1600" height="900">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-020.webp" data-title="Glass partition with slatted ceiling" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Clear glass office partition under a curved slatted ceiling">
+              <img decoding="async" src="assets/image-020.webp" alt="Clear glass office partition under a curved slatted ceiling" loading="lazy" width="1037" height="1277">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-033.webp" data-title="Glass balconies" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Modern building facade with glass balcony railings">
+              <img decoding="async" src="assets/project-033.webp" alt="Modern building facade with glass balcony railings" loading="lazy" width="992" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-012.webp" data-title="Arched glass doors" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Arched aluminum glass doors seen from inside">
+              <img decoding="async" src="assets/project-012.webp" alt="Arched aluminum glass doors seen from inside" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-025.webp" data-title="Arched sliding doors" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Rear of a brick home with arched aluminum sliding doors">
+              <img decoding="async" src="assets/image-025.webp" alt="Rear of a brick home with arched aluminum sliding doors" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-009.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 1 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-009.webp" alt="Railings and Aluminum Detailing project photo 1 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-010.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 2 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-010.webp" alt="Railings and Aluminum Detailing project photo 2 by ALUWORLD LTD" loading="lazy" width="738" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-012.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 3 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-012.webp" alt="Railings and Aluminum Detailing project photo 3 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-014.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 4 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-014.webp" alt="Railings and Aluminum Detailing project photo 4 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-016.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 5 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-016.webp" alt="Railings and Aluminum Detailing project photo 5 by ALUWORLD LTD" loading="lazy" width="1194" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-017.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 6 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-017.webp" alt="Railings and Aluminum Detailing project photo 6 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-019.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 7 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-019.webp" alt="Railings and Aluminum Detailing project photo 7 by ALUWORLD LTD" loading="lazy" width="1600" height="900">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-022.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 1 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-022.webp" alt="Glass and Mirror Interiors project photo 1 by ALUWORLD LTD" loading="lazy" width="1061" height="562">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-023.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 2 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-023.webp" alt="Glass and Mirror Interiors project photo 2 by ALUWORLD LTD" loading="lazy" width="1231" height="888">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-024.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 3 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-024.webp" alt="Glass and Mirror Interiors project photo 3 by ALUWORLD LTD" loading="lazy" width="1043" height="730">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-026.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 1 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-026.webp" alt="Windows and Home Exteriors project photo 1 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-027.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 2 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-027.webp" alt="Windows and Home Exteriors project photo 2 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-028.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 3 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-028.webp" alt="Windows and Home Exteriors project photo 3 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-029.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 4 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-029.webp" alt="Windows and Home Exteriors project photo 4 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-030.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 5 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-030.webp" alt="Windows and Home Exteriors project photo 5 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-031.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 6 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-031.webp" alt="Windows and Home Exteriors project photo 6 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-032.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 1 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-032.webp" alt="Commercial and Architectural project photo 1 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-033.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 2 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-033.webp" alt="Commercial and Architectural project photo 2 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-035.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 3 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-035.webp" alt="Commercial and Architectural project photo 3 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-036.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 4 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-036.webp" alt="Commercial and Architectural project photo 4 by ALUWORLD LTD" loading="lazy" width="1290" height="958">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-038.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 5 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-038.webp" alt="Commercial and Architectural project photo 5 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-039.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 6 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-039.webp" alt="Commercial and Architectural project photo 6 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-008.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 8 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-008.webp" alt="Railings and Aluminum Detailing project photo 8 by ALUWORLD LTD" loading="lazy" width="1500" height="2000">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/image-040.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 7 by ALUWORLD LTD">
+              <img decoding="async" src="assets/image-040.webp" alt="Commercial and Architectural project photo 7 by ALUWORLD LTD" loading="lazy" width="1536" height="2048">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-002.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 9 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-002.webp" alt="Railings and Aluminum Detailing project photo 9 by ALUWORLD LTD" loading="lazy" width="1600" height="900">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-003.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 10 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-003.webp" alt="Railings and Aluminum Detailing project photo 10 by ALUWORLD LTD" loading="lazy" width="1600" height="900">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-004.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 11 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-004.webp" alt="Railings and Aluminum Detailing project photo 11 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-005.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 12 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-005.webp" alt="Railings and Aluminum Detailing project photo 12 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-006.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 13 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-006.webp" alt="Railings and Aluminum Detailing project photo 13 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-aluminum">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-007.webp" data-category-label="Railings &amp; Aluminum Detailing" aria-label="View larger: Railings and Aluminum Detailing project photo 14 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-007.webp" alt="Railings and Aluminum Detailing project photo 14 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-008.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 7 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-008.webp" alt="Windows and Home Exteriors project photo 7 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-009.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 8 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-009.webp" alt="Windows and Home Exteriors project photo 8 by ALUWORLD LTD" loading="lazy" width="738" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-010.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 9 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-010.webp" alt="Windows and Home Exteriors project photo 9 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-011.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 10 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-011.webp" alt="Windows and Home Exteriors project photo 10 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-013.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 11 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-013.webp" alt="Windows and Home Exteriors project photo 11 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-014.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 12 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-014.webp" alt="Windows and Home Exteriors project photo 12 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-015.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 13 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-015.webp" alt="Windows and Home Exteriors project photo 13 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-016.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 14 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-016.webp" alt="Windows and Home Exteriors project photo 14 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-017.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 15 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-017.webp" alt="Windows and Home Exteriors project photo 15 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-018.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 16 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-018.webp" alt="Windows and Home Exteriors project photo 16 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-019.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 17 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-019.webp" alt="Windows and Home Exteriors project photo 17 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-020.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 18 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-020.webp" alt="Windows and Home Exteriors project photo 18 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-021.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 19 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-021.webp" alt="Windows and Home Exteriors project photo 19 by ALUWORLD LTD" loading="lazy" width="1170" height="874">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-022.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 20 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-022.webp" alt="Windows and Home Exteriors project photo 20 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="residential-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-023.webp" data-category-label="Windows &amp; Home Exteriors" aria-label="View larger: Windows and Home Exteriors project photo 21 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-023.webp" alt="Windows and Home Exteriors project photo 21 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-024.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 4 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-024.webp" alt="Glass and Mirror Interiors project photo 4 by ALUWORLD LTD" loading="lazy" width="1231" height="888">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-025.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 5 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-025.webp" alt="Glass and Mirror Interiors project photo 5 by ALUWORLD LTD" loading="lazy" width="1037" height="1277">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-026.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 6 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-026.webp" alt="Glass and Mirror Interiors project photo 6 by ALUWORLD LTD" loading="lazy" width="1044" height="690">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-027.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 7 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-027.webp" alt="Glass and Mirror Interiors project photo 7 by ALUWORLD LTD" loading="lazy" width="1061" height="562">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="glass-partition">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-028.webp" data-category-label="Glass &amp; Mirror Interiors" aria-label="View larger: Glass and Mirror Interiors project photo 8 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-028.webp" alt="Glass and Mirror Interiors project photo 8 by ALUWORLD LTD" loading="lazy" width="1043" height="730">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-029.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 8 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-029.webp" alt="Commercial and Architectural project photo 8 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-030.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 9 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-030.webp" alt="Commercial and Architectural project photo 9 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-031.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 10 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-031.webp" alt="Commercial and Architectural project photo 10 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-032.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 11 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-032.webp" alt="Commercial and Architectural project photo 11 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-034.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 12 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-034.webp" alt="Commercial and Architectural project photo 12 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-035.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 13 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-035.webp" alt="Commercial and Architectural project photo 13 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-036.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 14 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-036.webp" alt="Commercial and Architectural project photo 14 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-037.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 15 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-037.webp" alt="Commercial and Architectural project photo 15 by ALUWORLD LTD" loading="lazy" width="1170" height="871">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-038.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 16 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-038.webp" alt="Commercial and Architectural project photo 16 by ALUWORLD LTD" loading="lazy" width="1170" height="880">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-039.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 17 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-039.webp" alt="Commercial and Architectural project photo 17 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-040.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 18 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-040.webp" alt="Commercial and Architectural project photo 18 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-041.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 19 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-041.webp" alt="Commercial and Architectural project photo 19 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-042.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 20 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-042.webp" alt="Commercial and Architectural project photo 20 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-043.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 21 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-043.webp" alt="Commercial and Architectural project photo 21 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-044.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 22 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-044.webp" alt="Commercial and Architectural project photo 22 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-045.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 23 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-045.webp" alt="Commercial and Architectural project photo 23 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-046.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 24 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-046.webp" alt="Commercial and Architectural project photo 24 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-047.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 25 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-047.webp" alt="Commercial and Architectural project photo 25 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-048.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 26 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-048.webp" alt="Commercial and Architectural project photo 26 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-049.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 27 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-049.webp" alt="Commercial and Architectural project photo 27 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-050.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 28 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-050.webp" alt="Commercial and Architectural project photo 28 by ALUWORLD LTD" loading="lazy" width="1600" height="1200">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-051.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 29 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-051.webp" alt="Commercial and Architectural project photo 29 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+          <figure class="gallery-card" data-category="commercial-buildings">
+            <button class="gallery-open" type="button" data-fullsrc="assets/project-052.webp" data-category-label="Commercial &amp; Architectural" aria-label="View larger: Commercial and Architectural project photo 30 by ALUWORLD LTD">
+              <img decoding="async" src="assets/project-052.webp" alt="Commercial and Architectural project photo 30 by ALUWORLD LTD" loading="lazy" width="1200" height="1600">
+            </button>
+          </figure>
+        </div>
         <div class="gallery-more-wrap reveal">
-          <button class="button gallery-more-button" id="gallery-see-more" type="button">See More <span aria-hidden="true">↓</span></button>
+          <button class="button gallery-more-button" id="gallery-see-more" type="button">View all projects <span aria-hidden="true">↓</span></button>
           <p class="gallery-more-status" id="gallery-more-status" aria-live="polite"></p>
         </div>
       </div>
@@ -1775,7 +1478,9 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
     const closeTargets = [...document.querySelectorAll('[data-close-lightbox]')];
 
     let activeFilter = 'all';
-    let visibleLimit = 5;
+    const FEATURED_COUNT = 12;
+    let visibleLimit = FEATURED_COUNT;
+    let lastOpener = null;
 
     const getMatchingCards = () => galleryCards.filter((card) =>
       activeFilter === 'all' || card.dataset.category === activeFilter
@@ -1806,19 +1511,17 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         card.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
 
         if (shouldShow) {
-          card.style.setProperty('--alu-reveal-delay', `${Math.min(matchIndex * 45, 180)}ms`);
           if (wasHidden && animateFrom !== null && matchIndex >= animateFrom) newlyShown.push(card);
         }
       });
 
       const shown = Math.min(visibleLimit, matchingCards.length);
       const remaining = Math.max(0, matchingCards.length - shown);
-      const nextBatch = Math.min(10, remaining);
 
       if (seeMoreButton) {
         seeMoreButton.hidden = remaining === 0;
         seeMoreButton.innerHTML = remaining > 0
-          ? `See More <span aria-hidden="true">↓</span>`
+          ? `View all ${matchingCards.length} projects <span aria-hidden="true">↓</span>`
           : '';
       }
       if (moreStatus) {
@@ -1832,7 +1535,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 
     const setFilter = (filter, sourceButton = null) => {
       activeFilter = filter;
-      visibleLimit = 5;
+      visibleLimit = FEATURED_COUNT;
 
       filterButtons.forEach((button) => {
         const active = button.dataset.filter === filter;
@@ -1856,7 +1559,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 
       seeMoreButton?.addEventListener('click', () => {
         const previousLimit = visibleLimit;
-        visibleLimit += 10;
+        visibleLimit = getMatchingCards().length;
         renderGallery({ animateFrom: previousLimit });
       });
 
@@ -1872,6 +1575,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('lightbox-open');
+      window.setTimeout(() => lightbox.querySelector('.gallery-lightbox-close')?.focus(), 60);
     };
 
     const closeLightbox = () => {
@@ -1879,6 +1583,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('lightbox-open');
+      lastOpener?.focus();
       window.setTimeout(() => {
         if (lightboxImage) lightboxImage.src = '';
       }, 180);
@@ -1886,6 +1591,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 
     document.querySelectorAll('.gallery-open').forEach((button) => {
       button.addEventListener('click', () => {
+        lastOpener = button;
         openLightbox(
           button.dataset.fullsrc,
           button.dataset.title,
