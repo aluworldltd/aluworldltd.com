@@ -420,8 +420,24 @@ em, .accent-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic
 
 /* ---------- Google reviews link ---------- */
 .reviews.section { padding: 84px 0; }
-.reviews .section-heading { margin-bottom: 0; }
+.reviews .section-heading { margin-bottom: 44px; }
 .reviews .section-heading > div:last-child p { color: var(--muted); margin: 0 0 22px; }
+.g-review-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.g-review { display: flex; flex-direction: column; padding: 24px 22px 20px; border: 1px solid var(--soft-line); border-radius: 20px; background: #fff; color: #242220; box-shadow: 0 10px 30px rgba(20,15,10,.05); }
+.g-review-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.g-review-head > div { display: flex; flex-direction: column; min-width: 0; }
+.g-review-head strong { font-size: .95rem; line-height: 1.3; }
+.g-review-head span:not(.g-review-avatar) { color: #6b6055; font-size: .78rem; }
+.g-review-avatar { flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #2d1f10; color: #ffcf94; font-weight: 800; }
+.g-review-stars { margin: 0 0 10px; color: #e8a317; letter-spacing: 2px; font-size: 1rem; line-height: 1; }
+.g-review blockquote { margin: 0 0 16px; color: #43403c; font-size: .95rem; line-height: 1.6; }
+.g-review-source { margin: auto 0 0; color: #8a7d6d; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+@media (max-width: 1040px) { .g-review-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .g-review-list { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px 2px 26px; margin-bottom: -18px; scroll-padding-inline: 2px; scrollbar-width: none; }
+  .g-review-list::-webkit-scrollbar { display: none; }
+  .g-review { scroll-snap-align: start; }
+}
 
 /* ---------- Ticker strip ---------- */
 .ticker { overflow: hidden; border-block: 1px solid var(--soft-line); background: var(--panel); padding: 15px 0; position: relative; z-index: 1; }
@@ -2178,13 +2194,53 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">Customer reviews</p>
-            <h2 id="reviews-title">See what our customers say on Google.</h2>
+            <h2 id="reviews-title">What our customers say on Google.</h2>
           </div>
           <div>
-            <p>Read real reviews from ALUWORLD LTD customers on our Google Business Profile.</p>
-            <a class="button" href="https://share.google/DuhpmtYDUdyGER0lq" target="_blank" rel="noopener">Read our reviews on Google <span aria-hidden="true">↗</span></a>
+            <p>Real reviews from ALUWORLD LTD customers, shown exactly as posted on our Google Business Profile.</p>
+            <a class="button" href="https://share.google/DuhpmtYDUdyGER0lq" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a>
           </div>
         </div>
+
+        <!-- Reviews are copied verbatim from the Google Business Profile. Do not edit the text. -->
+        <ul class="g-review-list" aria-label="Customer reviews from Google">
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">G</span>
+              <div><strong>Gordon D</strong><span>Local Guide</span></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>I had a 3 panel neo-angle glass shower door installation that was nicely done. Door alignment and travel were plum and true. Job was completed to my full satisfaction. Good communication from start to end.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">J</span>
+              <div><strong>John Koil</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>Really happy with the work from AluWorld. The team was easy to deal with, showed up when they said they would, and did a great job. 10/10 would recommend.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Michael Grabowski</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>Had my windows changed by AluWorld LTD and the quality was the best. Highly recommend!</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">V</span>
+              <div><strong>valentina bodnariuc</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <blockquote>great job</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+        </ul>
       </div>
     </section>
 
