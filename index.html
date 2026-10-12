@@ -405,7 +405,10 @@ em { font-style: normal; color: var(--glass-deep); }
 .contact h2 { color: var(--on-dark); }
 .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
 .contact-intro { position: sticky; top: 120px; }
-.contact-intro > p:not(.eyebrow) { max-width: 440px; margin: 22px 0 32px; color: var(--on-dark-body); }
+.contact-intro > p:not(.eyebrow) { max-width: 440px; margin: 22px 0 24px; color: var(--on-dark-body); }
+.next-steps { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 12px; }
+.next-steps li { display: grid; grid-template-columns: 34px 1fr; align-items: baseline; color: var(--on-dark-body); font-size: .92rem; }
+.next-steps li span { color: var(--glass-light); font-family: var(--font-head); font-weight: 600; font-size: .82rem; letter-spacing: .06em; }
 .contact-links { display: grid; }
 .contact-links a { display: flex; flex-direction: column; padding: 16px 0; border-bottom: 1px solid var(--line-dark); transition: color .2s ease; }
 .contact-links a:first-child { border-top: 1px solid var(--line-dark); }
@@ -532,15 +535,15 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       <div class="hero-shade"></div>
       <div class="shell hero-content">
         <div class="hero-copy reveal">
-          <p class="eyebrow">Glass. Aluminum. Precision.</p>
-          <h1 id="hero-title">Windows, glass and aluminum work done <em>right</em> the first time.</h1>
-          <p class="hero-intro">Owner-operated and based in the GTA. We handle everything from a single cracked pane to redesigning a whole building's glass and aluminum exterior — across the GTA and surrounding areas, with one crew and one point of contact from quote to final walkthrough.</p>
+          <p class="eyebrow">Glass &amp; aluminum · Greater Toronto Area</p>
+          <h1 id="hero-title">Glass and aluminum, <em>installed with precision.</em></h1>
+          <p class="hero-intro">Owner-operated and based in the GTA. From a single cracked pane to a full storefront or building exterior — one crew and one point of contact from quote to final walkthrough.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Get a Free Quote <span aria-hidden="true">↗</span></a>
             <a class="button button-ghost" href="#services">Explore Services <span aria-hidden="true">↓</span></a>
           </div>
           <div class="hero-trust" aria-label="Company highlights">
-            <span>Residential</span><span>Commercial</span><span>Repair &amp; Installation</span>
+            <span>5.0 on Google</span><span>Residential &amp; commercial</span><span>Repair &amp; installation</span>
           </div>
         </div>
 
@@ -572,7 +575,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <p class="eyebrow">What we do</p>
             <h2 id="services-title">Complete solutions, built around your property.</h2>
           </div>
-          <p>From a single damaged pane to a complete commercial entrance system, every project receives careful planning, accurate field measurements, premium materials and precise installation. We tailor the scope to the property, access conditions, performance needs and desired finish.</p>
+          <p>From a single damaged pane to a complete commercial entrance, every project starts with accurate field measurements and ends with a clean, precise installation.</p>
         </div>
 
         <div class="service-grid">
@@ -581,7 +584,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <div class="service-body">
               <span class="service-number">01</span>
               <h3>Residential Work</h3>
-              <p>Window replacements and new installations, patio and folding glass doors, railings, screens, sealed glass units and custom aluminum details for refined modern homes. We coordinate measurements, finishes and installation so each component complements the architecture and performs reliably.</p>
+              <p>Window and door replacements, patio and folding glass doors, railings, screens, sealed units and custom aluminum details for modern homes.</p>
               <a href="#contact">Discuss a residential project</a>
             </div>
           </article>
@@ -591,7 +594,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <div class="service-body">
               <span class="service-number">02</span>
               <h3>Commercial Solutions</h3>
-              <p>Storefronts, glazed entrances, curtain-wall components, interior glass and custom aluminum fabrication for retail, office and multi-residential properties. Every solution is planned around durability, security, accessibility and a clean professional appearance.</p>
+              <p>Storefronts, glazed entrances, curtain-wall components, interior glass and custom aluminum fabrication for retail, office and multi-residential properties.</p>
               <a href="#contact">Plan a commercial installation</a>
             </div>
           </article>
@@ -601,7 +604,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <div class="service-body">
               <span class="service-number">03</span>
               <h3>Glass &amp; Screen Repairs</h3>
-              <p>Responsive assessment and repair for cracked or fogged windows, doors, balcony glass, screens, hardware and failed seals. We focus on safe removal, accurate replacement, weather protection and a neat finish that restores proper operation.</p>
+              <p>Cracked or fogged windows, balcony glass, doors, screens, hardware and failed seals — safely removed, accurately replaced and finished neatly.</p>
               <a href="#contact">Request a repair assessment</a>
             </div>
           </article>
@@ -611,7 +614,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <div class="service-body">
               <span class="service-number">04</span>
               <h3>Custom Sunrooms</h3>
-              <p>Custom, light-filled extensions with carefully planned glazing, insulated panels, doors and aluminum framing. Layout, ventilation, drainage and seasonal comfort are considered to create a bright space that feels naturally integrated with the home.</p>
+              <p>Light-filled extensions with insulated glazing, doors and aluminum framing, planned around drainage, ventilation and seasonal comfort.</p>
               <a href="#contact">Start a sunroom project</a>
             </div>
           </article>
@@ -1341,6 +1344,11 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           <p class="eyebrow">Get in touch</p>
           <h2 id="contact-title">Tell us about your project.</h2>
           <p>Share a few details and ALUWORLD LTD will follow up to discuss the scope, timing and next steps.</p>
+          <ol class="next-steps" aria-label="What happens next">
+            <li><span>01</span>We review your request and reply within one business day.</li>
+            <li><span>02</span>We confirm the details by phone, or arrange a free site visit.</li>
+            <li><span>03</span>You get your quote and clear next steps.</li>
+          </ol>
           <div class="contact-links">
             <a href="mailto:aluworldltd@gmail.com"><span>Email</span><strong>aluworldltd@gmail.com</strong></a>
             <a href="tel:+16475044338"><span>Phone</span><strong>(647) 504-4338</strong></a>
@@ -1391,13 +1399,13 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <div class="footer-brand-lockup brand-combo" aria-label="ALUWORLD LTD">
           <img class="brand-logo" decoding="async" src="assets/aluworld-logo-v4.svg" alt="ALUWORLD LTD">
         </div>
-        <p>Premium glass, screen and aluminum solutions for modern high rises, commercial spaces and homes.</p>
+        <p>Glass and aluminum solutions for homes, commercial spaces and high-rise buildings across the Greater Toronto Area.</p>
       </div>
       <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
       <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
-    <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Screen Repair for Modern High Rises &amp; Homes</span></div>
+    <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
   </footer>
 
 <script id="site-script">
