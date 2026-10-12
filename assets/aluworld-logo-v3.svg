@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" role="img" aria-label="ALUWORLD LIMITED">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 220" role="img" aria-label="ALUWORLD LTD">
   <defs>
     <linearGradient id="bronze4a" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#ffcf94"/><stop offset="1" stop-color="#ee942d"/>
@@ -20,5 +20,5 @@
   <text x="228" y="122" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="88" letter-spacing="-1.5">
     <tspan fill="#ffcf94">ALU</tspan><tspan fill="#fcfaf7">WORLD</tspan>
   </text>
-  <text x="230" y="162" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="6" fill="#ee942d" opacity=".9">LIMITED</text>
+  <text x="230" y="162" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="6" fill="#ee942d" opacity=".9">LTD</text>
 </svg>
