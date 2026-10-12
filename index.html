@@ -2225,6 +2225,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <blockquote>I had a 3 panel neo-angle glass shower door installation that was nicely done. Door alignment and travel were plum and true. Job was completed to my full satisfaction. Good communication from start to end.</blockquote>
             <p class="g-review-source">Posted on Google</p>
           </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">F</span>
+              <div><strong>feoudakos FN</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
           <li class="g-review">
             <div class="g-review-head">
               <span class="g-review-avatar" aria-hidden="true">S</span>
@@ -2232,6 +2240,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             </div>
             <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <blockquote>They did the front facade as well as all the glass on the inside of our Bakery. Fabulous workmanship, on time, on budget and unlike a lot of businesses seemed very grateful to have the work. Would highly recommend for any commercial or residential project.</blockquote>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">C</span>
+              <div><strong>Christos Chatzipateras</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <p class="g-review-source">Posted on Google</p>
           </li>
           <li class="g-review">
@@ -2243,6 +2259,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <blockquote>Really happy with the work from AluWorld. The team was easy to deal with, showed up when they said they would, and did a great job. 10/10 would recommend.</blockquote>
             <p class="g-review-source">Posted on Google</p>
           </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Malik C</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
           <li class="g-review">
             <div class="g-review-head">
               <span class="g-review-avatar" aria-hidden="true">M</span>
@@ -2252,6 +2276,14 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             <blockquote>Had my windows changed by AluWorld LTD and the quality was the best. Highly recommend!</blockquote>
             <p class="g-review-source">Posted on Google</p>
           </li>
+          <li class="g-review g-review--rating">
+            <div class="g-review-head">
+              <span class="g-review-avatar" aria-hidden="true">M</span>
+              <div><strong>Maram Elhag</strong></div>
+            </div>
+            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
+            <p class="g-review-source">Posted on Google</p>
+          </li>
           <li class="g-review">
             <div class="g-review-head">
               <span class="g-review-avatar" aria-hidden="true">V</span>
@@ -2259,38 +2291,6 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
             </div>
             <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <blockquote>great job</blockquote>
-            <p class="g-review-source">Posted on Google</p>
-          </li>
-          <li class="g-review g-review--rating">
-            <div class="g-review-head">
-              <span class="g-review-avatar" aria-hidden="true">F</span>
-              <div><strong>feoudakos FN</strong></div>
-            </div>
-            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
-            <p class="g-review-source">Posted on Google</p>
-          </li>
-          <li class="g-review g-review--rating">
-            <div class="g-review-head">
-              <span class="g-review-avatar" aria-hidden="true">C</span>
-              <div><strong>Christos Chatzipateras</strong></div>
-            </div>
-            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
-            <p class="g-review-source">Posted on Google</p>
-          </li>
-          <li class="g-review g-review--rating">
-            <div class="g-review-head">
-              <span class="g-review-avatar" aria-hidden="true">M</span>
-              <div><strong>Malik C</strong></div>
-            </div>
-            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
-            <p class="g-review-source">Posted on Google</p>
-          </li>
-          <li class="g-review g-review--rating">
-            <div class="g-review-head">
-              <span class="g-review-avatar" aria-hidden="true">M</span>
-              <div><strong>Maram Elhag</strong></div>
-            </div>
-            <p class="g-review-stars" role="img" aria-label="Rated 5 out of 5">★★★★★</p>
             <p class="g-review-source">Posted on Google</p>
           </li>
           <li class="g-review g-review--rating">
@@ -3281,6 +3281,25 @@ html.js .alu-image-reveal { transition-duration: 760ms !important; }
     const prev = controls.querySelector('.g-review-prev');
     const next = controls.querySelector('.g-review-next');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* Shuffle on each visit, alternating written reviews with star-only ones
+       (always starting with a written review) so neither kind bunches up. */
+    const shuffle = (items) => {
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+      return items;
+    };
+    const cards = [...list.children];
+    const written = shuffle(cards.filter((card) => !card.classList.contains('g-review--rating')));
+    const ratingOnly = shuffle(cards.filter((card) => card.classList.contains('g-review--rating')));
+    const mixed = [];
+    while (written.length || ratingOnly.length) {
+      if (written.length) mixed.push(written.shift());
+      if (ratingOnly.length) mixed.push(ratingOnly.shift());
+    }
+    list.append(...mixed);
 
     const step = () => {
       const card = list.querySelector('.g-review');
