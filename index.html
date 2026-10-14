@@ -699,6 +699,13 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 }
   </style>
 
+<style>
+.analytics-choice { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 10000; max-width: 560px; padding: 20px; background: #fff; color: #0f1a24; border: 1px solid #d5dbe1; border-radius: 12px; box-shadow: 0 8px 40px #0003; font: 14px/1.5 system-ui; }
+.analytics-choice p { margin: 0 0 14px; }
+.analytics-choice a { color: #275d79; text-decoration: underline; }
+.analytics-choice div { display: flex; gap: 10px; }
+.analytics-choice button, .analytics-settings { cursor: pointer; font: inherit; padding: 9px 14px; border: 1px solid #8c99a3; border-radius: 6px; background: #fff; color: #0f1a24; }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -1602,7 +1609,8 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
     <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved. · <a href="/privacy/">Privacy policy</a></span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
-  </footer>
+    <button class="analytics-settings" type="button" data-analytics-settings>Cookie settings</button>
+</footer>
 
 <script id="site-script">
 (() => {
@@ -2010,6 +2018,10 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             : { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
           if (!response.ok) throw new Error('Submission failed');
 
+          window.trackAluworldEvent?.('generate_lead', {
+            form_name: form.getAttribute('name'),
+            site_visit_requested: form.elements.site_visit?.checked ? 'yes' : 'no'
+          });
           form.reset();
           showStatus(options.successMessage || 'Thank you! Your request was sent successfully. ALUWORLD LTD will contact you shortly.', 'is-success');
         } catch (error) {
@@ -2095,6 +2107,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   })();
   </script>
 
+<script src="/assets/analytics-v1.js" defer></script>
 </body>
 </html>
 
