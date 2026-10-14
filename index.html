@@ -420,6 +420,24 @@ em { font-style: normal; color: var(--glass-deep); }
 .consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: var(--steel); font-size: .8rem; line-height: 1.5; }
 .quote-form .consent-label input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--glass); }
 .consent-label > span { color: var(--steel) !important; font-weight: 400 !important; font-size: .8rem !important; margin: 0 !important; }
+.photo-upload { margin: 0 0 16px; }
+.photo-upload-label { display: block; margin-bottom: 7px; font-size: .78rem; font-weight: 600; }
+.photo-upload-label em { color: var(--steel); font-style: normal; font-weight: 400; }
+.photo-drop { display: none; width: 100%; flex-direction: column; align-items: center; gap: 4px; padding: 20px 16px; border: 1.5px dashed #C3C9CF; border-radius: var(--radius-sm); background: var(--mist-2); color: var(--steel); font-size: .84rem; text-align: center; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+.photo-drop strong { color: var(--ink); font-size: .92rem; }
+.photo-drop:hover, .photo-drop.is-over { border-color: var(--glass); background: rgba(62, 117, 145, .06); }
+.photo-drop:disabled { cursor: progress; opacity: .7; }
+.photo-upload.is-enhanced .photo-drop { display: flex; }
+.photo-upload.is-enhanced .photo-fields { display: none; }
+.photo-previews { display: flex; flex-wrap: wrap; gap: 10px; }
+.photo-previews:not(:empty) { margin-top: 10px; }
+.photo-thumb { position: relative; width: 76px; height: 76px; margin: 0; overflow: hidden; border-radius: var(--radius-sm); background: var(--mist); }
+.photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.photo-thumb button { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; border: 0; border-radius: 50%; background: rgba(15, 26, 36, .78); color: var(--white); font-size: 1rem; line-height: 1; cursor: pointer; }
+.photo-error { margin: 6px 0 0; color: #8F1D1D; font-size: .8rem; }
+.photo-error:empty { display: none; }
+.photo-fields label { margin-bottom: 8px; }
+.photo-fields input { height: auto !important; padding: 10px !important; }
 .honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; margin: -1px !important; padding: 0 !important; border: 0 !important; }
 .form-status { display: none; margin: 16px 0 0; padding: 13px 15px; border-radius: var(--radius-sm); font-size: .88rem; line-height: 1.5; }
 .form-status.is-visible { display: block; }
@@ -1629,7 +1647,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           <div class="owner-note">Owned and Operated by <strong>K. Edlbi</strong></div>
         </div>
 
-        <form class="quote-form reveal" name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <form class="quote-form reveal" name="quote-request" method="POST" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="quote-request">
           <input type="hidden" name="subject" value="New AluWorld Quote Request">
           <p class="honeypot" aria-hidden="true">
@@ -1648,6 +1666,20 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <label><span>Postal code</span><input type="text" name="postal_code" autocomplete="postal-code" inputmode="text" placeholder="A1A 1A1"></label>
           </div>
           <label><span>Project details *</span><textarea name="message" rows="6" required minlength="10" placeholder="Tell us what needs to be repaired, installed or built..."></textarea></label>
+          <div class="photo-upload" data-max="3">
+            <span class="photo-upload-label">Photos <em>(optional, up to 3)</em></span>
+            <button class="photo-drop" type="button" aria-describedby="photo-hint">
+              <strong>Drag photos here or tap to choose</strong>
+              <span id="photo-hint">A photo of the window, glass or space helps us quote faster.</span>
+            </button>
+            <div class="photo-previews" aria-live="polite"></div>
+            <p class="photo-error" role="alert"></p>
+            <div class="photo-fields">
+              <label><span>Photo 1</span><input type="file" name="photo_1" accept="image/*"></label>
+              <label><span>Photo 2</span><input type="file" name="photo_2" accept="image/*"></label>
+              <label><span>Photo 3</span><input type="file" name="photo_3" accept="image/*"></label>
+            </div>
+          </div>
           <label class="consent-label">
             <input type="checkbox" name="contact_consent" value="Yes" required>
             <span>I agree that ALUWORLD LTD may contact me about this quote request. *</span>
@@ -1897,6 +1929,96 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 </script>
 
 
+  <script id="photo-upload-script">
+  (() => {
+    const box = document.querySelector('.photo-upload');
+    if (!box || typeof DataTransfer !== 'function') return; /* fall back to plain file inputs */
+    const form = box.closest('form');
+    const inputs = [...box.querySelectorAll('input[type="file"]')];
+    const drop = box.querySelector('.photo-drop');
+    const previews = box.querySelector('.photo-previews');
+    const error = box.querySelector('.photo-error');
+    const max = inputs.length;
+    const MAX_SIDE = 1600, QUALITY = 0.8, MAX_RAW = 4 * 1024 * 1024;
+    let photos = [];
+
+    const picker = document.createElement('input');
+    picker.type = 'file'; picker.accept = 'image/*'; picker.multiple = true; picker.hidden = true;
+    box.appendChild(picker);
+    box.classList.add('is-enhanced');
+
+    /* Shrink large phone photos before upload: faster on mobile data and well
+       inside Netlify's upload limits. */
+    const compress = (file) => new Promise((resolve) => {
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, MAX_SIDE / Math.max(img.naturalWidth, img.naturalHeight));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(img.naturalWidth * scale);
+        canvas.height = Math.round(img.naturalHeight * scale);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(url);
+        canvas.toBlob((blob) => {
+          const name = file.name.replace(/\.[^.]+$/, '') + '.jpg';
+          resolve(blob ? new File([blob], name, { type: 'image/jpeg' }) : null);
+        }, 'image/jpeg', QUALITY);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); resolve(file.size <= MAX_RAW ? file : null); };
+      img.src = url;
+    });
+
+    const sync = () => {
+      inputs.forEach((input, i) => {
+        const dt = new DataTransfer();
+        if (photos[i]) dt.items.add(photos[i]);
+        input.files = dt.files;
+      });
+      previews.replaceChildren(...photos.map((photo, i) => {
+        const fig = document.createElement('figure');
+        fig.className = 'photo-thumb';
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(photo);
+        img.alt = 'Attached photo ' + (i + 1);
+        img.onload = () => URL.revokeObjectURL(img.src);
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.textContent = '×';
+        remove.setAttribute('aria-label', 'Remove photo ' + (i + 1));
+        remove.addEventListener('click', () => { photos.splice(i, 1); error.textContent = ''; sync(); });
+        fig.append(img, remove);
+        return fig;
+      }));
+      drop.querySelector('strong').textContent = photos.length >= max
+        ? 'Maximum of ' + max + ' photos attached'
+        : (photos.length ? 'Add another photo' : 'Drag photos here or tap to choose');
+    };
+
+    const add = async (fileList) => {
+      error.textContent = '';
+      const images = [...fileList].filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
+      if (!images.length) { error.textContent = 'Please choose image files.'; return; }
+      const room = max - photos.length;
+      if (images.length > room) error.textContent = 'Only ' + max + ' photos can be attached.';
+      drop.disabled = true;
+      for (const file of images.slice(0, Math.max(0, room))) {
+        const small = await compress(file);
+        if (small) photos.push(small);
+        else error.textContent = 'One photo could not be added. Try a JPG or PNG.';
+      }
+      drop.disabled = false;
+      sync();
+    };
+
+    drop.addEventListener('click', () => { if (photos.length < max) picker.click(); });
+    picker.addEventListener('change', () => { add(picker.files); picker.value = ''; });
+    ['dragenter', 'dragover'].forEach((type) => drop.addEventListener(type, (e) => { e.preventDefault(); drop.classList.add('is-over'); }));
+    ['dragleave', 'drop'].forEach((type) => drop.addEventListener(type, (e) => { e.preventDefault(); drop.classList.remove('is-over'); }));
+    drop.addEventListener('drop', (e) => { if (e.dataTransfer?.files?.length) add(e.dataTransfer.files); });
+    form.addEventListener('reset', () => setTimeout(() => { photos = []; error.textContent = ''; sync(); }));
+  })();
+  </script>
+
   <script id="quote-form-script">
   (() => {
     const wireForm = (form, options = {}) => {
@@ -1939,12 +2061,17 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         button.textContent = 'Sending…';
 
         try {
-          const body = new URLSearchParams(new FormData(form));
-          const response = await fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: body.toString()
+          const data = new FormData(form);
+          let hasPhotos = false;
+          form.querySelectorAll('input[type="file"]').forEach((input) => {
+            if (input.files && input.files.length) hasPhotos = true;
+            else data.delete(input.name);
           });
+          /* Photos need a multipart upload; everything else keeps the original
+             URL-encoded submission. */
+          const response = await fetch('/', hasPhotos
+            ? { method: 'POST', body: data }
+            : { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
           if (!response.ok) throw new Error('Submission failed');
 
           form.reset();
