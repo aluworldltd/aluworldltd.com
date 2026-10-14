@@ -47,6 +47,118 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are your quotes free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Quotes are free and no-obligation. Send us a quote request or call (647) 504-4338, and we'll follow up within one business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a job cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every job is priced individually, based on the size, glass type, hardware and access. As a guide, a standard-sized shower door is usually $999 + tax, supplied and installed. Custom-sized doors and special designs are quoted individually. Send us a few details for a free, no-obligation quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a job take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the job. A standard-sized shower door can usually be done within 2–3 days. Custom-sized glass takes about 5 business days to manufacture, so a custom shower door takes about 7 days on average. Ask us about timing for your project when you request a quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer a warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All of our shower doors come with a 3-year warranty. For other types of work, ask us about coverage when you request your quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you do emergency repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For broken glass we come the same day, safely remove the damaged glass and, if needed, cover the opening until the new glass is ready. For urgent help, call (647) 504-4338."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you come and look at the job first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer free, no-obligation site visits. Pick a preferred day and time in Request a visit and we'll contact you to confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve the Greater Toronto Area, including Mississauga, Toronto, Brampton, Oakville, Burlington, Milton, Vaughan and Etobicoke. Not sure if we cover your area? Just ask."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work on homes and businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We work on houses, condos, storefronts, offices and other commercial properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you do repairs, or only new installations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. We repair cracked or fogged windows, balcony glass, doors, screens, hardware and failed seals, and we install new windows, doors, railings, shower doors, storefronts, glass partitions and sunrooms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work on condo balconies and high-rise buildings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We repair and replace balcony glass, condo windows and glass on high-rise buildings, including work at height."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle permits and condo-board approvals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When a project needs a permit, or approval from a condo board or property manager, we take care of it for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay, and do you need a deposit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept e-transfer, cheque, credit card and cash. A 30% deposit is required to cover the materials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I include in my quote request?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tell us what needs to be repaired or installed, the rough size, and your city or postal code. The more detail you share, the more accurate your quote."
+      }
+    }
+  ]
+}
+  </script>
   <link rel="icon" href="assets/favicon-v5.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-v5.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -410,6 +522,25 @@ em { font-style: normal; color: var(--glass-deep); }
 .location-card-content a { color: var(--white); font-size: .86rem; font-weight: 600; border-bottom: 1px solid rgba(255, 255, 255, .45); padding-bottom: 2px; }
 .location-card-content a::after { content: " →"; }
 
+/* ---------- FAQ ---------- */
+.faq { background: var(--mist); }
+.faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; align-items: start; }
+.faq-intro { position: sticky; top: 120px; }
+.faq-intro > p:not(.eyebrow) { max-width: 380px; margin: 22px 0 0; color: var(--steel); }
+.faq-intro a, .faq-item a { color: var(--glass-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.faq-intro a:hover, .faq-item a:hover { color: var(--ink); }
+.faq a[href^="tel:"] { white-space: nowrap; }
+.faq-list { border-top: 1px solid var(--line-light-strong); }
+.faq-item { border-bottom: 1px solid var(--line-light-strong); }
+.faq-item summary { position: relative; display: block; padding: 20px 44px 20px 0; cursor: pointer; list-style: none; font-family: var(--font-head); font-size: 1.08rem; font-weight: 600; letter-spacing: -.01em; color: var(--ink); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before, .faq-item summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 14px; height: 2px; background: var(--glass); transition: transform .25s ease; }
+.faq-item summary::after { transform: rotate(90deg); }
+.faq-item[open] summary::after { transform: rotate(0deg); }
+.faq-item summary:hover { color: var(--glass-deep); }
+.faq-item p { max-width: 640px; margin: -4px 0 22px; color: var(--steel); font-size: .96rem; }
+.faq-item strong { color: var(--ink); font-weight: 600; }
+
 /* ---------- Contact (dark) ---------- */
 .contact.light-section { background: var(--ink); color: var(--on-dark); }
 .contact .eyebrow { color: var(--glass-light); }
@@ -458,6 +589,8 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   .process-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .process-visual.before-after-visual { max-width: 620px; }
   .contact-intro { position: static; }
+  .faq-grid { grid-template-columns: 1fr; gap: 36px; }
+  .faq-intro { position: static; }
   .location-section-head { grid-template-columns: 1fr; gap: 18px; }
   .location-section-head > p { margin: 0; }
   .location-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1349,6 +1482,70 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       </div>
     </section>
 
+    <section class="section faq light-section" id="faq" aria-labelledby="faq-title">
+      <div class="shell faq-grid">
+        <div class="faq-intro reveal">
+          <p class="eyebrow">Common questions</p>
+          <h2 id="faq-title">Answers before you call.</h2>
+          <p>Can't find your question? Call <a href="tel:+16475044338">(647) 504-4338</a> or <a href="#contact">send us a request</a>.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Are your quotes free?</summary>
+            <p>Yes. Quotes are free and no-obligation. Send us a <a href="#contact">quote request</a> or call <a href="tel:+16475044338">(647) 504-4338</a>, and we'll follow up within one business day.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does a job cost?</summary>
+            <p>Every job is priced individually, based on the size, glass type, hardware and access. As a guide, a standard-sized shower door is usually <strong>$999 + tax, supplied and installed</strong>. Custom-sized doors and special designs are quoted individually. Send us a few details for a free, no-obligation quote.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long does a job take?</summary>
+            <p>It depends on the job. A standard-sized shower door can usually be done within <strong>2–3 days</strong>. Custom-sized glass takes about <strong>5 business days</strong> to manufacture, so a custom shower door takes about <strong>7 days</strong> on average. Ask us about timing for your project when you request a quote.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer a warranty?</summary>
+            <p>Yes. All of our shower doors come with a <strong>3-year warranty</strong>. For other types of work, ask us about coverage when you request your quote.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you do emergency repairs?</summary>
+            <p>Yes. For broken glass we <strong>come the same day</strong>, safely remove the damaged glass and, if needed, cover the opening until the new glass is ready. For urgent help, call <a href="tel:+16475044338">(647) 504-4338</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you come and look at the job first?</summary>
+            <p>Yes. We offer free, no-obligation site visits. Pick a preferred day and time in <a href="#schedule">Request a visit</a> and we'll contact you to confirm.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What areas do you serve?</summary>
+            <p>We serve the Greater Toronto Area, including Mississauga, Toronto, Brampton, Oakville, Burlington, Milton, Vaughan and Etobicoke. Not sure if we cover your area? Just ask.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work on homes and businesses?</summary>
+            <p>Yes. We work on houses, condos, storefronts, offices and other commercial properties.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you do repairs, or only new installations?</summary>
+            <p>Both. We repair cracked or fogged windows, balcony glass, doors, screens, hardware and failed seals, and we install new windows, doors, railings, shower doors, storefronts, glass partitions and sunrooms.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you work on condo balconies and high-rise buildings?</summary>
+            <p>Yes. We repair and replace balcony glass, condo windows and glass on high-rise buildings, including work at height.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you handle permits and condo-board approvals?</summary>
+            <p>Yes. When a project needs a permit, or approval from a condo board or property manager, we take care of it for you.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I pay, and do you need a deposit?</summary>
+            <p>We accept <strong>e-transfer, cheque, credit card and cash</strong>. A <strong>30% deposit</strong> is required to cover the materials.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What should I include in my quote request?</summary>
+            <p>Tell us what needs to be repaired or installed, the rough size, and your city or postal code. The more detail you share, the more accurate your quote.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section contact light-section" id="contact" aria-labelledby="contact-title">
       <div class="shell contact-grid">
         <div class="contact-intro reveal">
@@ -1413,7 +1610,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <p>Glass and aluminum solutions for homes, commercial spaces and high-rise buildings across the Greater Toronto Area.</p>
       </div>
       <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
-      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#contact">Request a quote</a></div>
+      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#faq">Common questions</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
     <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
