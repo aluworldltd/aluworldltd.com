@@ -35,7 +35,8 @@
     "areaServed": [
       "Mississauga", "Toronto", "Brampton", "Oakville", "Burlington",
       "Milton", "Vaughan", "Richmond Hill", "Markham", "Etobicoke",
-      "North York", "Scarborough", "Hamilton"
+      "North York", "Scarborough", "Hamilton", "Niagara Falls", "Cobourg",
+      "Wasaga Beach"
     ],
     "sameAs": [
       "https://share.google/DuhpmtYDUdyGER0lq"
@@ -105,7 +106,7 @@
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We serve the Greater Toronto Area, including Mississauga, Toronto, Brampton, Oakville, Burlington, Milton, Vaughan and Etobicoke. Not sure if we cover your area? Just ask."
+        "text": "We serve the Greater Toronto Area and beyond, from Niagara Falls to Cobourg and Wasaga Beach, including: Brampton, Burlington, Cobourg, Etobicoke, Hamilton, Markham, Milton, Mississauga, Niagara Falls, North York, Oakville, Richmond Hill, Scarborough, Toronto, Vaughan, Wasaga Beach, and the communities in between. Not sure if we cover your area? Just ask."
       }
     },
     {
@@ -540,6 +541,10 @@ em { font-style: normal; color: var(--glass-deep); }
 .faq-item summary:hover { color: var(--glass-deep); }
 .faq-item p { max-width: 640px; margin: -4px 0 22px; color: var(--steel); font-size: .96rem; }
 .faq-item strong { color: var(--ink); font-weight: 600; }
+.faq-areas { list-style: none; max-width: 600px; margin: -10px 0 14px; padding: 0; columns: 3; column-gap: 24px; }
+.faq-areas li { position: relative; padding: 3px 0 3px 14px; color: var(--ink); font-size: .94rem; break-inside: avoid; }
+.faq-areas li::before { content: ""; position: absolute; left: 0; top: .78em; width: 5px; height: 5px; border-radius: 1px; background: var(--glass); }
+.faq-areas + p { margin-top: 0; }
 
 /* ---------- Contact (dark) ---------- */
 .contact.light-section { background: var(--ink); color: var(--on-dark); }
@@ -633,6 +638,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   .service-body { padding: 24px; }
   .service-number { top: 27px; right: 24px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
+  .faq-areas { columns: 2; }
   .contact .quote-form { padding: 24px 20px; }
   .cal-card, .slot-card { padding: 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -1421,7 +1427,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <p class="eyebrow">Service areas</p>
             <h2 id="areas-title">Serving the Greater Toronto Area.</h2>
           </div>
-          <p>ALUWORLD LTD supports homeowners, condominium communities, retail spaces, offices and property-management teams throughout the GTA.</p>
+          <p>ALUWORLD LTD supports homeowners, condominium communities, retail spaces, offices and property-management teams throughout the GTA and beyond, from Niagara Falls to Cobourg and Wasaga Beach.</p>
         </div>
         <div class="location-grid">
         <article class="location-card reveal" tabindex="0">
@@ -1516,7 +1522,9 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           </details>
           <details class="faq-item">
             <summary>What areas do you serve?</summary>
-            <p>We serve the Greater Toronto Area, including Mississauga, Toronto, Brampton, Oakville, Burlington, Milton, Vaughan and Etobicoke. Not sure if we cover your area? Just ask.</p>
+            <p>We serve the Greater Toronto Area and beyond, from <strong>Niagara Falls</strong> to <strong>Cobourg</strong> and <strong>Wasaga Beach</strong>, including:</p>
+            <ul class="faq-areas"><li>Brampton</li><li>Burlington</li><li>Cobourg</li><li>Etobicoke</li><li>Hamilton</li><li>Markham</li><li>Milton</li><li>Mississauga</li><li>Niagara Falls</li><li>North York</li><li>Oakville</li><li>Richmond Hill</li><li>Scarborough</li><li>Toronto</li><li>Vaughan</li><li>Wasaga Beach</li></ul>
+            <p>…and the communities in between. Not sure if we cover your area? Just ask.</p>
           </details>
           <details class="faq-item">
             <summary>Do you work on homes and businesses?</summary>
