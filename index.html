@@ -32,12 +32,7 @@
     "telephone": "+1-647-504-4338",
     "email": "aluworldltd@gmail.com",
     "description": "ALUWORLD LTD provides glass repairs, window and door installations, storefront systems, aluminum fabrication and custom sunrooms across the Greater Toronto Area.",
-    "areaServed": [
-      "Mississauga", "Toronto", "Brampton", "Oakville", "Burlington",
-      "Milton", "Vaughan", "Richmond Hill", "Markham", "Etobicoke",
-      "North York", "Scarborough", "Hamilton", "Niagara Falls", "Cobourg",
-      "Wasaga Beach"
-    ],
+    "areaServed": ["Niagara Falls", "Niagara-on-the-Lake", "St. Catharines", "Thorold", "Welland", "Lincoln", "Grimsby", "Hamilton", "Stoney Creek", "Ancaster", "Dundas", "Waterdown", "Burlington", "Oakville", "Milton", "Georgetown", "Mississauga", "Brampton", "Caledon", "Bolton", "Orangeville", "Toronto", "Etobicoke", "North York", "York", "East York", "Scarborough", "Vaughan", "Woodbridge", "Thornhill", "Richmond Hill", "Markham", "Stouffville", "King City", "Aurora", "Newmarket", "East Gwillimbury", "Georgina", "Pickering", "Ajax", "Whitby", "Oshawa", "Courtice", "Bowmanville", "Newcastle", "Uxbridge", "Port Perry", "Port Hope", "Cobourg", "Bradford", "Innisfil", "Barrie", "Alliston", "Angus", "Wasaga Beach"],
     "sameAs": [
       "https://share.google/DuhpmtYDUdyGER0lq"
     ],
@@ -106,7 +101,7 @@
       "name": "What areas do you serve?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We serve the Greater Toronto Area and beyond, from Niagara Falls to Cobourg and Wasaga Beach, including: Brampton, Burlington, Cobourg, Etobicoke, Hamilton, Markham, Milton, Mississauga, Niagara Falls, North York, Oakville, Richmond Hill, Scarborough, Toronto, Vaughan, Wasaga Beach, and the communities in between. Not sure if we cover your area? Just ask."
+        "text": "We serve the Greater Toronto Area and beyond, from Niagara Falls to Cobourg and Wasaga Beach, including: Niagara: Niagara Falls, Niagara-on-the-Lake, St. Catharines, Thorold, Welland, Lincoln, Grimsby; Hamilton & Halton: Hamilton, Stoney Creek, Ancaster, Dundas, Waterdown, Burlington, Oakville, Milton, Georgetown; Peel & Dufferin: Mississauga, Brampton, Caledon, Bolton, Orangeville; Toronto: Toronto, Etobicoke, North York, York, East York, Scarborough; York Region: Vaughan, Woodbridge, Thornhill, Richmond Hill, Markham, Stouffville, King City, Aurora, Newmarket, East Gwillimbury, Georgina; Durham & Northumberland: Pickering, Ajax, Whitby, Oshawa, Courtice, Bowmanville, Newcastle, Uxbridge, Port Perry, Port Hope, Cobourg; Simcoe County: Bradford, Innisfil, Barrie, Alliston, Angus, Wasaga Beach; and the communities in between. Not sure if we cover your area? Just ask."
       }
     },
     {
@@ -131,14 +126,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. We repair and replace balcony glass, condo windows and glass on high-rise buildings, including work at height."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you handle permits and condo-board approvals?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. When a project needs a permit, or approval from a condo board or property manager, we take care of it for you."
       }
     },
     {
@@ -541,10 +528,12 @@ em { font-style: normal; color: var(--glass-deep); }
 .faq-item summary:hover { color: var(--glass-deep); }
 .faq-item p { max-width: 640px; margin: -4px 0 22px; color: var(--steel); font-size: .96rem; }
 .faq-item strong { color: var(--ink); font-weight: 600; }
-.faq-areas { list-style: none; max-width: 600px; margin: -10px 0 14px; padding: 0; columns: 3; column-gap: 24px; }
-.faq-areas li { position: relative; padding: 3px 0 3px 14px; color: var(--ink); font-size: .94rem; break-inside: avoid; }
-.faq-areas li::before { content: ""; position: absolute; left: 0; top: .78em; width: 5px; height: 5px; border-radius: 1px; background: var(--glass); }
-.faq-areas + p { margin-top: 0; }
+.faq-regions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; max-width: 660px; margin: -8px 0 16px; }
+.faq-region-name { margin: 0 0 2px !important; color: var(--glass-deep) !important; font-size: .72rem !important; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.faq-region-list { margin: 0 !important; color: var(--ink) !important; font-size: .92rem !important; line-height: 1.6; }
+.faq-region-list span { white-space: nowrap; }
+.faq-region-list span:not(:last-child)::after { content: "\00a0·"; color: var(--steel); }
+.faq-regions + p { margin-top: 0; }
 
 /* ---------- Contact (dark) ---------- */
 .contact.light-section { background: var(--ink); color: var(--on-dark); }
@@ -638,7 +627,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   .service-body { padding: 24px; }
   .service-number { top: 27px; right: 24px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
-  .faq-areas { columns: 2; }
+  .faq-regions { grid-template-columns: 1fr; }
   .contact .quote-form { padding: 24px 20px; }
   .cal-card, .slot-card { padding: 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -1523,7 +1512,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           <details class="faq-item">
             <summary>What areas do you serve?</summary>
             <p>We serve the Greater Toronto Area and beyond, from <strong>Niagara Falls</strong> to <strong>Cobourg</strong> and <strong>Wasaga Beach</strong>, including:</p>
-            <ul class="faq-areas"><li>Brampton</li><li>Burlington</li><li>Cobourg</li><li>Etobicoke</li><li>Hamilton</li><li>Markham</li><li>Milton</li><li>Mississauga</li><li>Niagara Falls</li><li>North York</li><li>Oakville</li><li>Richmond Hill</li><li>Scarborough</li><li>Toronto</li><li>Vaughan</li><li>Wasaga Beach</li></ul>
+            <div class="faq-regions"><div class="faq-region"><p class="faq-region-name">Niagara</p><p class="faq-region-list"><span>Niagara Falls</span> <span>Niagara-on-the-Lake</span> <span>St. Catharines</span> <span>Thorold</span> <span>Welland</span> <span>Lincoln</span> <span>Grimsby</span></p></div><div class="faq-region"><p class="faq-region-name">Hamilton &amp; Halton</p><p class="faq-region-list"><span>Hamilton</span> <span>Stoney Creek</span> <span>Ancaster</span> <span>Dundas</span> <span>Waterdown</span> <span>Burlington</span> <span>Oakville</span> <span>Milton</span> <span>Georgetown</span></p></div><div class="faq-region"><p class="faq-region-name">Peel &amp; Dufferin</p><p class="faq-region-list"><span>Mississauga</span> <span>Brampton</span> <span>Caledon</span> <span>Bolton</span> <span>Orangeville</span></p></div><div class="faq-region"><p class="faq-region-name">Toronto</p><p class="faq-region-list"><span>Toronto</span> <span>Etobicoke</span> <span>North York</span> <span>York</span> <span>East York</span> <span>Scarborough</span></p></div><div class="faq-region"><p class="faq-region-name">York Region</p><p class="faq-region-list"><span>Vaughan</span> <span>Woodbridge</span> <span>Thornhill</span> <span>Richmond Hill</span> <span>Markham</span> <span>Stouffville</span> <span>King City</span> <span>Aurora</span> <span>Newmarket</span> <span>East Gwillimbury</span> <span>Georgina</span></p></div><div class="faq-region"><p class="faq-region-name">Durham &amp; Northumberland</p><p class="faq-region-list"><span>Pickering</span> <span>Ajax</span> <span>Whitby</span> <span>Oshawa</span> <span>Courtice</span> <span>Bowmanville</span> <span>Newcastle</span> <span>Uxbridge</span> <span>Port Perry</span> <span>Port Hope</span> <span>Cobourg</span></p></div><div class="faq-region"><p class="faq-region-name">Simcoe County</p><p class="faq-region-list"><span>Bradford</span> <span>Innisfil</span> <span>Barrie</span> <span>Alliston</span> <span>Angus</span> <span>Wasaga Beach</span></p></div></div>
             <p>…and the communities in between. Not sure if we cover your area? Just ask.</p>
           </details>
           <details class="faq-item">
@@ -1537,10 +1526,6 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           <details class="faq-item">
             <summary>Do you work on condo balconies and high-rise buildings?</summary>
             <p>Yes. We repair and replace balcony glass, condo windows and glass on high-rise buildings, including work at height.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do you handle permits and condo-board approvals?</summary>
-            <p>Yes. When a project needs a permit, or approval from a condo board or property manager, we take care of it for you.</p>
           </details>
           <details class="faq-item">
             <summary>How do I pay, and do you need a deposit?</summary>
