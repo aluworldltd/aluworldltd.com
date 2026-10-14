@@ -412,6 +412,11 @@ em { font-style: normal; color: var(--glass-deep); }
 .quote-form ::placeholder { color: #8A949E; }
 .field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .form-note { margin: 12px 0 0; color: var(--steel); font-size: .78rem; text-align: center; }
+.form-note a { color: var(--glass-deep); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.hero-quote-card .form-note { color: var(--alu-muted); }
+.hero-quote-card .form-note a { color: var(--glass-light); }
+.footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-bottom a:hover { color: var(--white); }
 .consent-label { display: grid !important; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: var(--steel); font-size: .8rem; line-height: 1.5; }
 .quote-form .consent-label input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--glass); }
 .consent-label > span { color: var(--steel) !important; font-weight: 400 !important; font-size: .8rem !important; margin: 0 !important; }
@@ -766,6 +771,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <label><span>Email or phone *</span><input type="text" name="contact" autocomplete="email" required placeholder="you@email.com or your phone"></label>
             <label><span>What do you need? *</span><textarea name="message" rows="3" required minlength="6" placeholder="e.g. Replace 2 windows, repair balcony glass..."></textarea></label>
             <button class="button form-button" type="submit">Get My Free Quote</button>
+            <p class="form-note">We only use your details to reply. <a href="/privacy/">Privacy policy</a></p>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
           <a class="hero-quote-callback" href="#schedule">Prefer an in-person visit? Request one →</a>
@@ -1647,7 +1653,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <span>I agree that ALUWORLD LTD may contact me about this quote request. *</span>
           </label>
           <button class="button form-button" type="submit">Send Quote Request</button>
-          <p class="form-note">Your information is used only to respond to this quote request.</p>
+          <p class="form-note">Your information is used only to respond to this quote request. <a href="/privacy/">Privacy policy</a></p>
           <div class="form-status" role="status" aria-live="polite"></div>
         </form>
       </div>
@@ -1672,7 +1678,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#faq">Common questions</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
-    <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved.</span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
+    <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved. · <a href="/privacy/">Privacy policy</a></span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
   </footer>
 
 <script id="site-script">
@@ -2114,7 +2120,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       html += '  <label><span>Address to visit *</span><input type="text" id="bf-address" autocomplete="street-address" required></label>';
       html += '  <label><span>Anything we should know?</span><textarea id="bf-notes" rows="2"></textarea></label>';
       html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Request this visit</button>';
-      html += '  <p class="form-note">This is a request, not a confirmed booking. We\'ll contact you to confirm the day and time.</p>';
+      html += '  <p class="form-note">This is a request, not a confirmed booking. We\'ll contact you to confirm the day and time. <a href="/privacy/">Privacy policy</a></p>';
       html += '  <div class="form-status" role="status" aria-live="polite" id="bf-status"></div>';
       html += '</div>';
       panel.innerHTML = html;
