@@ -1,6 +1,6 @@
 /* ==========================================================================
    ALUWORLD LTD — service pages (/services/*). Same tokens and components as
-   the homepage. Assets are cached for a year: save changes as service-v3.css.
+   the homepage. Assets are cached for a year: save changes as service-v6.css.
    ========================================================================== */
 :root {
   --ink: #0F1A24;
@@ -121,6 +121,9 @@ em { font-style: normal; color: var(--glass-deep); }
 .hero-trust span::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 1px; background: var(--glass-light); }
 .page-hero-media { overflow: hidden; aspect-ratio: 4 / 5; max-height: 560px; border-radius: var(--radius); background: var(--slate); box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
 .page-hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.page-hero-grid.no-media { grid-template-columns: minmax(0, 820px); }
+figure.page-hero-media { position: relative; margin: 0; }
+.page-hero-media figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; padding: 10px 12px; border: 1px solid var(--line-dark); border-radius: var(--radius-sm); background: rgba(15, 26, 36, .86); color: var(--on-dark-body); font-size: .8rem; line-height: 1.4; backdrop-filter: blur(8px); }
 
 /* ---------- What we do ---------- */
 .scope-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
@@ -136,6 +139,11 @@ em { font-style: normal; color: var(--glass-deep); }
 .photo-grid figure:hover img { transform: scale(1.03); }
 .photo-grid figcaption { margin-top: 8px; color: var(--steel); font-size: .84rem; line-height: 1.4; }
 .photos-more { margin: 28px 0 0; }
+.review-card { max-width: 760px; margin: 44px 0 0; padding: 30px 32px; border: 1px solid var(--line-light); border-radius: var(--radius); background: var(--mist-2); }
+.review-stars { margin: 0 0 12px; color: var(--glass); font-size: 1.05rem; letter-spacing: 2px; line-height: 1; }
+.review-card blockquote { margin: 0 0 16px; font-family: var(--font-head); font-size: clamp(1.1rem, 2vw, 1.3rem); font-weight: 500; line-height: 1.45; letter-spacing: -.01em; }
+.review-by { color: var(--steel); font-size: .88rem; }
+.review-by strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- Steps ---------- */
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; counter-reset: step; }
