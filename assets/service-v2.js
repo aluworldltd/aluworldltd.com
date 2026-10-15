@@ -1,6 +1,46 @@
-/* ALUWORLD LTD — service pages (/services/*): quick-quote form and footer year.
+/* ALUWORLD LTD — service pages (/services/*): menu, Services dropdown, quick-quote form, footer year.
    The form posts to Netlify exactly like the homepage quick-quote form. */
 (() => {
+  /* Menu (phones and tablets) */
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  const setMenu = (open) => {
+    menuButton?.setAttribute('aria-expanded', String(open));
+    menuButton?.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    nav?.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+  };
+  menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenu(false);
+  });
+  window.matchMedia('(min-width: 1101px)').addEventListener?.('change', (event) => {
+    if (event.matches) setMenu(false);
+  });
+
+  /* Services dropdown: opens on hover with a mouse; the arrow button opens it on touch screens. */
+  document.querySelectorAll('.has-menu').forEach((item) => {
+    const toggle = item.querySelector('.nav-sub-toggle');
+    const setOpen = (open) => {
+      item.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setOpen(!item.classList.contains('open'));
+    });
+    document.addEventListener('click', (event) => {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && item.classList.contains('open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  });
+
   const form = document.querySelector('form[name="quick-quote"]');
   if (form) {
     const button = form.querySelector('button[type="submit"]');

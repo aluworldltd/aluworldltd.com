@@ -352,6 +352,13 @@ em { font-style: normal; color: var(--glass-deep); }
 .main-nav.open { opacity: 1; visibility: visible; transform: none; }
 .main-nav > a { padding: 12px 0; border-bottom: 1px solid var(--line-dark); font-family: var(--font-head); font-size: clamp(1.25rem, 6vw, 1.6rem); font-weight: 600; letter-spacing: -.015em; color: var(--on-dark); }
 .main-nav > a:hover { color: var(--glass-light); }
+.nav-item { border-bottom: 1px solid var(--line-dark); }
+.nav-top { display: block; padding: 12px 0 6px; font-family: var(--font-head); font-size: clamp(1.25rem, 6vw, 1.6rem); font-weight: 600; letter-spacing: -.015em; color: var(--on-dark); }
+.nav-top:hover { color: var(--glass-light); }
+.nav-sub-toggle { display: none; }
+.nav-submenu-inner { display: flex; flex-direction: column; padding: 0 0 12px 14px; border-left: 1px solid var(--line-dark); margin-bottom: 4px; }
+.nav-submenu-inner a { padding: 6px 0; color: var(--on-dark-body); font-size: 1rem; }
+.nav-submenu-inner a:hover { color: var(--glass-light); }
 .nav-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
 .nav-actions .button { width: 100%; min-height: 52px; }
 .nav-phone svg { width: 17px; height: 17px; flex: 0 0 17px; fill: currentColor; }
@@ -369,6 +376,18 @@ em { font-style: normal; color: var(--glass-deep); }
   .main-nav > a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--glass-light); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
   .main-nav > a:hover { color: var(--white); }
   .main-nav > a:hover::after { transform: scaleX(1); }
+  .nav-item { position: relative; display: flex; align-items: center; gap: 2px; border: 0; }
+  .nav-top { position: relative; padding: 6px 0; font-family: var(--font-body); font-size: .88rem; font-weight: 500; letter-spacing: 0; color: var(--on-dark-body); white-space: nowrap; }
+  .nav-top:hover, .has-menu:hover .nav-top, .has-menu.open .nav-top { color: var(--white); }
+  .nav-sub-toggle { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 26px; padding: 0; border: 0; background: none; color: var(--on-dark-body); cursor: pointer; }
+  .nav-sub-toggle svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+  .has-menu:hover .nav-sub-toggle svg, .has-menu.open .nav-sub-toggle svg { transform: rotate(180deg); }
+  .nav-submenu { position: absolute; top: 100%; left: -18px; z-index: 5; padding-top: 14px; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .18s ease, visibility .18s ease, transform .18s ease; }
+  .has-menu:hover .nav-submenu, .has-menu.open .nav-submenu { opacity: 1; visibility: visible; transform: none; }
+  .has-menu:has(:focus-visible) .nav-submenu { opacity: 1; visibility: visible; transform: none; }
+  .nav-submenu-inner { min-width: 300px; margin: 0; padding: 8px; border: 1px solid var(--line-dark); border-radius: var(--radius); background: var(--ink); box-shadow: 0 24px 50px rgba(0, 0, 0, .35); }
+  .nav-submenu-inner a { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--on-dark-body); font-size: .88rem; white-space: nowrap; }
+  .nav-submenu-inner a:hover, .nav-submenu-inner a:focus-visible { background: rgba(141, 185, 207, .1); color: var(--white); }
   .nav-actions { flex-direction: row; align-items: center; gap: 10px; margin: 0 0 0 6px; }
   .nav-actions .button { width: auto; min-height: 42px; padding: 0 16px; font-size: .84rem; }
 }
@@ -709,7 +728,20 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <span></span><span></span><span></span>
       </button>
       <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
+        <div class="nav-item has-menu">
+          <a class="nav-top" href="#services">Services</a>
+          <button class="nav-sub-toggle" type="button" aria-expanded="false" aria-controls="services-menu" aria-label="Show service pages"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+          <div class="nav-submenu" id="services-menu">
+            <div class="nav-submenu-inner">
+              <a href="/services/glass-repair/">Glass repair &amp; replacement</a>
+              <a href="/services/windows-doors/">Windows &amp; doors</a>
+              <a href="/services/railings/">Glass &amp; aluminum railings</a>
+              <a href="/services/storefronts/">Storefronts &amp; commercial glass</a>
+              <a href="/services/aluminum-cladding/">Aluminum cladding, soffits &amp; canopies</a>
+              <a href="/services/glass-partitions/">Glass partitions &amp; mirrors</a>
+            </div>
+          </div>
+        </div>
         <a href="#work">Our Work</a>
         <a href="#reviews">Reviews</a>
         <a href="#site-visit">Request a Visit</a>
@@ -1522,6 +1554,28 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
      open (and the page scroll-locked) after resizing up. */
   window.matchMedia('(min-width: 1200px)').addEventListener?.('change', (event) => {
     if (event.matches) closeMenu();
+  });
+
+  /* Services dropdown: opens on hover with a mouse; the arrow button opens it on touch screens. */
+  document.querySelectorAll('.has-menu').forEach((item) => {
+    const toggle = item.querySelector('.nav-sub-toggle');
+    const setOpen = (open) => {
+      item.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setOpen(!item.classList.contains('open'));
+    });
+    document.addEventListener('click', (event) => {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && item.classList.contains('open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
   });
 
   /* Solid header once the page has scrolled. */
