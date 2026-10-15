@@ -14,7 +14,7 @@ Structure
                AVIF that Chrome refuses to show, leaving a blank gallery tile.
   services/    One page per service (glass repair, windows & doors, railings,
                storefronts, aluminum cladding, glass partitions,
-               shower doors). They share
+               shower glass). They share
                assets/service-v3.css and assets/service-v2.js, reuse gallery photos,
                and carry a copy of the quick-quote form (same name and fields, with
                the page named in the email subject). Add new pages to sitemap.xml.
