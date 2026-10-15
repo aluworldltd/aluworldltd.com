@@ -1,6 +1,6 @@
 /* ==========================================================================
    ALUWORLD LTD — service pages (/services/*). Same tokens and components as
-   the homepage. Assets are cached for a year: save changes as service-v4.css.
+   the homepage. Assets are cached for a year: save changes as service-v5.css.
    ========================================================================== */
 :root {
   --ink: #0F1A24;
@@ -121,6 +121,7 @@ em { font-style: normal; color: var(--glass-deep); }
 .hero-trust span::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 1px; background: var(--glass-light); }
 .page-hero-media { overflow: hidden; aspect-ratio: 4 / 5; max-height: 560px; border-radius: var(--radius); background: var(--slate); box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
 .page-hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.page-hero-grid.no-media { grid-template-columns: minmax(0, 820px); }
 
 /* ---------- What we do ---------- */
 .scope-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
