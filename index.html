@@ -550,50 +550,13 @@ em { font-style: normal; color: var(--glass-deep); }
 .g-review--rating .g-review-stars { margin: 0; font-size: .95rem; }
 .g-review--rating .g-review-source { margin: 2px 0 0; }
 
-/* ---------- Visit request calendar ---------- */
-.schedule { background: var(--mist); }
-.booking-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: start; }
-.cal-card, .slot-card { padding: 28px; border: 1px solid var(--line-light); border-radius: var(--radius); background: var(--white); }
-.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
-.cal-head strong { font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; }
-.cal-nav { display: flex; gap: 8px; }
-.cal-nav button { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line-light-strong); border-radius: var(--radius-sm); background: var(--white); color: var(--ink); font-size: 1.05rem; cursor: pointer; }
-.cal-nav button:hover:not(:disabled) { border-color: var(--ink); }
-.cal-nav button:disabled { opacity: .3; cursor: not-allowed; }
-.weekday-row, .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-.weekday-row { margin-bottom: 8px; }
-.weekday-row span { text-align: center; color: var(--steel); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.day-cell { position: relative; height: 46px; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: var(--radius-sm); background: transparent; cursor: pointer; transition: background .15s ease, border-color .15s ease; }
-.day-cell .num { color: var(--ink); font-size: .92rem; font-weight: 600; }
-.day-cell.is-open:hover { border-color: rgba(62, 117, 145, .45); background: rgba(62, 117, 145, .08); }
-.day-cell.is-past, .day-cell.is-closed { cursor: default; }
-.day-cell.is-past .num, .day-cell.is-closed .num { color: #B9C1C8; font-weight: 500; }
-.day-cell.is-selected { background: var(--glass) !important; border-color: var(--glass) !important; }
-.day-cell.is-selected .num { color: var(--white); }
-.cal-note { margin: 18px 0 0; color: var(--steel); font-size: .8rem; }
-.slot-card h3 { margin: 0 0 4px; font-size: 1.25rem; }
-.slot-date { display: block; margin-bottom: 20px; color: var(--glass-deep); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.slot-empty { padding: 60px 0; color: var(--steel); font-size: .92rem; text-align: center; }
-.time-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 8px; }
-.time-btn { padding: 13px 10px; border: 1px solid var(--line-light-strong); border-radius: var(--radius-sm); background: var(--white); color: var(--ink); font-weight: 600; font-size: .88rem; text-align: center; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
-.time-btn:hover { border-color: var(--glass); }
-.time-btn.is-selected { background: var(--ink); border-color: var(--ink); color: var(--white); }
-.booking-form { display: none; margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line-light); }
-.booking-form.is-visible { display: block; }
-.booking-form label { display: block; margin-bottom: 14px; }
-.booking-form label > span { display: block; margin-bottom: 6px; font-size: .78rem; font-weight: 600; }
-.booking-form input, .booking-form textarea { width: 100%; height: 46px; padding: 0 13px; border: 1px solid #D5DBE1; border-radius: var(--radius-sm); background: var(--white); color: var(--ink); font-size: .92rem; outline: none; transition: border-color .15s ease, box-shadow .15s ease; }
-.booking-form textarea { height: auto; min-height: 66px; padding: 11px 13px; resize: vertical; }
-.booking-form input:focus, .booking-form textarea:focus { border-color: var(--glass); box-shadow: 0 0 0 3px rgba(62, 117, 145, .2); }
-.success-card { padding: 20px 4px; text-align: center; }
-.success-check { width: 52px; height: 52px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--glass); color: var(--white); font-size: 1.5rem; }
-.success-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
-.success-card p { margin: 0 0 4px; color: var(--steel); font-size: .92rem; }
-.success-card .booked-for { color: var(--ink); font-weight: 600; }
-.book-again { margin-top: 18px; border: 0; background: none; color: var(--glass-deep); font-weight: 600; font-size: .86rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
-
 /* ---------- Service areas ---------- */
+.site-visit-option { scroll-margin-top: 110px; padding: 18px; margin: 0 0 20px; border: 1px solid var(--line-light-strong); border-radius: var(--radius-sm); }
+.site-visit-option .form-note { text-align: left; margin: 0; }
 .locations { background: var(--white); }
+.service-area-summary { border-top: 1px solid rgba(15,26,36,.12); padding-top: 24px; }
+.service-area-list { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding: 0; margin: 0 0 28px; }
+.service-area-list li { padding: 12px 18px; border: 1px solid rgba(15,26,36,.12); border-radius: 8px; background: #f4f7f8; color: var(--ink); font-size: .95rem; }
 .location-section-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: end; margin-bottom: 44px; }
 .location-section-head > p { max-width: 520px; margin: 0 0 0 auto; color: var(--steel); }
 .location-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -692,7 +655,6 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   .footer-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 880px) {
-  .booking-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 820px) {
   :root { --shell: calc(100% - 32px); }
@@ -727,7 +689,6 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .faq-regions { grid-template-columns: 1fr; }
   .contact .quote-form { padding: 24px 20px; }
-  .cal-card, .slot-card { padding: 20px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .floating-call { right: 14px; min-height: 48px; padding: 0 16px; font-size: .82rem; }
 }
@@ -738,6 +699,13 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
 }
   </style>
 
+<style>
+.analytics-choice { position: fixed; bottom: 16px; left: 16px; right: 16px; z-index: 10000; max-width: 560px; padding: 20px; background: #fff; color: #0f1a24; border: 1px solid #d5dbe1; border-radius: 12px; box-shadow: 0 8px 40px #0003; font: 14px/1.5 system-ui; }
+.analytics-choice p { margin: 0 0 14px; }
+.analytics-choice a { color: #275d79; text-decoration: underline; }
+.analytics-choice div { display: flex; gap: 10px; }
+.analytics-choice button, .analytics-settings { cursor: pointer; font: inherit; padding: 9px 14px; border: 1px solid #8c99a3; border-radius: 6px; background: #fff; color: #0f1a24; }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -755,7 +723,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <a href="#services">Services</a>
         <a href="#work">Our Work</a>
         <a href="#reviews">Reviews</a>
-        <a href="#schedule">Request a Visit</a>
+        <a href="#site-visit">Request a Visit</a>
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
         <div class="nav-actions">
@@ -773,7 +741,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       <div class="shell hero-content">
         <div class="hero-copy reveal">
           <p class="eyebrow">Glass &amp; aluminum · Greater Toronto Area</p>
-          <h1 id="hero-title">Glass and aluminum, <em>installed with precision.</em></h1>
+          <h1 id="hero-title">Glass Repairs, Windows &amp; Doors <em>Across the GTA.</em></h1>
           <p class="hero-intro">Owner-operated and based in the GTA. From a single cracked pane to a full storefront or building exterior — one crew and one point of contact from quote to final walkthrough.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Get a Free Quote <span aria-hidden="true">↗</span></a>
@@ -801,7 +769,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <p class="form-note">We only use your details to reply. <a href="/privacy/">Privacy policy</a></p>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
-          <a class="hero-quote-callback" href="#schedule">Prefer an in-person visit? Request one →</a>
+          <a class="hero-quote-callback" href="#site-visit">Prefer an in-person visit? Request one →</a>
         </aside>
       </div>
     </section>
@@ -1453,48 +1421,6 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
       </div>
     </section>
 
-    <section class="section schedule light-section" id="schedule" aria-labelledby="schedule-title">
-      <div class="shell">
-        <p class="eyebrow">Request a visit</p>
-        <h2 id="schedule-title">Request a visit — <em>we'll confirm with you.</em></h2>
-        <p class="section-sub">Free, no-obligation site visits. Choose a preferred day and time, and we'll contact you by phone or email to confirm. Your visit is not booked until we confirm it.</p>
-
-        <div class="booking-grid">
-          <div class="cal-card">
-            <div class="cal-head">
-              <strong id="cal-month-label">Month</strong>
-              <div class="cal-nav">
-                <button id="cal-prev" type="button" aria-label="Previous week">&#8249;</button>
-                <button id="cal-next" type="button" aria-label="Next week">&#8250;</button>
-              </div>
-            </div>
-            <div class="weekday-row">
-              <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-            </div>
-            <div class="day-grid" id="day-grid"></div>
-            <p class="cal-note">Visits available Monday to Saturday. Pick a preferred time and we'll contact you to confirm.</p>
-          </div>
-
-          <div class="slot-card">
-            <div id="slot-panel">
-              <div class="slot-empty">Pick a preferred day on the calendar.</div>
-            </div>
-          </div>
-        </div>
-
-        <form name="visit-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-          <input type="hidden" name="form-name" value="visit-request">
-          <input type="hidden" name="subject" value="New AluWorld Visit Request">
-          <input type="text" name="name">
-          <input type="text" name="contact">
-          <input type="text" name="address">
-          <textarea name="notes"></textarea>
-          <input type="text" name="visit_date">
-          <input type="text" name="visit_time">
-          <input type="text" name="bot-field">
-        </form>
-      </div>
-    </section>
 
     <section class="section locations light-section" id="areas" aria-labelledby="areas-title">
       <div class="shell">
@@ -1505,61 +1431,13 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           </div>
           <p>ALUWORLD LTD supports homeowners, condominium communities, retail spaces, offices and property-management teams throughout the GTA and beyond, from Niagara Falls to Cobourg and Wasaga Beach.</p>
         </div>
-        <div class="location-grid">
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-041-600.avif 600w, assets/img/image-041-800.avif 800w, assets/img/image-041-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-041.webp" alt="Greater Toronto Area skyline and residential towers" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>01</span>
-            <h3>Across the GTA</h3>
-            <p>Residential and commercial glass and aluminum service throughout the Greater Toronto Area.</p>
-            <a href="#contact">See if we cover your area</a>
-          </div>
-        </article>
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-042-600.avif 600w, assets/img/image-042-800.avif 800w, assets/img/image-042-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-042.webp" alt="Ontario urban streetscape with modern buildings" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>02</span>
-            <h3>Brampton & Caledon</h3>
-            <p>Responsive residential and commercial glass, screen and aluminum service throughout Peel Region.</p>
-            <a href="#contact">Get a Peel Region quote</a>
-          </div>
-        </article>
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-043-600.avif 600w, assets/img/image-043-800.avif 800w, assets/img/image-043-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-043.webp" alt="Burlington and Hamilton waterfront skyline" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>03</span>
-            <h3>Oakville & Burlington</h3>
-            <p>Premium window, entrance, railing, storefront and custom aluminum work across the lakeshore communities.</p>
-            <a href="#contact">Ask about lakeshore projects</a>
-          </div>
-        </article>
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-044-600.avif 600w, assets/img/image-044-800.avif 800w, assets/img/image-044-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-044.webp" alt="Halton and Central Ontario lakefront community" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>04</span>
-            <h3>Milton & Halton Region</h3>
-            <p>Project scheduling for growing residential communities, custom homes and commercial properties.</p>
-            <a href="#contact">Book a project consult</a>
-          </div>
-        </article>
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-045-600.avif 600w, assets/img/image-045-800.avif 800w, assets/img/image-045-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-045.webp" alt="Toronto skyline and waterfront" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>05</span>
-            <h3>Etobicoke & Toronto</h3>
-            <p>Glass repairs, high-rise service, storefront systems and architectural installations across Toronto.</p>
-            <a href="#contact">Request Toronto service</a>
-          </div>
-        </article>
-        <article class="location-card reveal" tabindex="0">
-          <picture><source type="image/avif" srcset="assets/img/image-046-600.avif 600w, assets/img/image-046-800.avif 800w, assets/img/image-046-1000.avif 1000w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1040px) 50vw, 390px"><img width="1586" height="992" decoding="async" src="assets/image-046.webp" alt="Southern Ontario urban cityscape" loading="lazy" /></picture>
-          <div class="location-card-content">
-            <span>06</span>
-            <h3>Vaughan & Surrounding GTA</h3>
-            <p>Commercial and residential inquiries across Vaughan, York Region and nearby GTA communities.</p>
-            <a href="#contact">Reach the Vaughan team</a>
-          </div>
-        </article>
+        <div class="service-area-summary reveal">
+          <ul class="service-area-list" aria-label="Service locations">
+            <li>Mississauga</li><li>Brampton &amp; Caledon</li>
+            <li>Oakville &amp; Burlington</li><li>Milton &amp; Halton Region</li>
+            <li>Etobicoke &amp; Toronto</li><li>Vaughan &amp; York Region</li>
+          </ul>
+          <a class="button" href="#contact">Ask about your area <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -1594,7 +1472,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
           </details>
           <details class="faq-item">
             <summary>Can you come and look at the job first?</summary>
-            <p>Yes. We offer free, no-obligation site visits. Pick a preferred day and time in <a href="#schedule">Request a visit</a> and we'll contact you to confirm.</p>
+            <p>Yes. We offer free, no-obligation site visits. Select <a href="#site-visit">a free site visit</a> in the quote form and optionally tell us your preferred day. We'll contact you to arrange and confirm the visit.</p>
           </details>
           <details class="faq-item">
             <summary>What areas do you serve?</summary>
@@ -1662,6 +1540,14 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             <label><span>Project city</span><input type="text" name="city" autocomplete="address-level2" placeholder="For example, Mississauga"></label>
             <label><span>Postal code</span><input type="text" name="postal_code" autocomplete="postal-code" inputmode="text" placeholder="A1A 1A1"></label>
           </div>
+          <div class="site-visit-option" id="site-visit">
+            <label class="consent-label">
+              <input type="checkbox" name="site_visit" value="Yes">
+              <span>I'd like a free, no-obligation site visit.</span>
+            </label>
+            <label><span>Preferred day for a visit (optional)</span><input type="text" name="preferred_visit_day" placeholder="For example, Tuesday afternoon"></label>
+            <p class="form-note">We'll contact you to arrange and confirm the visit.</p>
+          </div>
           <label><span>Project details *</span><textarea name="message" rows="6" required minlength="10" placeholder="Tell us what needs to be repaired, installed or built..."></textarea></label>
           <div class="photo-upload" data-max="3">
             <span class="photo-upload-label">Photos <em>(optional, up to 3)</em></span>
@@ -1704,11 +1590,12 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         <p>Glass and aluminum solutions for homes, commercial spaces and high-rise buildings across the Greater Toronto Area.</p>
       </div>
       <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
-      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#schedule">Request a visit</a><a href="#areas">Service areas</a><a href="#faq">Common questions</a><a href="#contact">Request a quote</a></div>
+      <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#site-visit">Request a visit</a><a href="#areas">Service areas</a><a href="#faq">Common questions</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
     <div class="shell footer-bottom"><span>© <span id="year"></span> ALUWORLD LTD. All rights reserved. · <a href="/privacy/">Privacy policy</a></span><span>Glass &amp; Aluminum Solutions · Greater Toronto Area</span></div>
-  </footer>
+    <button class="analytics-settings" type="button" data-analytics-settings>Cookie settings</button>
+</footer>
 
 <script id="site-script">
 (() => {
@@ -2116,6 +2003,10 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             : { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
           if (!response.ok) throw new Error('Submission failed');
 
+          window.trackAluworldEvent?.('generate_lead', {
+            form_name: form.getAttribute('name'),
+            site_visit_requested: form.elements.site_visit?.checked ? 'yes' : 'no'
+          });
           form.reset();
           showStatus(options.successMessage || 'Thank you! Your request was sent successfully. ALUWORLD LTD will contact you shortly.', 'is-success');
         } catch (error) {
@@ -2201,197 +2092,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
   })();
   </script>
 
-  <script id="schedule-calendar-script">
-  (() => {
-    const grid = document.getElementById('day-grid');
-    if (!grid) return;
-
-    const today = new Date();
-    today.setHours(0,0,0,0);
-    let viewStart = new Date(today);
-
-    // Preferred time windows only. Nothing here reflects real availability;
-    // every request is confirmed by ALUWORLD LTD by phone or email.
-    const slotTimes = ["9:00 AM","11:00 AM","1:00 PM","3:00 PM"];
-    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-    const dayInfo = (date) => {
-      const diff = Math.round((date - today) / 86400000);
-      if (diff < 1) return { status: 'past' };
-      if (date.getDay() === 0) return { status: 'closed' };
-      return { status: 'open' };
-    };
-
-    let selectedDate = null;
-    let selectedTime = null;
-
-    const labelEl = document.getElementById('cal-month-label');
-    const prevBtn = document.getElementById('cal-prev');
-    const nextBtn = document.getElementById('cal-next');
-
-    const fmtDate = (d) => monthNames[d.getMonth()] + ' ' + d.getDate();
-    const fmtLongDate = (d) => dayNames[d.getDay()] + ', ' + monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
-
-    const renderCalendar = () => {
-      grid.innerHTML = '';
-      const startOfWeek = new Date(viewStart);
-      startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
-      labelEl.textContent = monthNames[viewStart.getMonth()] + ' ' + viewStart.getFullYear();
-      prevBtn.disabled = viewStart <= today;
-
-      for (let w = 0; w < 21; w++) {
-        const d = new Date(startOfWeek);
-        d.setDate(d.getDate() + w);
-        const cell = document.createElement('button');
-        cell.type = 'button';
-        cell.className = 'day-cell';
-        const info = dayInfo(d);
-        cell.classList.add('is-' + info.status);
-        const numSpan = document.createElement('span');
-        numSpan.className = 'num';
-        numSpan.textContent = d.getDate();
-        cell.appendChild(numSpan);
-        const isSelected = selectedDate && d.getTime() === selectedDate.getTime();
-        if (isSelected) cell.classList.add('is-selected');
-        if (info.status === 'open') {
-          cell.setAttribute('aria-label', fmtLongDate(d));
-          if (isSelected) cell.setAttribute('aria-pressed', 'true');
-          cell.addEventListener('click', () => selectDay(new Date(d)));
-        } else {
-          cell.disabled = true;
-          cell.setAttribute('aria-label', fmtLongDate(d) + (info.status === 'closed' ? ', closed' : ', not available'));
-        }
-        grid.appendChild(cell);
-      }
-    };
-
-    const selectDay = (date) => {
-      selectedDate = date;
-      selectedTime = null;
-      renderCalendar();
-      renderSlotPanel(date);
-    };
-
-    const renderSlotPanel = (date) => {
-      const panel = document.getElementById('slot-panel');
-      let html = '';
-      html += '<span class="slot-date">' + fmtLongDate(date) + '</span>';
-      html += '<h3>Choose a preferred time</h3>';
-      html += '<div class="time-grid" id="time-grid">';
-      slotTimes.forEach((t, i) => {
-        html += '<button type="button" class="time-btn" data-idx="' + i + '" aria-pressed="false">' + t + '</button>';
-      });
-      html += '</div>';
-      html += '<div class="booking-form" id="booking-form">';
-      html += '  <label><span>Name *</span><input type="text" id="bf-name" autocomplete="name" required></label>';
-      html += '  <label><span>Phone or email *</span><input type="text" id="bf-contact" autocomplete="tel" required></label>';
-      html += '  <label><span>Address to visit *</span><input type="text" id="bf-address" autocomplete="street-address" required></label>';
-      html += '  <label><span>Anything we should know?</span><textarea id="bf-notes" rows="2"></textarea></label>';
-      html += '  <button type="button" class="button form-button" id="bf-confirm" style="width:100%">Request this visit</button>';
-      html += '  <p class="form-note">This is a request, not a confirmed booking. We\'ll contact you to confirm the day and time. <a href="/privacy/">Privacy policy</a></p>';
-      html += '  <div class="form-status" role="status" aria-live="polite" id="bf-status"></div>';
-      html += '</div>';
-      panel.innerHTML = html;
-
-      panel.querySelectorAll('.time-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          panel.querySelectorAll('.time-btn').forEach((b) => {
-            b.classList.remove('is-selected');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          btn.classList.add('is-selected');
-          btn.setAttribute('aria-pressed', 'true');
-          selectedTime = btn.textContent;
-          document.getElementById('booking-form').classList.add('is-visible');
-        });
-      });
-
-      document.getElementById('bf-confirm').addEventListener('click', async () => {
-        const nameEl = document.getElementById('bf-name');
-        const contactEl = document.getElementById('bf-contact');
-        const addressEl = document.getElementById('bf-address');
-        const notesEl = document.getElementById('bf-notes');
-        const statusEl = document.getElementById('bf-status');
-        const confirmBtn = document.getElementById('bf-confirm');
-        const name = nameEl.value.trim();
-        const contact = contactEl.value.trim();
-        const address = addressEl.value.trim();
-
-        [[nameEl,name],[contactEl,contact],[addressEl,address]].forEach(([el,val]) => {
-          el.style.borderColor = val ? '' : '#d9534f';
-          el.setAttribute('aria-invalid', val ? 'false' : 'true');
-        });
-        if (!name || !contact || !address) {
-          statusEl.className = 'form-status is-visible is-error';
-          statusEl.textContent = 'Please fill in your name, contact, and address.';
-          return;
-        }
-
-        confirmBtn.disabled = true;
-        confirmBtn.textContent = 'Sending…';
-
-        try {
-          if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
-            const body = new URLSearchParams({
-              'form-name': 'visit-request',
-              subject: 'New AluWorld Visit Request',
-              name, contact, address,
-              notes: notesEl.value.trim(),
-              visit_date: fmtLongDate(date),
-              visit_time: selectedTime
-            });
-            const response = await fetch('/', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-              body: body.toString()
-            });
-            if (!response.ok) throw new Error('Submission failed');
-          }
-
-          const card = document.createElement('div');
-          card.className = 'success-card';
-          const check = document.createElement('div');
-          check.className = 'success-check';
-          check.textContent = '✓';
-          const heading = document.createElement('h3');
-          heading.textContent = 'Request received, ' + name.split(' ')[0] + '.';
-          const requested = document.createElement('p');
-          requested.append('You asked for ');
-          const when = document.createElement('span');
-          when.className = 'booked-for';
-          when.textContent = fmtLongDate(date) + ' at ' + selectedTime;
-          requested.append(when, '.');
-          const followUp = document.createElement('p');
-          followUp.textContent = 'We\'ll contact you at ' + contact + ' to confirm. Your visit is not booked until we confirm it.';
-          const again = document.createElement('button');
-          again.type = 'button';
-          again.className = 'book-again';
-          again.textContent = 'Request a different time';
-          again.addEventListener('click', () => renderSlotPanel(date));
-          card.append(check, heading, requested, followUp, again);
-          panel.replaceChildren(card);
-        } catch (err) {
-          confirmBtn.disabled = false;
-          confirmBtn.textContent = 'Request this visit';
-          statusEl.className = 'form-status is-visible is-error';
-          statusEl.textContent = 'We could not send your request. Please call (647) 504-4338 instead.';
-        }
-      });
-    };
-
-    prevBtn.addEventListener('click', () => {
-      let nd = new Date(viewStart); nd.setDate(nd.getDate() - 7);
-      if (nd < today) nd = new Date(today);
-      viewStart = nd; renderCalendar();
-    });
-    nextBtn.addEventListener('click', () => {
-      viewStart.setDate(viewStart.getDate() + 7); renderCalendar();
-    });
-
-    renderCalendar();
-  })();
-  </script>
+<script src="/assets/analytics-v1.js" defer></script>
 </body>
 </html>
 
