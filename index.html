@@ -26,6 +26,7 @@
 {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
+  "@id": "https://aluworldltd.com/#business",
   "name": "ALUWORLD LTD",
   "url": "https://aluworldltd.com/",
   "logo": "https://aluworldltd.com/brand/aluworld-icon-v5-720.png",
@@ -459,6 +460,10 @@ em { font-style: normal; color: var(--glass-deep); }
 .service-body a { align-self: flex-start; color: var(--glass-deep); font-weight: 600; font-size: .9rem; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .service-body a::after { content: " →"; }
 .service-body a:hover { color: var(--ink); }
+.service-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 30px; }
+.service-links span { margin-right: 6px; color: var(--steel); font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.service-links a { padding: 10px 14px; border: 1px solid var(--line-light-strong); border-radius: var(--radius-sm); background: var(--white); font-size: .88rem; font-weight: 500; transition: border-color .2s ease, background .2s ease; }
+.service-links a:hover { border-color: var(--ink); }
 
 /* ---------- Process ---------- */
 .process { background: var(--white); }
@@ -809,6 +814,15 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
             </div>
           </article>
         </div>
+        <nav class="service-links reveal" aria-label="Service pages">
+          <span>Browse by service</span>
+          <a href="/services/glass-repair/">Glass repair &amp; replacement</a>
+          <a href="/services/windows-doors/">Windows &amp; doors</a>
+          <a href="/services/railings/">Glass &amp; aluminum railings</a>
+          <a href="/services/storefronts/">Storefronts &amp; commercial glass</a>
+          <a href="/services/aluminum-cladding/">Aluminum cladding, soffits &amp; canopies</a>
+          <a href="/services/glass-partitions/">Glass partitions &amp; mirrors</a>
+        </nav>
       </div>
     </section>
 
@@ -1468,7 +1482,7 @@ body.menu-open .floating-call, body.lightbox-open .floating-call { opacity: 0; p
         </div>
         <p>Glass and aluminum solutions for homes, commercial spaces and high-rise buildings across the Greater Toronto Area.</p>
       </div>
-      <div><h3>Services</h3><a href="#services">Residential work</a><a href="#services">Commercial solutions</a><a href="#services">Glass repairs</a><a href="#services">Custom sunrooms</a></div>
+      <div><h3>Services</h3><a href="/services/glass-repair/">Glass repair &amp; replacement</a><a href="/services/windows-doors/">Windows &amp; doors</a><a href="/services/railings/">Glass &amp; aluminum railings</a><a href="/services/storefronts/">Storefronts &amp; commercial glass</a><a href="/services/aluminum-cladding/">Aluminum cladding, soffits &amp; canopies</a><a href="/services/glass-partitions/">Glass partitions &amp; mirrors</a><a href="#services">Custom sunrooms</a></div>
       <div><h3>Company</h3><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#site-visit">Request a visit</a><a href="#areas">Service areas</a><a href="#faq">Common questions</a><a href="#contact">Request a quote</a></div>
       <div><h3>Contact</h3><a href="mailto:aluworldltd@gmail.com">aluworldltd@gmail.com</a><a href="tel:+16475044338">(647) 504-4338</a><p>Owned and Operated by K. Edlbi</p></div>
     </div>
