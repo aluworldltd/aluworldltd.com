@@ -17,7 +17,8 @@ Structure
 Forms (Netlify Forms; notification emails go to aluworldltd@gmail.com)
   quick-quote     Hero form            Email subject: New AluWorld Quick Quote
   quote-request   Contact form         Email subject: New AluWorld Quote Request
-  visit-request   Visit request flow   Email subject: New AluWorld Visit Request
+  Site visits are requested with the "site_visit" checkbox and "preferred_visit_day"
+  field in quote-request (the separate visit-request form was removed).
   Keep the form names and field names unchanged, or Netlify stops receiving them.
 
 Google reviews: copied verbatim from the Google Business Profile. Do not edit the text.
