@@ -27,6 +27,10 @@ Forms (Netlify Forms; notification emails go to aluworldltd@gmail.com)
   Site visits are requested with the "site_visit" checkbox and "preferred_visit_day"
   field in quote-request (the separate visit-request form was removed).
   Keep the form names and field names unchanged, or Netlify stops receiving them.
+  Every submission is also sent to the CRM (crm.aluworldltd.com) by
+  netlify/functions/submission-created.mjs, using the CRM_INBOUND_URL and
+  CRM_INBOUND_KEY environment variables on this Netlify site. If they're missing,
+  or the CRM is down, the forms still work exactly as before.
 
 Google reviews: copied verbatim from the Google Business Profile. Do not edit the text.
 
